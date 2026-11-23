@@ -9,9 +9,24 @@
  */
 export async function onRequest(context) {
   const { request, env } = context;
-  // Временный backend для демо. В продакшене задайте BACKEND_URL
-  // (например, https://naparu-backend.onrender.com) в Cloudflare Pages.
-  const backendUrl = env.BACKEND_URL ?? 'https://naparuapp2026.loca.lt';
+  // Задайте BACKEND_URL в Cloudflare Pages:
+  // Settings → Environment variables → BACKEND_URL = https://<backend>
+  const backendUrl = env.BACKEND_URL;
+
+  if (!backendUrl) {
+    return new Response(
+      JSON.stringify({
+        error: {
+          code: 'BACKEND_NOT_CONFIGURED',
+          message: 'В Cloudflare Pages не задан BACKEND_URL. Задеплойте backend на Render и укажите его URL.',
+        },
+      }),
+      {
+        status: 503,
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      },
+    );
+  }
 
   const incoming = new URL(request.url);
   const target = new URL(`${incoming.pathname}${incoming.search}`, backendUrl);
