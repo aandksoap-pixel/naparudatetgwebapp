@@ -13,7 +13,6 @@ import type {
   SubscriptionSyncResponse,
   SwipeDirection,
   SwipeResponse,
-  YookassaResponse,
 } from '@/types/api';
 import { getInitData } from './telegram';
 
@@ -360,13 +359,6 @@ export const api = {
 
   createStarsInvoice(plan: PaymentPlan): Promise<StarsInvoiceResponse> {
     return request<StarsInvoiceResponse>('/subscription/stars-invoice', {
-      method: 'POST',
-      body: { plan },
-    });
-  },
-
-  createYookassaPayment(plan: PaymentPlan): Promise<YookassaResponse> {
-    return request<YookassaResponse>('/subscription/yookassa', {
       method: 'POST',
       body: { plan },
     });

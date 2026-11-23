@@ -3,6 +3,7 @@
  * чтобы не было гонок между партнёрами.
  */
 import { AppError, appErrors, mapDbError } from '../lib/errors.js';
+import { logger } from '../lib/logger.js';
 import { callRpc, supabaseAdmin } from '../lib/supabase.js';
 import type {
   Category,
@@ -50,8 +51,13 @@ export async function processSwipe(userId: number, input: SwipeInput): Promise<S
   }
 
   if (result.new_match && result.match) {
-    const participantIds = await getPairParticipantIds(result.swipe.pair_id);
-    await notifyNewMatch(participantIds, result.match.item_title);
+    // Уведомление бота не должно задерживать ответ на свайп.
+    const title = result.match.item_title;
+    void getPairParticipantIds(result.swipe.pair_id)
+      .then((participantIds) => notifyNewMatch(participantIds, title))
+      .catch((error: unknown) => {
+        logger.warn({ err: error, pairId: result.swipe.pair_id }, 'Не удалось отправить пуш о мэтче');
+      });
   }
 
   return {

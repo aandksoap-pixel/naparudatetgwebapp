@@ -15,6 +15,7 @@ const SWIPE_VELOCITY = 520;
 interface SwipeCardProps {
   item: SwipeItem;
   onSwipe: (direction: SwipeDirection) => void;
+  onDetails: (item: SwipeItem) => void;
   interactive: boolean;
   disabled: boolean;
   exitDirection: SwipeDirection | null;
@@ -43,6 +44,7 @@ export function itemDescription(item: SwipeItem): string {
 export function SwipeCard({
   item,
   onSwipe,
+  onDetails,
   interactive,
   disabled,
   exitDirection,
@@ -120,7 +122,7 @@ export function SwipeCard({
             category={item.category}
             poster={poster}
             emoji={emoji}
-            priority={stackIndex === 0}
+            priority={stackIndex <= 1}
             showFallbackTitle={false}
             className="absolute inset-0 h-full w-full"
           />
@@ -170,6 +172,19 @@ export function SwipeCard({
                 {description}
               </p>
             ) : null}
+
+            <button
+              type="button"
+              onPointerDownCapture={(event) => event.stopPropagation()}
+              onClick={(event) => {
+                event.stopPropagation();
+                onDetails(item);
+              }}
+              className="relative z-20 mt-2 inline-flex min-h-[34px] items-center gap-1 rounded-full border border-white/20 bg-white/10 px-3 text-[11px] font-semibold text-white/90 backdrop-blur-sm"
+            >
+              Подробнее
+              <span aria-hidden="true">↗</span>
+            </button>
           </div>
 
           <motion.div

@@ -11,7 +11,6 @@ import { cronRoutes } from './cron.js';
 import { matchRoutes } from './matches.js';
 import { moodRoutes } from './mood.js';
 import { pairRoutes } from './pair.js';
-import { paymentWebhookRoutes } from './payments.js';
 import { profileRoutes } from './profile.js';
 import { reminderRoutes } from './reminders.js';
 import { sessionRoutes } from './session.js';
@@ -55,5 +54,4 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
   await app.register(cronRoutes, { prefix: '/api' });
 
   await app.register(webhookRoutes);
-  await app.register(paymentWebhookRoutes);
 }

@@ -13,7 +13,7 @@ import {
   hapticSuccess,
   hapticWarning,
 } from '@/lib/haptics';
-import { openExternalLink, openInvoice } from '@/lib/telegram';
+import { openInvoice } from '@/lib/telegram';
 import { useApp } from '@/context/AppContext';
 import { useToast } from '@/context/ToastContext';
 import { Modal } from './Modal';
@@ -136,7 +136,6 @@ export function PaywallModal(): JSX.Element | null {
   const [selectedPlan, setSelectedPlan] = useState<PaymentPlan>('monthly');
   const [trialLoading, setTrialLoading] = useState(false);
   const [starsLoading, setStarsLoading] = useState(false);
-  const [cardLoading, setCardLoading] = useState(false);
   const [checking, setChecking] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [awaitingPayment, setAwaitingPayment] = useState(false);
@@ -202,7 +201,6 @@ export function PaywallModal(): JSX.Element | null {
     setAwaitingNotice(null);
     setTrialLoading(false);
     setStarsLoading(false);
-    setCardLoading(false);
     setChecking(false);
     hapticWarning();
   }, [paywallReason]);
@@ -250,10 +248,6 @@ export function PaywallModal(): JSX.Element | null {
   const trialAvailable =
     !subscription.isPro && !subscription.isTrial && !trialUsed;
 
-  const selectedRub =
-    selectedPlan === 'monthly'
-      ? config.prices.monthlyRub
-      : config.prices.yearlyRub;
   const selectedStars =
     selectedPlan === 'monthly'
       ? config.prices.starsMonthly
@@ -329,27 +323,6 @@ export function PaywallModal(): JSX.Element | null {
       setStarsLoading(false);
       hapticError();
       setError(getErrorMessage(caught));
-    }
-  };
-
-  const handleCard = async (): Promise<void> => {
-    if (cardLoading) return;
-    setCardLoading(true);
-    setError(null);
-    hapticImpact('medium');
-    try {
-      const response = await api.createYookassaPayment(selectedPlan);
-      openExternalLink(response.confirmationUrl);
-      setAwaitingPayment(true);
-      setAwaitingNotice(
-        'Вернитесь в приложение после оплаты — PRO активируется автоматически.',
-      );
-      toast.info('Открыли страницу оплаты. После оплаты вернитесь сюда.');
-    } catch (caught) {
-      hapticError();
-      setError(getErrorMessage(caught));
-    } finally {
-      setCardLoading(false);
     }
   };
 
@@ -578,28 +551,6 @@ export function PaywallModal(): JSX.Element | null {
             </span>
           )}
         </button>
-        <button
-          type="button"
-          onClick={() => {
-            void handleCard();
-          }}
-          disabled={cardLoading || awaitingPayment || trialLoading}
-          className="btn btn-secondary w-full"
-        >
-          {cardLoading ? (
-            <Spinner size={18} />
-          ) : (
-            <span className="flex flex-col items-center leading-tight">
-              <span className="text-sm font-semibold">
-                Оплатить картой / СБП
-              </span>
-              <span className="text-[11px] font-medium text-tg-hint">
-                {formatPriceRub(selectedRub)} · без автопродления
-              </span>
-            </span>
-          )}
-        </button>
-
         {awaitingPayment ? (
           <button
             type="button"
@@ -616,7 +567,7 @@ export function PaywallModal(): JSX.Element | null {
       </div>
 
       <p className="mt-3 pb-1 text-center text-[10px] leading-4 text-tg-hint">
-        Оплата безопасна. Подписка действует на обоих партнёров.
+        Оплата через Telegram Stars. Подписка действует на обоих партнёров.
       </p>
     </Modal>
   );

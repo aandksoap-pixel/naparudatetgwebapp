@@ -13,6 +13,7 @@ build/
 .env.*
 !.env.example
 !**/.env.example
+!frontend/.env.production
 
 # Logs
 *.log
@@ -24,6 +25,7 @@ yarn-error.log*
 # OS / editors
 .DS_Store
 Thumbs.db
+~$*
 .idea/
 .vscode/
 *.local

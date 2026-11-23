@@ -11,7 +11,7 @@
     "dev": "concurrently -n api,web -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
     "dev:backend": "npm run dev --workspace backend",
     "dev:frontend": "npm run dev --workspace frontend",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && node scripts/collect-dist.mjs",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "start": "npm run start --workspace backend",
     "lint": "npm run lint --workspaces --if-present"

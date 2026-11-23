@@ -3,9 +3,8 @@ import type { FastifyPluginAsync } from 'fastify';
 import { getAuth, requireTelegramAuth } from '../lib/auth.js';
 import { parseInput, subscriptionPlanSchema } from '../lib/validation.js';
 import { createStarsInvoiceLink } from '../services/payments/telegram-stars.js';
-import { createYookassaPayment } from '../services/payments/yookassa.js';
 import { buildState } from '../services/state.js';
-import { activateTrial, syncPendingPayments } from '../services/subscription.js';
+import { activateTrial } from '../services/subscription.js';
 
 export const subscriptionRoutes: FastifyPluginAsync = async (app) => {
   app.post('/subscription/trial', { preHandler: requireTelegramAuth }, async (request) => {
@@ -26,16 +25,11 @@ export const subscriptionRoutes: FastifyPluginAsync = async (app) => {
     },
   );
 
-  app.post('/subscription/yookassa', { preHandler: requireTelegramAuth }, async (request) => {
-    const auth = getAuth(request);
-    const input = parseInput(subscriptionPlanSchema, request.body);
-    return createYookassaPayment(auth.userId, input.plan);
-  });
-
   app.post('/subscription/sync', { preHandler: requireTelegramAuth }, async (request) => {
     const auth = getAuth(request);
-    const result = await syncPendingPayments(auth.userId);
+    // Оставлено для совместимости с клиентом: Stars активируются webhook'ом
+    // бота, здесь просто отдаём актуальный снимок состояния.
     const state = await buildState(auth.userId);
-    return { state, pending: result.pending };
+    return { state, pending: false };
   });
 };

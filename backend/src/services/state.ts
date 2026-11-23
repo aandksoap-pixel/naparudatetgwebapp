@@ -6,7 +6,7 @@
  */
 import { config } from '../config.js';
 import { appErrors, mapDbError } from '../lib/errors.js';
-import { daysLeftUntil, daysTogether, getMoscowToday } from '../lib/moscow.js';
+import { daysLeftUntil, daysTogether, moscowDateString } from '../lib/moscow.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 import type {
   AppState,
@@ -254,15 +254,18 @@ function toPairInfo(pair: PairRow, subscription: SubscriptionInfo, today: string
 export async function buildState(userId: number): Promise<AppState> {
   const user = await getUserRow(userId);
   const pair = user.pair_id ? await getPairRow(user.pair_id) : null;
-  const today = await getMoscowToday();
+  // Дата Москвы считается локально: не тратим ещё один сетевой round-trip.
+  const today = moscowDateString();
 
-  const partner = pair ? await getPartnerRow(pair.id, userId) : null;
-  const usageRow = pair ? await getUsageRow(pair.id, today) : null;
-  const matchRows: MatchRow[] = pair ? await listMatches(pair.id) : [];
-  const reminderRows: ReminderRow[] = pair ? await listReminders(pair.id) : [];
-  const mySwipes: { movie: string[]; food: string[] } = pair
-    ? await listMySwipes(pair.id, userId)
-    : { movie: [], food: [] };
+  const [partner, usageRow, matchRows, reminderRows, mySwipes] = pair
+    ? await Promise.all([
+        getPartnerRow(pair.id, userId),
+        getUsageRow(pair.id, today),
+        listMatches(pair.id),
+        listReminders(pair.id),
+        listMySwipes(pair.id, userId),
+      ])
+    : [null, null, [] as MatchRow[], [] as ReminderRow[], { movie: [], food: [] }];
 
   const subscription = computeSubscription(pair);
   const usage: UsageInfo = {

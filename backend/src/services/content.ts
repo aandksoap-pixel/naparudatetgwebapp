@@ -270,6 +270,12 @@ const fallbackFoodSchema = z.object({
   description: z.string().optional().default(''),
   photo: z.string().optional().default(''),
   emoji: z.string().optional().default('🍽️'),
+  calories: z.number().int().optional(),
+  prepTime: z.number().int().optional(),
+  portion: z.string().optional(),
+  spiceLevel: z.string().optional(),
+  pairing: z.string().optional(),
+  details: z.string().optional(),
 });
 
 let foodCatalogCache: FoodCard[] | null = null;
@@ -292,6 +298,12 @@ function loadFoodCatalog(): FoodCard[] {
     description: item.description,
     photo: item.photo,
     emoji: item.emoji,
+    calories: item.calories,
+    prepTime: item.prepTime,
+    portion: item.portion,
+    spiceLevel: item.spiceLevel,
+    pairing: item.pairing,
+    details: item.details,
   }));
 
   return foodCatalogCache;

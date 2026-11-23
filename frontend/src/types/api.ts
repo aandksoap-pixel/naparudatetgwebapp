@@ -118,6 +118,12 @@ export interface FoodCard {
   description: string;
   photo: string;
   emoji: string;
+  calories?: number;
+  prepTime?: number;
+  portion?: string;
+  spiceLevel?: string;
+  pairing?: string;
+  details?: string;
 }
 
 export type SwipeItem = MovieCard | FoodCard;
@@ -187,11 +193,6 @@ export interface ReminderResponse {
 
 export interface StarsInvoiceResponse {
   invoiceLink: string;
-}
-
-export interface YookassaResponse {
-  confirmationUrl: string;
-  paymentId: string;
 }
 
 export interface SubscriptionSyncResponse {

@@ -1,0 +1,62 @@
+services:
+  - type: web
+    name: naparu-backend
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: BOT_MODE
+        value: webhook
+      - key: ENABLE_INTERNAL_CRON
+        value: "false"
+      - key: LOG_LEVEL
+        value: info
+      - key: CORS_ORIGINS
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: MINI_APP_URL
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        value: naparulove_bot
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: SUPABASE_JWT_KID
+        sync: false
+      - key: PAYMENT_SIGNING_SECRET
+        sync: false
+      - key: PRICE_MONTHLY_RUB
+        value: "149"
+      - key: PRICE_YEARLY_RUB
+        value: "1299"
+      - key: STARS_MONTHLY
+        value: "85"
+      - key: STARS_YEARLY
+        value: "750"
+      - key: CRON_SECRET
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false
+      - key: TMDB_ACCESS_TOKEN
+        sync: false

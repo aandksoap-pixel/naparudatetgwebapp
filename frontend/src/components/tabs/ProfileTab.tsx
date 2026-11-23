@@ -229,6 +229,29 @@ export function ProfileTab(): JSX.Element {
           </div>
         </div>
 
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          {[
+            { label: 'Мэтчи', value: state.matches.length },
+            {
+              label: 'Выполнено',
+              value: state.matches.filter((match) => match.isCompleted).length,
+            },
+            { label: 'Напоминания', value: state.reminders.length },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-slate-300/15 bg-tg-secondary-bg/40 px-2 py-2 text-center"
+            >
+              <p className="text-base font-extrabold leading-5 text-tg-text">
+                {stat.value}
+              </p>
+              <p className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-tg-hint">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
         <div className="divider my-4" />
 
         <label

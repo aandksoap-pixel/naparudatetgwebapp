@@ -6,6 +6,7 @@ interface SwipeDeckProps {
   busy: boolean;
   exitDirection: SwipeDirection | null;
   onSwipe: (direction: SwipeDirection) => void;
+  onDetails: (item: SwipeItem) => void;
 }
 
 /**
@@ -17,6 +18,7 @@ export function SwipeDeck({
   busy,
   exitDirection,
   onSwipe,
+  onDetails,
 }: SwipeDeckProps): JSX.Element {
   const visible = items.slice(0, 3);
 
@@ -36,6 +38,7 @@ export function SwipeDeck({
               disabled={busy}
               exitDirection={isTop ? exitDirection : null}
               onSwipe={onSwipe}
+              onDetails={onDetails}
             />
           );
         })}

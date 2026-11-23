@@ -55,10 +55,6 @@ const envSchema = z
     PRICE_MONTHLY_RUB: z.coerce.number().positive('Цена должна быть больше 0'),
     PRICE_YEARLY_RUB: z.coerce.number().positive('Цена должна быть больше 0'),
 
-    YOOKASSA_SHOP_ID: z.string().min(1).optional(),
-    YOOKASSA_SECRET_KEY: z.string().min(1).optional(),
-    YOOKASSA_RETURN_URL: z.string().url().optional(),
-
     CRON_SECRET: z.string().min(8).optional(),
     ENABLE_INTERNAL_CRON: booleanFromEnv(true),
   })
@@ -78,13 +74,6 @@ const envSchema = z
           message: 'обязателен при BOT_MODE=webhook (нужен публичный HTTPS-адрес backend)',
         });
       }
-    }
-    if (Boolean(value.YOOKASSA_SHOP_ID) !== Boolean(value.YOOKASSA_SECRET_KEY)) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        path: ['YOOKASSA_SHOP_ID'],
-        message: 'заполните и YOOKASSA_SHOP_ID, и YOOKASSA_SECRET_KEY — либо оставьте оба пустыми',
-      });
     }
   });
 
@@ -177,12 +166,6 @@ export interface AppConfig {
     priceMonthlyRub: number;
     priceYearlyRub: number;
   };
-  yookassa: {
-    shopId: string | null;
-    secretKey: string | null;
-    returnUrl: string;
-    configured: boolean;
-  };
   cronSecret: string | null;
   internalCronEnabled: boolean;
 }
@@ -224,12 +207,6 @@ export const config: AppConfig = {
     starsYearly: env.STARS_YEARLY,
     priceMonthlyRub: env.PRICE_MONTHLY_RUB,
     priceYearlyRub: env.PRICE_YEARLY_RUB,
-  },
-  yookassa: {
-    shopId: env.YOOKASSA_SHOP_ID ?? null,
-    secretKey: env.YOOKASSA_SECRET_KEY ?? null,
-    returnUrl: trimTrailingSlashes(env.YOOKASSA_RETURN_URL ?? env.MINI_APP_URL),
-    configured: Boolean(env.YOOKASSA_SHOP_ID && env.YOOKASSA_SECRET_KEY),
   },
   cronSecret: env.CRON_SECRET ?? null,
   internalCronEnabled: env.ENABLE_INTERNAL_CRON,

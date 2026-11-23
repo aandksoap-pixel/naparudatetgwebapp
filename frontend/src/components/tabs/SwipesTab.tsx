@@ -19,6 +19,7 @@ import { SwipeDeck } from '@/components/SwipeDeck';
 import { LimitMeter } from '@/components/LimitMeter';
 import { MatchModal } from '@/components/MatchModal';
 import { MatchesSheet } from '@/components/MatchesSheet';
+import { ItemDetailsModal } from '@/components/ItemDetailsModal';
 import { Spinner } from '@/components/LoadingScreen';
 
 const CONTENT_LIMIT = 30;
@@ -68,15 +69,21 @@ export function SwipesTab(): JSX.Element {
   const [matchOpen, setMatchOpen] = useState(false);
   const [activeMatch, setActiveMatch] = useState<MatchInfo | null>(null);
   const [matchesOpen, setMatchesOpen] = useState(false);
+  const [detailsItem, setDetailsItem] = useState<SwipeItem | null>(null);
+  const [filter, setFilter] = useState<string | null>(null);
 
   const loadingRef = useRef(false);
-  const busyRef = useRef(false);
   const decksRef = useRef<Decks>(createDecks());
   const stateRef = useRef(state);
+  const filterRef = useRef<string | null>(null);
   const swipedRef = useRef<Record<Category, Set<string>>>({
     movie: new Set<string>(),
     food: new Set<string>(),
   });
+
+  useEffect(() => {
+    filterRef.current = filter;
+  }, [filter]);
 
   useEffect(() => {
     stateRef.current = state;
@@ -145,6 +152,12 @@ export function SwipesTab(): JSX.Element {
     void loadDeck(category, false);
   }, [category, loadDeck, loaded, loadingCategory]);
 
+  /* Заранее подгружаем вторую категорию — переключение будет мгновенным. */
+  useEffect(() => {
+    if (!loaded.movie || loaded.food || loadingCategory !== null) return;
+    void loadDeck('food', false);
+  }, [loadDeck, loaded.food, loaded.movie, loadingCategory]);
+
   /* Догрузка, когда в колоде осталось меньше 4 карточек. */
   useEffect(() => {
     if (!loaded[category]) return;
@@ -162,93 +175,83 @@ export function SwipesTab(): JSX.Element {
     loadingCategory,
   ]);
 
+  const swipeQueueRef = useRef<Promise<void>>(Promise.resolve());
+  const pendingCountRef = useRef(0);
+
   const handleSwipe = useCallback(
-    async (direction: SwipeDirection): Promise<void> => {
-      if (busyRef.current) return;
-      const currentState = stateRef.current;
-      const item = decksRef.current[category][0];
-      if (!item || !currentState) return;
+    (direction: SwipeDirection): void => {
+      const currentDeck = decksRef.current[category];
+      const activeFilter = filterRef.current;
+      const item = activeFilter
+        ? currentDeck.find((deckItem) =>
+            deckItem.category === 'movie'
+              ? deckItem.genres.includes(activeFilter)
+              : deckItem.tags.includes(activeFilter),
+          )
+        : currentDeck[0];
+      if (!item || !stateRef.current) return;
 
-      const limitInfo =
-        category === 'movie'
-          ? currentState.limits.movie
-          : currentState.limits.food;
-
-      if (
-        !currentState.limits.isUnlimited &&
-        limitInfo.limit !== null &&
-        limitInfo.used >= limitInfo.limit
-      ) {
-        hapticWarning();
-        openPaywall(category);
-        toast.info('Дневной лимит исчерпан. PRO открывает безлимит для пары.');
-        void refresh();
-        return;
-      }
-
-      busyRef.current = true;
-      setBusy(true);
-      setExitDirection(direction);
+      // Карточка исчезает мгновенно. API-запрос уходит в последовательную
+      // очередь, поэтому можно свайпать дальше, не ожидая сети.
+      const optimisticDecks: Decks = {
+        ...decksRef.current,
+        [category]: currentDeck.filter((deckItem) => deckItem.id !== item.id),
+      };
+      decksRef.current = optimisticDecks;
+      setDecks(optimisticDecks);
+      swipedRef.current[category].add(item.id);
+      setExitDirection(null);
       hapticImpact('medium');
+      pendingCountRef.current += 1;
+      setBusy(true);
 
-      try {
-        const response = await api.sendSwipe({
-          category,
-          itemId: item.id,
-          itemTitle: item.title,
-          itemPoster:
-            item.category === 'movie' ? item.poster : item.photo,
-          direction,
-        });
-
-        swipedRef.current[category].add(item.id);
-        const nextDecks: Decks = {
-          ...decksRef.current,
-          [category]: decksRef.current[category].filter(
-            (deckItem) => deckItem.id !== item.id,
-          ),
-        };
-        decksRef.current = nextDecks;
-        setDecks(nextDecks);
-        setExitDirection(null);
-        applyState(response.state);
-
-        if (response.newMatch && response.match) {
-          setActiveMatch(response.match);
-          setMatchOpen(true);
+      swipeQueueRef.current = swipeQueueRef.current.then(async () => {
+        try {
+          const response = await api.sendSwipe({
+            category,
+            itemId: item.id,
+            itemTitle: item.title,
+            itemPoster:
+              item.category === 'movie' ? item.poster : item.photo,
+            direction,
+          });
+          applyState(response.state);
+          if (response.newMatch && response.match) {
+            setActiveMatch(response.match);
+            setMatchOpen(true);
+          }
+        } catch (caught) {
+          swipedRef.current[category].delete(item.id);
+          const restored: Decks = {
+            ...decksRef.current,
+            [category]: [item, ...decksRef.current[category]],
+          };
+          decksRef.current = restored;
+          setDecks(restored);
+          if (isApiError(caught) && caught.code === 'LIMIT_REACHED') {
+            hapticWarning();
+            openPaywall(category);
+            toast.error('Дневной лимит исчерпан. Откройте PRO, чтобы продолжить.');
+            void refresh();
+          } else if (isApiError(caught) && caught.code === 'NO_PAIR') {
+            hapticError();
+            toast.error('Пара больше не активна');
+            void refreshSession();
+          } else {
+            hapticError();
+            toast.error(getErrorMessage(caught));
+          }
+        } finally {
+          pendingCountRef.current = Math.max(0, pendingCountRef.current - 1);
+          setBusy(pendingCountRef.current > 0);
         }
-      } catch (caught) {
-        setExitDirection(null);
-        if (isApiError(caught) && caught.code === 'LIMIT_REACHED') {
-          hapticWarning();
-          openPaywall(category);
-          toast.error('Дневной лимит исчерпан. Откройте PRO, чтобы продолжить.');
-          void refresh();
-        } else if (isApiError(caught) && caught.code === 'NO_PAIR') {
-          hapticError();
-          toast.error('Пара больше не активна');
-          void refreshSession();
-        } else {
-          hapticError();
-          toast.error(getErrorMessage(caught));
-        }
-      } finally {
-        busyRef.current = false;
-        setBusy(false);
-      }
+      });
     },
-    [
-      applyState,
-      category,
-      openPaywall,
-      refresh,
-      refreshSession,
-      toast,
-    ],
+    [applyState, category, openPaywall, refresh, refreshSession, toast],
   );
 
   const handleCategoryChange = (next: Category): void => {
-    if (next === category || busyRef.current) return;
+    if (next === category) return;
     hapticSelection();
     setExitDirection(null);
     setCategory(next);
@@ -266,7 +269,21 @@ export function SwipesTab(): JSX.Element {
 
   const matchesCount = state?.matches.length ?? 0;
   const deck = decks[category];
-  const topItem = deck[0] ?? null;
+  const filterOptions = useMemo(() => {
+    const values = deck.flatMap((item) =>
+      item.category === 'movie' ? item.genres : item.tags,
+    );
+    return Array.from(new Set(values)).slice(0, 8);
+  }, [deck]);
+  const visibleDeck = useMemo(() => {
+    if (!filter) return deck;
+    return deck.filter((item) =>
+      item.category === 'movie'
+        ? item.genres.includes(filter)
+        : item.tags.includes(filter),
+    );
+  }, [deck, filter]);
+  const topItem = visibleDeck[0] ?? null;
   const isLoading = loadingCategory === category;
   const error = errors[category];
   const isExhausted = exhausted[category];
@@ -279,11 +296,16 @@ export function SwipesTab(): JSX.Element {
 
   const emptyTitle = useMemo(() => {
     if (!state?.partner) return 'Зовите партнёра в пространство';
+    if (filter && deck.length > 0) return 'Нет карточек с этим фильтром';
     if (isExhausted) return 'Вы посмотрели всё';
     return 'Подборка закончилась';
-  }, [isExhausted, state?.partner]);
+  }, [deck.length, filter, isExhausted, state?.partner]);
 
-  const canShowDeck = deck.length > 0;
+  const canShowDeck = visibleDeck.length > 0;
+
+  useEffect(() => {
+    setFilter(null);
+  }, [category]);
 
   return (
     <div className="mx-auto w-full max-w-[520px] px-4 pt-3">
@@ -296,7 +318,6 @@ export function SwipesTab(): JSX.Element {
                 key={tab.key}
                 type="button"
                 onClick={() => handleCategoryChange(tab.key)}
-                disabled={busy}
                 aria-pressed={isActive}
                 className={`relative isolate flex min-h-[44px] items-center gap-1 rounded-xl px-3 text-xs font-semibold transition-colors ${
                   isActive ? 'text-tg-text' : 'text-tg-hint'
@@ -354,14 +375,48 @@ export function SwipesTab(): JSX.Element {
         />
       ) : null}
 
+      {filterOptions.length > 1 ? (
+        <div className="scroll-area -mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 pb-0.5">
+          <button
+            type="button"
+            onClick={() => {
+              if (filter) {
+                hapticSelection();
+                setFilter(null);
+              }
+            }}
+            className={`chip min-h-[32px] shrink-0 px-2.5 text-[10px] ${filter === null ? 'chip-active' : ''}`}
+          >
+            Все
+          </button>
+          {filterOptions.map((option) => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                hapticSelection();
+                setFilter(option === filter ? null : option);
+              }}
+              className={`chip min-h-[32px] shrink-0 px-2.5 text-[10px] ${filter === option ? 'chip-active' : ''}`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       <div className="mt-3">
         {canShowDeck ? (
           <SwipeDeck
-            items={deck}
-            busy={busy}
+            items={visibleDeck}
+            busy={false}
             exitDirection={exitDirection}
             onSwipe={(direction) => {
               void handleSwipe(direction);
+            }}
+            onDetails={(item) => {
+              hapticSelection();
+              setDetailsItem(item);
             }}
           />
         ) : isLoading ? (
@@ -405,12 +460,17 @@ export function SwipesTab(): JSX.Element {
             <button
               type="button"
               onClick={() => {
+                if (filter) {
+                  hapticSelection();
+                  setFilter(null);
+                  return;
+                }
                 void handleRefreshDeck();
               }}
               disabled={isLoading}
               className="btn btn-secondary mt-4 min-w-[200px]"
             >
-              {isLoading ? <Spinner size={16} /> : 'Обновить подборку'}
+              {isLoading ? <Spinner size={16} /> : filter ? 'Сбросить фильтр' : 'Обновить подборку'}
             </button>
           </motion.div>
         )}
@@ -423,7 +483,7 @@ export function SwipesTab(): JSX.Element {
           onClick={() => {
             void handleSwipe('left');
           }}
-          disabled={!topItem || busy}
+          disabled={!topItem}
           aria-label="Пропустить"
           className="flex h-[62px] w-[62px] items-center justify-center rounded-full border border-slate-300/25 bg-tg-bg text-[26px] shadow-soft transition-opacity disabled:opacity-40"
         >
@@ -451,7 +511,7 @@ export function SwipesTab(): JSX.Element {
           onClick={() => {
             void handleSwipe('right');
           }}
-          disabled={!topItem || busy}
+          disabled={!topItem}
           aria-label="Хочу"
           className="flex h-[62px] w-[62px] items-center justify-center rounded-full border border-rose-300/30 bg-gradient-to-br from-rose-500 to-orange-400 text-[26px] text-white shadow-glow transition-opacity disabled:opacity-40"
         >
@@ -472,6 +532,12 @@ export function SwipesTab(): JSX.Element {
           setMatchOpen(false);
           setActiveMatch(null);
         }}
+      />
+
+      <ItemDetailsModal
+        item={detailsItem}
+        open={Boolean(detailsItem)}
+        onClose={() => setDetailsItem(null)}
       />
 
       <MatchesSheet

@@ -314,6 +314,12 @@ export interface FoodCard {
   description: string;
   photo: string;
   emoji: string;
+  calories?: number;
+  prepTime?: number;
+  portion?: string;
+  spiceLevel?: string;
+  pairing?: string;
+  details?: string;
 }
 
 export type SwipeItem = MovieCard | FoodCard;
