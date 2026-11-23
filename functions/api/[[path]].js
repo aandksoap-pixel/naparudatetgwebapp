@@ -11,7 +11,7 @@ export async function onRequest(context) {
   const { request, env } = context;
   // Временный backend для демо. В продакшене задайте BACKEND_URL
   // (например, https://naparu-backend.onrender.com) в Cloudflare Pages.
-  const backendUrl = env.BACKEND_URL ?? 'https://naparu.loca.lt';
+  const backendUrl = env.BACKEND_URL ?? 'https://naparuapp2026.loca.lt';
 
   const incoming = new URL(request.url);
   const target = new URL(`${incoming.pathname}${incoming.search}`, backendUrl);
