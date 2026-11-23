@@ -1,0 +1,695 @@
+[
+  {
+    "id": "food_pizza_margherita",
+    "title": "Пицца Маргарита",
+    "cuisine": "Итальянская",
+    "tags": ["Доставка", "Готовим дома"],
+    "description": "Тонкая основа, томатный соус, моцарелла и свежий базилик. Классика, которую невозможно испортить.",
+    "photo": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍕"
+  },
+  {
+    "id": "food_pizza_pepperoni",
+    "title": "Пицца Пепперони",
+    "cuisine": "Итальянская",
+    "tags": ["Доставка", "Острое"],
+    "description": "Острая колбаса пепперони, тянущаяся моцарелла и щедрый слой томатного соуса.",
+    "photo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍕"
+  },
+  {
+    "id": "food_pizza_four_cheese",
+    "title": "Пицца четыре сыра",
+    "cuisine": "Итальянская",
+    "tags": ["Доставка"],
+    "description": "Моцарелла, горгонзола, пармезан и чеддер — для тех, кто любит сыр во всех проявлениях.",
+    "photo": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🧀"
+  },
+  {
+    "id": "food_pasta_carbonara",
+    "title": "Паста карбонара",
+    "cuisine": "Итальянская",
+    "tags": ["Готовим дома", "Быстро"],
+    "description": "Спагетти с гуанчале, яичным желтком и пекорино. Секрет — не торопиться и не добавлять сливки.",
+    "photo": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍝"
+  },
+  {
+    "id": "food_pasta_bolognese",
+    "title": "Паста болоньезе",
+    "cuisine": "Итальянская",
+    "tags": ["Готовим дома"],
+    "description": "Мясной соус рагу, который томится пару часов, и паста, впитывающая всё это богатство.",
+    "photo": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍝"
+  },
+  {
+    "id": "food_lasagna",
+    "title": "Лазанья",
+    "cuisine": "Итальянская",
+    "tags": ["Готовим дома"],
+    "description": "Слои пасты, соуса болоньезе и бешамеля под сырной корочкой. Идеально на двоих на ужин.",
+    "photo": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍲"
+  },
+  {
+    "id": "food_risotto_mushroom",
+    "title": "Ризотто с грибами",
+    "cuisine": "Итальянская",
+    "tags": ["Готовим дома"],
+    "description": "Кремовый рис арборио, белые грибы, пармезан и сливочное масло. Медленно, но очень вкусно.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍄"
+  },
+  {
+    "id": "food_bruschetta",
+    "title": "Брускетта",
+    "cuisine": "Итальянская",
+    "tags": ["Быстро", "Готовим дома"],
+    "description": "Поджаренный хлеб, чеснок, томаты, базилик и оливковое масло. Закуска, которая исчезает первой.",
+    "photo": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍅"
+  },
+  {
+    "id": "food_sushi_philadelphia",
+    "title": "Ролл «Филадельфия»",
+    "cuisine": "Японская",
+    "tags": ["Доставка"],
+    "description": "Лосось, сливочный сыр и огурец в рисе с нори. Самый популярный ролл в мире — и не зря.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍣"
+  },
+  {
+    "id": "food_sushi_california",
+    "title": "Ролл «Калифорния»",
+    "cuisine": "Японская",
+    "tags": ["Доставка"],
+    "description": "Краб, авокадо и икра тобико в рисе, обёрнутом в нори. Нежный и слегка сладковатый вкус.",
+    "photo": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍣"
+  },
+  {
+    "id": "food_baked_rolls",
+    "title": "Запечённые роллы",
+    "cuisine": "Японская",
+    "tags": ["Доставка", "Острое"],
+    "description": "Горячие роллы под сырно-майонезной шапкой с лёгкой остринкой. Уютный вариант суши на холодный вечер.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🔥"
+  },
+  {
+    "id": "food_ramen",
+    "title": "Рамен",
+    "cuisine": "Японская",
+    "tags": ["Готовим дома", "Острое"],
+    "description": "Насыщенный бульон, пшеничная лапша, маринованное яйцо и свинина. Миска, которая согревает изнутри.",
+    "photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍜"
+  },
+  {
+    "id": "food_tom_yam",
+    "title": "Том-ям",
+    "cuisine": "Тайская",
+    "tags": ["Острое", "Доставка"],
+    "description": "Кисло-острый суп с креветками, лемонграссом и кокосовым молоком. Согревает и бодрит одновременно.",
+    "photo": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍲"
+  },
+  {
+    "id": "food_pad_thai",
+    "title": "Пад-тай",
+    "cuisine": "Тайская",
+    "tags": ["Острое", "Готовим дома"],
+    "description": "Рисовая лапша с креветками, арахисом, лаймом и соусом тамаринда. Баланс сладкого, кислого и острого.",
+    "photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍜"
+  },
+  {
+    "id": "food_wok_chicken",
+    "title": "Вок с курицей",
+    "cuisine": "Китайская",
+    "tags": ["Быстро", "Доставка"],
+    "description": "Курица, овощи и лапша, обжаренные в раскалённом воке с соевым соусом. Готовится быстрее, чем доставляется.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥡"
+  },
+  {
+    "id": "food_kung_pao",
+    "title": "Курица Кунг-пао",
+    "cuisine": "Китайская",
+    "tags": ["Острое", "Доставка"],
+    "description": "Курица с арахисом, перцем чили и хрустящими овощами в остром соусе. Огонь во всех смыслах.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌶️"
+  },
+  {
+    "id": "food_dim_sums",
+    "title": "Дим-самы",
+    "cuisine": "Китайская",
+    "tags": ["Доставка"],
+    "description": "Маленькие паровые пирожки с креветкой, свининой или овощами. Их всегда мало.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_kimchi",
+    "title": "Кимчи",
+    "cuisine": "Корейская",
+    "tags": ["Острое", "ПП"],
+    "description": "Ферментированная пекинская капуста с чили и чесноком. Хрустящая, острая и невероятно полезная для пищеварения.",
+    "photo": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥬"
+  },
+  {
+    "id": "food_bibimbap",
+    "title": "Пибимпап",
+    "cuisine": "Корейская",
+    "tags": ["Острое", "ПП"],
+    "description": "Рис с овощами, мясом, яйцом и соусом кочуджан. Всё перемешать — и это и есть счастье.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍲"
+  },
+  {
+    "id": "food_korean_bbq",
+    "title": "Корейский барбекю",
+    "cuisine": "Корейская",
+    "tags": ["Готовим дома"],
+    "description": "Мраморная говядина, которую жаришь сам за столом и заворачиваешь в листья салата с соусами.",
+    "photo": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥩"
+  },
+  {
+    "id": "food_burger_classic",
+    "title": "Классический бургер",
+    "cuisine": "Американская",
+    "tags": ["Быстро", "Доставка"],
+    "description": "Сочная котлета, чеддер, салат, томат и соус в мягкой булочке. Проверенная временем формула.",
+    "photo": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍔"
+  },
+  {
+    "id": "food_cheeseburger",
+    "title": "Чизбургер",
+    "cuisine": "Американская",
+    "tags": ["Быстро", "Доставка"],
+    "description": "Котлета, расплавленный сыр, маринованные огурцы и горчичный соус. Просто и идеально.",
+    "photo": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍔"
+  },
+  {
+    "id": "food_bacon_burger",
+    "title": "Бургер с беконом",
+    "cuisine": "Американская",
+    "tags": ["Доставка", "Острое"],
+    "description": "Двойной бекон, сыр, котлета и острый соус. Для тех, кто не считает калории, когда вкусно.",
+    "photo": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥓"
+  },
+  {
+    "id": "food_fries",
+    "title": "Картофель фри",
+    "cuisine": "Американская",
+    "tags": ["Быстро", "Доставка"],
+    "description": "Хрустящая соломка с морской солью. Идеальный компаньон к бургеру или фильму.",
+    "photo": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍟"
+  },
+  {
+    "id": "food_hot_dog",
+    "title": "Хот-дог",
+    "cuisine": "Американская",
+    "tags": ["Быстро"],
+    "description": "Сосиска в булочке с горчицей, кетчупом и хрустящим луком. Уличная классика без лишних церемоний.",
+    "photo": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌭"
+  },
+  {
+    "id": "food_ribs_bbq",
+    "title": "Рёбра барбекю",
+    "cuisine": "Американская",
+    "tags": ["Готовим дома"],
+    "description": "Свиные рёбра, томлённые в дымном соусе до мягкости. Стоит запастись салфетками.",
+    "photo": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍖"
+  },
+  {
+    "id": "food_buffalo_wings",
+    "title": "Крылышки баффало",
+    "cuisine": "Американская",
+    "tags": ["Острое", "Доставка"],
+    "description": "Куриные крылья в остром соусе с голубым сыром и сельдереем. Едят руками и с удовольствием.",
+    "photo": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍗"
+  },
+  {
+    "id": "food_steak_ribeye",
+    "title": "Стейк рибай",
+    "cuisine": "Американская",
+    "tags": ["Готовим дома"],
+    "description": "Мраморная говядина, обжаренная до корочки и розового сока внутри. Соль, перец и абсолютное счастье.",
+    "photo": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥩"
+  },
+  {
+    "id": "food_shashlik_pork",
+    "title": "Шашлык из свинины",
+    "cuisine": "Кавказская",
+    "tags": ["Готовим дома"],
+    "description": "Маринованная шея на углях, лаваш, зелень и соус. Вкус лета и дачи.",
+    "photo": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍢"
+  },
+  {
+    "id": "food_shashlik_chicken",
+    "title": "Шашлык из курицы",
+    "cuisine": "Кавказская",
+    "tags": ["Готовим дома"],
+    "description": "Куриные бёдра в маринаде с луком и специями, подрумяненные на гриле. Быстрее и легче свинины.",
+    "photo": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍢"
+  },
+  {
+    "id": "food_lula_kebab",
+    "title": "Люля-кебаб",
+    "cuisine": "Кавказская",
+    "tags": ["Готовим дома"],
+    "description": "Молотый бараний фарш с луком, запечённый на шампуре. Подают с лепёшкой и помидорами.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥙"
+  },
+  {
+    "id": "food_khinkali",
+    "title": "Хинкали",
+    "cuisine": "Грузинская",
+    "tags": ["Доставка", "Готовим дома"],
+    "description": "Крупные пельмени с мясным бульоном внутри. Держи за хвостик, надкусывай и выпивай сок.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_khachapuri",
+    "title": "Хачапури по-аджарски",
+    "cuisine": "Грузинская",
+    "tags": ["Доставка"],
+    "description": "Лодочка из теста с сыром и яичным желтком, в которую добавляют масло и размешивают. Сырная мечта.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🧀"
+  },
+  {
+    "id": "food_cheburek",
+    "title": "Чебурек",
+    "cuisine": "Татарская",
+    "tags": ["Быстро", "Острое"],
+    "description": "Хрустящий пирожок с сочным мясным фаршем и бульоном внутри. Осторожно: горячо и брызгает.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_borscht",
+    "title": "Борщ",
+    "cuisine": "Русская",
+    "tags": ["Готовим дома"],
+    "description": "Свёкла, капуста, мясо и ложка сметаны. Главный суп, который объединяет и согревает.",
+    "photo": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍲"
+  },
+  {
+    "id": "food_pelmeni",
+    "title": "Пельмени",
+    "cuisine": "Русская",
+    "tags": ["Готовим дома", "Быстро"],
+    "description": "Маленькие пельмени с мясом, сливочное масло и сметана. Ужин за 15 минут, если заморожены заранее.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_vareniki",
+    "title": "Вареники с картошкой",
+    "cuisine": "Русская",
+    "tags": ["Готовим дома"],
+    "description": "Нежное тесто с картофельным пюре, жареный лук и сметана. Простая домашняя классика.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_blini",
+    "title": "Блины с творогом",
+    "cuisine": "Русская",
+    "tags": ["Сладкое", "Готовим дома"],
+    "description": "Тонкие блины с творожной начинкой, сметаной и ягодами. Идеальный завтрак выходного дня.",
+    "photo": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥞"
+  },
+  {
+    "id": "food_syrniki",
+    "title": "Сырники",
+    "cuisine": "Русская",
+    "tags": ["Сладкое", "Готовим дома"],
+    "description": "Творожные оладьи с хрустящей корочкой, сметаной и вареньем. Бабушкин рецепт в лучшем виде.",
+    "photo": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥞"
+  },
+  {
+    "id": "food_olivier",
+    "title": "Оливье",
+    "cuisine": "Русская",
+    "tags": ["Готовим дома"],
+    "description": "Горошек, курица, картофель, яйца и майонез. Главный праздничный салат — и повод для споров о составе.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥗"
+  },
+  {
+    "id": "food_solyanka",
+    "title": "Солянка",
+    "cuisine": "Русская",
+    "tags": ["Готовим дома"],
+    "description": "Насыщенный суп с копчёностями, оливками и лимоном. Кисло, сытно и очень по-домашнему.",
+    "photo": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍲"
+  },
+  {
+    "id": "food_mushroom_soup",
+    "title": "Грибной крем-суп",
+    "cuisine": "Европейская",
+    "tags": ["Готовим дома"],
+    "description": "Грибы, сливки и лёгкая интрига мускатного ореха. Бархатистый суп, который стоит макать хлебом.",
+    "photo": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍄"
+  },
+  {
+    "id": "food_pumpkin_soup",
+    "title": "Тыквенный крем-суп",
+    "cuisine": "Европейская",
+    "tags": ["ПП", "Готовим дома"],
+    "description": "Запечённая тыква, сливки и специи. Сладковатый, уютный и при этом очень полезный.",
+    "photo": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🎃"
+  },
+  {
+    "id": "food_caesar",
+    "title": "Салат «Цезарь»",
+    "cuisine": "Европейская",
+    "tags": ["Быстро"],
+    "description": "Романо, курица, пармезан и хрустящие сухарики под соусом «Цезарь». Беспроигрышный выбор.",
+    "photo": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥗"
+  },
+  {
+    "id": "food_greek_salad",
+    "title": "Греческий салат",
+    "cuisine": "Греческая",
+    "tags": ["ПП", "Быстро"],
+    "description": "Огурцы, томаты, фета, маслины и оливковое масло. Свежесть одним движением ложки.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥗"
+  },
+  {
+    "id": "food_tabbouleh",
+    "title": "Табуле",
+    "cuisine": "Ближневосточная",
+    "tags": ["ПП"],
+    "description": "Булгур с петрушкой, мятой, томатами и лимоном. Лёгкий, ароматный и очень освежающий салат.",
+    "photo": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥗"
+  },
+  {
+    "id": "food_hummus",
+    "title": "Хумус",
+    "cuisine": "Ближневосточная",
+    "tags": ["ПП", "Быстро"],
+    "description": "Паста из нута с тхиной, лимоном и оливковым маслом. Идеально с лепёшкой и свежими овощами.",
+    "photo": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🫓"
+  },
+  {
+    "id": "food_falafel",
+    "title": "Фалафель",
+    "cuisine": "Ближневосточная",
+    "tags": ["ПП", "Доставка"],
+    "description": "Хрустящие шарики из нута со специями. В пите с овощами и соусом — сытный вегетарианский перекус.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🧆"
+  },
+  {
+    "id": "food_shawarma",
+    "title": "Шаурма",
+    "cuisine": "Ближневосточная",
+    "tags": ["Быстро", "Доставка", "Острое"],
+    "description": "Мясо с гриля, овощи, соус и лаваш. Главный фастфуд ночного города.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌯"
+  },
+  {
+    "id": "food_doner",
+    "title": "Дёнер",
+    "cuisine": "Турецкая",
+    "tags": ["Быстро", "Доставка"],
+    "description": "Турецкий вариант шаурмы с мясом, свежими овощами и йогуртовым соусом. Порция — на полдня.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌯"
+  },
+  {
+    "id": "food_gyros",
+    "title": "Гирос",
+    "cuisine": "Греческая",
+    "tags": ["Доставка"],
+    "description": "Пита с мясом, цуцики, томатами и луком. Уличная еда, которую приятно есть на ходу.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥙"
+  },
+  {
+    "id": "food_taco",
+    "title": "Тако",
+    "cuisine": "Мексиканская",
+    "tags": ["Быстро", "Острое"],
+    "description": "Кукурузная тортилья с мясом, сальсой, кинзой и лаймом. Маленькие, но очень характерные.",
+    "photo": "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌮"
+  },
+  {
+    "id": "food_burrito",
+    "title": "Бурито",
+    "cuisine": "Мексиканская",
+    "tags": ["Доставка", "Острое"],
+    "description": "Большая тортилья с рисом, фасолью, мясом и сыром. Заворачиваешь всё сразу — и вкусно, и удобно.",
+    "photo": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌯"
+  },
+  {
+    "id": "food_nachos",
+    "title": "Начос",
+    "cuisine": "Мексиканская",
+    "tags": ["Доставка"],
+    "description": "Чипсы из тортильи под сырным соусом, гуакамоле и халапеньо. Закуска для компании и кино.",
+    "photo": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🧀"
+  },
+  {
+    "id": "food_fajitas",
+    "title": "Фахитас",
+    "cuisine": "Мексиканская",
+    "tags": ["Острое", "Готовим дома"],
+    "description": "Полоски мяса с перцем и луком на раскалённой сковороде, которые заворачивают в тортилью.",
+    "photo": "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌮"
+  },
+  {
+    "id": "food_enchilada",
+    "title": "Энчилада",
+    "cuisine": "Мексиканская",
+    "tags": ["Острое", "Доставка"],
+    "description": "Тортилья с начинкой, залитая острым томатным соусом и запечённая с сыром. Мексика в тарелке.",
+    "photo": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🌮"
+  },
+  {
+    "id": "food_paella",
+    "title": "Паэлья",
+    "cuisine": "Испанская",
+    "tags": ["Готовим дома"],
+    "description": "Рис с морепродуктами, шафраном и овощами, приготовленный в большой сковороде. Испания на двоих.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥘"
+  },
+  {
+    "id": "food_grilled_fish",
+    "title": "Рыба на гриле",
+    "cuisine": "Средиземноморская",
+    "tags": ["ПП", "Готовим дома"],
+    "description": "Свежая рыба с лимоном, розмарином и оливковым маслом. Минимум усилий — максимум пользы.",
+    "photo": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🐟"
+  },
+  {
+    "id": "food_shrimp_tempura",
+    "title": "Креветки темпура",
+    "cuisine": "Японская",
+    "tags": ["Доставка"],
+    "description": "Креветки в лёгком хрустящем кляре с соусом. Хрустит так, что слышно на весь стол.",
+    "photo": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍤"
+  },
+  {
+    "id": "food_poke_bowl",
+    "title": "Поке-боул",
+    "cuisine": "Гавайская",
+    "tags": ["ПП", "Быстро"],
+    "description": "Рис, лосось, авокадо, эдамаме и соус понзу. Свежий, сытный и фотогеничный.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥙"
+  },
+  {
+    "id": "food_curry_chicken",
+    "title": "Карри с курицей",
+    "cuisine": "Индийская",
+    "tags": ["Острое", "Доставка"],
+    "description": "Курица в пряном кокосовом соусе с рисом. Согревает, насыщает и пахнет специями.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍛"
+  },
+  {
+    "id": "food_butter_chicken",
+    "title": "Баттер чикен",
+    "cuisine": "Индийская",
+    "tags": ["Готовим дома"],
+    "description": "Курица в сливочно-томатном соусе с маслом и специями. Мягкий вкус, который любят все.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍛"
+  },
+  {
+    "id": "food_gyoza",
+    "title": "Гёдза",
+    "cuisine": "Японская",
+    "tags": ["Доставка"],
+    "description": "Японские жареные пельмени с хрустящей корочкой и сочным фаршем. Одна порция никогда не бывает лишней.",
+    "photo": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥟"
+  },
+  {
+    "id": "food_tom_kha",
+    "title": "Том кха",
+    "cuisine": "Тайская",
+    "tags": ["Острое"],
+    "description": "Кокосовый суп с курицей, имбирём и лемонграссом. Мягче том-яма, но такой же ароматный.",
+    "photo": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍜"
+  },
+  {
+    "id": "food_cheesecake",
+    "title": "Чизкейк",
+    "cuisine": "Американская",
+    "tags": ["Сладкое"],
+    "description": "Кремовый сырный слой на песочной основе с ягодным соусом. Один кусок — и мир стал добрее.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍰"
+  },
+  {
+    "id": "food_tiramisu",
+    "title": "Тирамису",
+    "cuisine": "Итальянская",
+    "tags": ["Сладкое"],
+    "description": "Савоярди, пропитанное кофе, маскарпоне и какао. Итальянский десерт для взрослых.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "☕"
+  },
+  {
+    "id": "food_eclairs",
+    "title": "Эклеры",
+    "cuisine": "Французская",
+    "tags": ["Сладкое", "Быстро"],
+    "description": "Заварное тесто с кремом и глазурью. Маленькая французская радость к чаю.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍫"
+  },
+  {
+    "id": "food_panna_cotta",
+    "title": "Панна-котта",
+    "cuisine": "Итальянская",
+    "tags": ["Сладкое"],
+    "description": "Нежный сливочный десерт с ванилью и ягодным соусом. Тает, не успев растаять.",
+    "photo": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍮"
+  },
+  {
+    "id": "food_fondant",
+    "title": "Шоколадный фондан",
+    "cuisine": "Французская",
+    "tags": ["Сладкое", "Готовим дома"],
+    "description": "Тёплый шоколадный кекс с жидким центром и шариком мороженого. Лучший финал ужина.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍫"
+  },
+  {
+    "id": "food_medovik",
+    "title": "Медовик",
+    "cuisine": "Русская",
+    "tags": ["Сладкое"],
+    "description": "Тонкие медовые коржи со сметанным кремом. Чем дольше пропитывается, тем вкуснее.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍯"
+  },
+  {
+    "id": "food_brownie",
+    "title": "Брауни",
+    "cuisine": "Американская",
+    "tags": ["Сладкое", "Готовим дома"],
+    "description": "Плотный шоколадный квадрат с хрустящей корочкой. В разогретом виде — особенно опасен.",
+    "photo": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍫"
+  },
+  {
+    "id": "food_waffles",
+    "title": "Вафли",
+    "cuisine": "Бельгийская",
+    "tags": ["Сладкое", "Быстро"],
+    "description": "Хрустящие вафли с ягодами, сиропом и взбитыми сливками. Завтрак, который хочется фотографировать.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🧇"
+  },
+  {
+    "id": "food_pancakes",
+    "title": "Панкейки",
+    "cuisine": "Американская",
+    "tags": ["Сладкое", "Быстро"],
+    "description": "Пышные оладьи с кленовым сиропом и маслом. Американская классика воскресного утра.",
+    "photo": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥞"
+  },
+  {
+    "id": "food_ice_cream",
+    "title": "Мороженое",
+    "cuisine": "Десерт",
+    "tags": ["Сладкое", "Быстро"],
+    "description": "Холодное лакомство на любой вкус — от ванили до солёной карамели. Лучше в вафельном рожке.",
+    "photo": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍦"
+  },
+  {
+    "id": "food_oatmeal",
+    "title": "Овсяная каша с ягодами",
+    "cuisine": "Европейская",
+    "tags": ["ПП", "Быстро"],
+    "description": "Овсянка на молоке с ягодами, орехами и ложкой мёда. Полезный старт дня без лишней суеты.",
+    "photo": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥣"
+  },
+  {
+    "id": "food_granola",
+    "title": "Гранола с йогуртом",
+    "cuisine": "Европейская",
+    "tags": ["ПП", "Быстро"],
+    "description": "Хрустящие хлопья с орехами, греческий йогурт и свежие фрукты. Вкусно и без чувства тяжести.",
+    "photo": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🥣"
+  },
+  {
+    "id": "food_smoothie_bowl",
+    "title": "Смузи-боул",
+    "cuisine": "Европейская",
+    "tags": ["ПП", "Сладкое", "Быстро"],
+    "description": "Густой смузи из ягод и банана с гранолой и кокосом. Красиво, свежо и по-летнему.",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "emoji": "🍓"
+  }
+]

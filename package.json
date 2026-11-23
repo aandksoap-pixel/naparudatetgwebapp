@@ -1,0 +1,25 @@
+{
+  "name": "space-for-two",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Пространство для двоих — Telegram Mini App + Telegram Bot",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "start": "npm run start --workspace backend",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
