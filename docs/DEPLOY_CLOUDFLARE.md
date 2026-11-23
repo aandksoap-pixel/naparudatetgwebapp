@@ -31,7 +31,8 @@ Cloudflare собирал проект из корня и искал `dist` в �
 
 В корне есть `render.yaml` (Blueprint, free, Singapore). В Render:
 
-1. New → Blueprint → выберите GitHub-репозиторий.
+1. New → Blueprint → выберите GitHub-репозиторий (или откройте
+   `https://render.com/deploy?repo=https://github.com/aandksoap-pixel/naparudatetgwebapp`).
 2. Render создаст `naparu-backend` и попросит заполнить секреты (`sync: false`):
    `TELEGRAM_BOT_TOKEN`, `TELEGRAM_WEBHOOK_SECRET`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_JWT_SECRET`, `SUPABASE_JWT_KID`, `PAYMENT_SIGNING_SECRET`, `CRON_SECRET`.
 3. После деплоя задайте:
