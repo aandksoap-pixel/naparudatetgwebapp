@@ -9,22 +9,9 @@
  */
 export async function onRequest(context) {
   const { request, env } = context;
-  const backendUrl = env.BACKEND_URL;
-
-  if (!backendUrl) {
-    return new Response(
-      JSON.stringify({
-        error: {
-          code: 'BACKEND_NOT_CONFIGURED',
-          message: 'В Cloudflare Pages не задан BACKEND_URL',
-        },
-      }),
-      {
-        status: 503,
-        headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      },
-    );
-  }
+  // Временный backend для демо. В продакшене задайте BACKEND_URL
+  // (например, https://naparu-backend.onrender.com) в Cloudflare Pages.
+  const backendUrl = env.BACKEND_URL ?? 'https://naparu.loca.lt';
 
   const incoming = new URL(request.url);
   const target = new URL(`${incoming.pathname}${incoming.search}`, backendUrl);
@@ -32,6 +19,8 @@ export async function onRequest(context) {
   const headers = new Headers(request.headers);
   headers.delete('host');
   headers.delete('content-length');
+  // localtunnel иначе отдаёт 511 вместо API; на Render заголовок игнорируется.
+  headers.set('bypass-tunnel-reminder', 'true');
 
   const init = {
     method: request.method,
