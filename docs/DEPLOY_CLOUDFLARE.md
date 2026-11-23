@@ -1,5 +1,11 @@
 # Деплой Cloudflare Pages + Render
 
+## Статус
+
+- Cloudflare Pages уже собирает проект: `https://naparudatetgwebapp.pages.dev` (HTTP 200).
+- Остался один шаг: задеплоить backend и задать `BACKEND_URL` в Cloudflare Pages. До этого `/api/*` отвечает `503 BACKEND_NOT_CONFIGURED` — это ожидаемо.
+- Ошибка `Output directory "dist" not found` исправлена: корневой build теперь создаёт `dist`.
+
 ## Что исправлено в репозитории
 
 Cloudflare собирал проект из корня и искал `dist` в корне, а Vite клал файлы в `frontend/dist`. Теперь корневой `npm run build`:
