@@ -9,7 +9,7 @@ import { config } from '../config.js';
 import { logger } from './logger.js';
 
 const api = new Api(config.telegram.botToken);
-const CACHE_TTL_MS = 60_000;
+const CACHE_TTL_MS = 15_000;
 const cache = new Map<number, { allowed: boolean; expiresAt: number }>();
 
 export function isChannelGateEnabled(): boolean {

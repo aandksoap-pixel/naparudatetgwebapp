@@ -41,7 +41,7 @@ export async function buildApp(): Promise<FastifyInstance> {
       callback(null, allowed);
     },
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'X-Telegram-Init-Data', 'X-Cron-Secret'],
+    allowedHeaders: ['Content-Type', 'X-Telegram-Init-Data', 'X-Cron-Secret', 'X-Channel-Check'],
     maxAge: 86400,
   });
 

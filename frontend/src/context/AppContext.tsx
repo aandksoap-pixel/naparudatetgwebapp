@@ -82,7 +82,7 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
    * showLoader=false — фоновое обновление без глобального спиннера.
    */
   const loadSession = useCallback(
-    async (showLoader: boolean): Promise<void> => {
+    async (showLoader: boolean, forceChannelCheck = false): Promise<void> => {
       if (!getInitData()) {
         if (showLoader) {
           setLoading(false);
@@ -98,7 +98,7 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
       }
 
       try {
-        const response = await api.createSession();
+        const response = await api.createSession(forceChannelCheck);
         if (!mountedRef.current) return;
         lastSessionAtRef.current = Date.now();
         stateRef.current = response.state;
@@ -158,7 +158,8 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
   }, [loadSession]);
 
   const retry = useCallback((): void => {
-    void loadSession(true);
+    // Повторная проверка канала должна обходить 15-секундный кэш.
+    void loadSession(true, true);
   }, [loadSession]);
 
   const dismissNotice = useCallback((): void => {

@@ -1,0 +1,35 @@
+name: Backend keep-alive
+
+# Render Free засыпает после 15 минут без запросов. Пингуем health каждые
+# 5 минут, чтобы backend и внутренний планировщик (напоминания/подписки)
+# оставались живыми без ежедневных ручных деплоев.
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: backend-keepalive
+  cancel-in-progress: true
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping Render health
+        run: |
+          curl -fsS --retry 3 --retry-delay 5 --max-time 40 \
+            https://naparu-backend.onrender.com/api/health
+      - name: Run scheduled jobs (optional)
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -n "$CRON_SECRET" ]; then
+            curl -fsS --retry 2 --retry-delay 3 --max-time 40 \
+              -X POST \
+              -H "X-Cron-Secret: $CRON_SECRET" \
+              https://naparu-backend.onrender.com/api/cron/tick
+          else
+            echo "CRON_SECRET is not set; internal cron will handle jobs."
+          fi

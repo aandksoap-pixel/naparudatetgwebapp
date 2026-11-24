@@ -126,6 +126,7 @@ interface RequestOptions {
   body?: unknown;
   signal?: AbortSignal;
   timeoutMs?: number;
+  headers?: Record<string, string>;
 }
 
 interface ApiErrorEnvelope {
@@ -177,6 +178,7 @@ async function request<T>(
     body,
     signal,
     timeoutMs = DEFAULT_TIMEOUT_MS,
+    headers: extraHeaders,
   } = options;
 
   const controller = new AbortController();
@@ -193,7 +195,10 @@ async function request<T>(
     else signal.addEventListener('abort', handleExternalAbort, { once: true });
   }
 
-  const headers: Record<string, string> = { Accept: 'application/json' };
+  const headers: Record<string, string> = {
+    Accept: 'application/json',
+    ...extraHeaders,
+  };
   const initData = getInitData();
   if (initData) headers['X-Telegram-Init-Data'] = initData;
   if (body !== undefined) headers['Content-Type'] = 'application/json';
@@ -258,8 +263,12 @@ function normalizeLimit(limit: number): number {
 }
 
 export const api = {
-  createSession(): Promise<SessionResponse> {
-    return request<SessionResponse>('/session', { method: 'POST', body: {} });
+  createSession(forceChannelCheck = false): Promise<SessionResponse> {
+    return request<SessionResponse>('/session', {
+      method: 'POST',
+      body: {},
+      headers: forceChannelCheck ? { 'X-Channel-Check': 'force' } : undefined,
+    });
   },
 
   getState(): Promise<AppState> {

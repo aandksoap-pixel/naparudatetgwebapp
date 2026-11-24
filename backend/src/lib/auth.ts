@@ -61,7 +61,8 @@ export async function requireTelegramAuth(request: FastifyRequest): Promise<void
   });
 
   if (isChannelGateEnabled()) {
-    const subscribed = await isSubscribedToRequiredChannel(user.id);
+    const force = readHeader(request, 'x-channel-check') === 'force';
+    const subscribed = await isSubscribedToRequiredChannel(user.id, force);
     if (!subscribed) {
       throw appErrors.channelRequired(requiredChannelUrl());
     }

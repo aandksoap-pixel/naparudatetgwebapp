@@ -4,9 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import type { MatchInfo } from '@/types/api';
 import { ItemImage } from './ItemImage';
 import { hapticSuccess } from '@/lib/haptics';
-import { openTelegramLink } from '@/lib/telegram';
 import { useApp } from '@/context/AppContext';
-import { useToast } from '@/context/ToastContext';
 
 interface MatchModalProps {
   match: MatchInfo | null;
@@ -47,7 +45,6 @@ export function MatchModal({
   onClose,
 }: MatchModalProps): JSX.Element | null {
   const { state } = useApp();
-  const toast = useToast();
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -67,21 +64,6 @@ export function MatchModal({
 
   const partnerName = state?.partner?.firstName ?? 'Партнёр';
   const myName = state?.user.firstName ?? 'Вы';
-
-  const handleShare = (): void => {
-    if (!match) return;
-    // Telegram добавляет превью ссылки, если передать url. Передаём только
-    // text — в сообщении останется чистый текст без карточки-ссылки.
-    const text =
-      `Мы оба захотели «${match.itemTitle}» 💞 ` +
-      'Присоединяйся к нам в «Пространстве для двоих»';
-    const shareUrl = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
-    try {
-      openTelegramLink(shareUrl);
-    } catch {
-      toast.error('Не удалось открыть Telegram для отправки');
-    }
-  };
 
   return createPortal(
     <AnimatePresence>
@@ -163,13 +145,6 @@ export function MatchModal({
             </p>
 
             <div className="mt-7 w-full max-w-[320px] space-y-2.5">
-              <button
-                type="button"
-                onClick={handleShare}
-                className="btn w-full border-white/20 bg-white text-slate-900 hover:bg-white/90"
-              >
-                Отправить в чат
-              </button>
               <button
                 type="button"
                 onClick={onClose}
