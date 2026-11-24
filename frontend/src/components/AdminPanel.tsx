@@ -32,6 +32,11 @@ const DURATIONS: ReadonlyArray<{ key: GrantDuration; label: string; hint: string
   { key: 'custom', label: 'Свой срок', hint: 'дни' },
 ];
 
+function isForever(expiresAt: string | null): boolean {
+  if (!expiresAt) return false;
+  return Date.parse(expiresAt) > Date.now() + 50 * 365 * 24 * 60 * 60 * 1000;
+}
+
 function StatCard({ label, value, hint }: { label: string; value: string; hint?: string }): JSX.Element {
   return (
     <div className="rounded-2xl border border-slate-300/15 bg-tg-secondary-bg/40 px-3 py-2.5">
@@ -75,7 +80,11 @@ function UserRowAdmin({
         </p>
         <p className="text-[9px] text-tg-hint/80">
           Был(а): {formatRelative(user.lastSeenAt)}
-          {user.isPro && user.expiresAt ? ` · PRO до ${formatDateTime(user.expiresAt)}` : ''}
+          {user.isPro && user.expiresAt
+            ? isForever(user.expiresAt)
+              ? ' · PRO бессрочно'
+              : ` · PRO до ${formatDateTime(user.expiresAt)}`
+            : ''}
         </p>
       </div>
     </button>
@@ -320,7 +329,9 @@ export function AdminPanel({ open, onClose }: { open: boolean; onClose: () => vo
               <p className="mt-0.5 text-[10px] text-tg-hint">
                 {selected.pairId ? `Пара ${selected.pairId.slice(0, 8)}…` : 'Без пары'} ·{' '}
                 {selected.isPro && selected.expiresAt
-                  ? `PRO до ${formatDateTime(selected.expiresAt)}`
+                  ? isForever(selected.expiresAt)
+                    ? 'PRO бессрочно'
+                    : `PRO до ${formatDateTime(selected.expiresAt)}`
                   : 'FREE'}
               </p>
 
