@@ -292,7 +292,7 @@ Backend вызывает только RPC (service role) и делает select/
 
 ### 7.1 Сервис пользователей/пары
 - `ensureUser(fromInitData)`: upsert по id. Не перезаписывать отредактированное `first_name` при каждом входе; обновлять `username`, `avatar_url`, `last_seen` нет (нет поля). Вставлять `first_name` из Telegram только при создании.
-- `buildState(userId)`: всё для `AppState`. `partner` — второй участник пары. `pair.inviteLink = https://t.me/${BOT_USERNAME}?startapp=join_${inviteCode}`. `daysTogether`: разница дат (не меньше 0). `subscription`: эффективный план; если `subscription_expires_at <= now()`, считать `free`, `isPro=false`, но `trialUsed` сохранять. `limits`: для PRO limit=null, иначе 5/2/3; used из `daily_usage` за `app_moscow_today`.
+- `buildState(userId)`: всё для `AppState`. `partner` — второй участник пары. `pair.inviteLink = https://t.me/${BOT_USERNAME}?start=join_${inviteCode}` (бот обрабатывает join в `/start`; `startapp` требует Main Mini App и не используется). `daysTogether`: разница дат (не меньше 0). `subscription`: эффективный план; если `subscription_expires_at <= now()`, считать `free`, `isPro=false`, но `trialUsed` сохранять. `limits`: для PRO limit=null, иначе 5/2/3; used из `daily_usage` за `app_moscow_today`.
 - `mySwipes`: все item_id текущего пользователя по категориям (для фильтрации колоды).
 - `matches` — последние 100 по created_at desc; `reminders` — последние 100 по created_at desc.
 

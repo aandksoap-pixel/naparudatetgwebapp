@@ -96,7 +96,8 @@ TELEGRAM_CHANNEL_URL=https://t.me/your_channel
 
 1. BotFather → `/setmenubutton` или настройки Mini App → URL Cloudflare.
 2. Обновите `MINI_APP_URL` на backend и перезапустите его — бот выставит menu button сам.
-3. Проверьте invite-ссылку: `https://t.me/naparulove_bot?startapp=join_PAIR_XXXXXX`.
+3. Проверьте invite-ссылку: `https://t.me/naparulove_bot?start=join_PAIR_XXXXXX`
+   (именно `start`, а не `startapp`: ссылка открывает бота и сразу связывает пару).
 
 ## Оплата
 
