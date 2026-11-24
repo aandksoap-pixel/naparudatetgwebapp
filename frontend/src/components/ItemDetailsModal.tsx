@@ -92,8 +92,17 @@ export function ItemDetailsModal({ item, open, onClose }: ItemDetailsModalProps)
       ) : (
         <div className="mt-4 rounded-2xl bg-tg-secondary-bg/50 px-3.5 py-2">
           <InfoRow label="Год" value={item.year ? String(item.year) : '—'} />
-          <InfoRow label="Рейтинг TMDB" value={`${item.rating.toFixed(1)} / 10`} />
+          <InfoRow
+            label="Рейтинг"
+            value={`${item.rating.toFixed(1)} / 10${item.imdbRating ? ` · IMDb ${item.imdbRating.toFixed(1)}` : ''}`}
+          />
           <InfoRow label="Жанры" value={item.genres.length > 0 ? item.genres.join(', ') : '—'} />
+          {item.runtime ? <InfoRow label="Длительность" value={item.runtime} /> : null}
+          {item.director ? <InfoRow label="Режиссёр" value={item.director} /> : null}
+          {item.country ? <InfoRow label="Страна" value={item.country} /> : null}
+          {item.cast && item.cast.length > 0 ? (
+            <InfoRow label="В ролях" value={item.cast.join(', ')} />
+          ) : null}
           {item.originalTitle ? <InfoRow label="Оригинал" value={item.originalTitle} /> : null}
         </div>
       )}

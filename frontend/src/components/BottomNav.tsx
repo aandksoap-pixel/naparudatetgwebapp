@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { hapticSelection } from '@/lib/haptics';
 
-export type TabKey = 'swipes' | 'mood' | 'reminders' | 'profile';
+export type TabKey = 'swipes' | 'love' | 'mood' | 'reminders' | 'profile';
 
 interface TabDefinition {
   key: TabKey;
@@ -11,6 +11,7 @@ interface TabDefinition {
 
 export const TABS: readonly TabDefinition[] = [
   { key: 'swipes', label: 'Свайпы', icon: '🎬' },
+  { key: 'love', label: 'Любовь', icon: '❤️' },
   { key: 'mood', label: 'Настроение', icon: '💭' },
   { key: 'reminders', label: 'Напоминания', icon: '🔔' },
   { key: 'profile', label: 'Профиль', icon: '👤' },

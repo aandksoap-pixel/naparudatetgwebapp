@@ -6,8 +6,20 @@
     "overview": "Офисный работник, страдающий бессонницей, знакомится с харизматичным торговцем мылом. Вместе они создают подпольный клуб, где люди выплёскивают агрессию, — и очень быстро всё выходит из-под контроля.",
     "year": 1999,
     "rating": 8.4,
-    "genres": ["Драма", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "139 min",
+    "director": "David Fincher",
+    "cast": [
+      "Brad Pitt",
+      "Edward Norton",
+      "Meat Loaf"
+    ],
+    "country": "United States, Germany",
+    "imdbRating": 8.8
   },
   {
     "id": "tmdb_13",
@@ -16,8 +28,20 @@
     "overview": "Простодушный Форрест Гамп из Алабамы случайно оказывается свидетелем и участником ключевых событий второй половины XX века, храня верность своей единственной любви — Дженни.",
     "year": 1994,
     "rating": 8.5,
-    "genres": ["Драма", "Мелодрама"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Мелодрама"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_QL75_UY562_CR4,0,380,562_.jpg",
+    "runtime": "142 min",
+    "director": "Robert Zemeckis",
+    "cast": [
+      "Tom Hanks",
+      "Robin Wright",
+      "Gary Sinise"
+    ],
+    "country": "United States",
+    "imdbRating": 8.8
   },
   {
     "id": "tmdb_155",
@@ -26,8 +50,21 @@
     "overview": "Бэтмен продолжает борьбу с преступностью Готэма, но сталкивается с Джокером — анархистом, который превращает город в поле психологической войны и проверяет героя на прочность.",
     "year": 2008,
     "rating": 8.5,
-    "genres": ["Боевик", "Драма", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Драма",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "152 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart"
+    ],
+    "country": "United States, United Kingdom",
+    "imdbRating": 9.1
   },
   {
     "id": "tmdb_27205",
@@ -36,8 +73,21 @@
     "overview": "Вор, умеющий проникать в сны и красть идеи, получает обратное задание — внедрить мысль в сознание наследника корпорации. Ради этого он собирает команду и спускается в сон внутри сна.",
     "year": 2010,
     "rating": 8.4,
-    "genres": ["Боевик", "Фантастика", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "148 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Elliot Page"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.8
   },
   {
     "id": "tmdb_680",
@@ -46,8 +96,20 @@
     "overview": "Несколько переплетённых криминальных историй: киллеры, боксёр, гангстерская жена и пара грабителей. Тарантино смешивает их в ироничную мозаику о случайности и судьбе.",
     "year": 1994,
     "rating": 8.5,
-    "genres": ["Криминал", "Драма"],
-    "poster": ""
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_QL75_UY562_CR3,0,380,562_.jpg",
+    "runtime": "154 min",
+    "director": "Quentin Tarantino",
+    "cast": [
+      "John Travolta",
+      "Uma Thurman",
+      "Samuel L. Jackson"
+    ],
+    "country": "United States",
+    "imdbRating": 8.8
   },
   {
     "id": "tmdb_238",
@@ -56,8 +118,20 @@
     "overview": "Глава влиятельной мафиозной семьи Дон Вито Корлеоне передаёт власть сыну. Майкл, которого готовили к совсем другой жизни, оказывается втянут в мир, где долг важнее крови.",
     "year": 1972,
     "rating": 8.7,
-    "genres": ["Криминал", "Драма"],
-    "poster": ""
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg",
+    "runtime": "175 min",
+    "director": "Francis Ford Coppola",
+    "cast": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan"
+    ],
+    "country": "United States",
+    "imdbRating": 9.2
   },
   {
     "id": "tmdb_240",
@@ -66,8 +140,20 @@
     "overview": "История Майкла Корлеоне, расширяющего империю семьи, параллельно переплетается с историей молодого Вито, который прокладывает путь из сицилийского посёлка в Нью-Йорк.",
     "year": 1974,
     "rating": 8.6,
-    "genres": ["Криминал", "Драма"],
-    "poster": ""
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDIxMzBlZDktZjMxNy00ZGI4LTgxNDEtYWRlNzRjMjJmOGQ1XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "202 min",
+    "director": "Francis Ford Coppola",
+    "cast": [
+      "Al Pacino",
+      "Robert De Niro",
+      "Robert Duvall"
+    ],
+    "country": "United States",
+    "imdbRating": 9
   },
   {
     "id": "tmdb_424",
@@ -76,8 +162,12 @@
     "overview": "Немецкий предприниматель Оскар Шиндлер сначала наживается на войне, но, увидев ужасы Краковского гетто, рискует всем, чтобы спасти жизни сотен людей.",
     "year": 1993,
     "rating": 8.6,
-    "genres": ["Драма", "Военный"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Военный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjM1ZDQxYWUtMzQyZS00MTE1LWJmZGYtNGUyNTdlYjM3ZmVmXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "country": "United States"
   },
   {
     "id": "tmdb_129",
@@ -86,8 +176,21 @@
     "overview": "Девочка Тихиро попадает в таинственный мир духов, где её родителей превратили в свиней. Чтобы спасти их, ей придётся работать в волшебной купальне и повзрослеть.",
     "year": 2001,
     "rating": 8.5,
-    "genres": ["Аниме", "Фэнтези", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Аниме",
+      "Фэнтези",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "124 min",
+    "director": "Hayao Miyazaki",
+    "cast": [
+      "Miyu Irino",
+      "Rumi Hiiragi",
+      "Mari Natsuki"
+    ],
+    "country": "Japan, United States",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_496243",
@@ -96,8 +199,20 @@
     "overview": "Бедная семья постепенно внедряется в богатый дом, подменяя прислугу и притворяясь специалистами. Ироничный триллер о социальном неравенстве оборачивается трагедией.",
     "year": 2019,
     "rating": 8.5,
-    "genres": ["Триллер", "Драма"],
-    "poster": ""
+    "genres": [
+      "Триллер",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "132 min",
+    "director": "Bong Joon Ho",
+    "cast": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong"
+    ],
+    "country": "South Korea",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_157336",
@@ -106,8 +221,21 @@
     "overview": "Земля умирает, и бывший пилот отправляется к червоточине у Сатурна в поисках новой планеты для человечества. Цена этого путешествия — разлука с дочерью и годами прожитой жизни.",
     "year": 2014,
     "rating": 8.4,
-    "genres": ["Фантастика", "Драма", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Драма",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "169 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain"
+    ],
+    "country": "United States, United Kingdom, Canada",
+    "imdbRating": 8.7
   },
   {
     "id": "tmdb_603",
@@ -116,8 +244,20 @@
     "overview": "Программист Нео узнаёт, что реальность — это машинная симуляция, а человечество порабощено. Ему предстоит поверить в себя и стать Избранным.",
     "year": 1999,
     "rating": 8.2,
-    "genres": ["Фантастика", "Боевик"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Боевик"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "136 min",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "cast": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss"
+    ],
+    "country": "United States",
+    "imdbRating": 8.7
   },
   {
     "id": "tmdb_106646",
@@ -125,9 +265,22 @@
     "originalTitle": "The Wolf of Wall Street",
     "overview": "Брокер Джордан Белфорт строит финансовую империю, живёт в роскоши и не выбирает методов. Взлёт и падение самого дерзкого мошенника Уолл-стрит в стиле Ди Каприо и Скорсезе.",
     "year": 2013,
-    "rating": 8.0,
-    "genres": ["Криминал", "Комедия", "Драма"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Криминал",
+      "Комедия",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "180 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Jonah Hill",
+      "Margot Robbie"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_122906",
@@ -136,8 +289,21 @@
     "overview": "Тим узнаёт, что мужчины в его семье умеют путешествовать во времени. Вместо глобальных спасений он учится ценить обычные дни и отношения с дорогими людьми.",
     "year": 2013,
     "rating": 7.9,
-    "genres": ["Мелодрама", "Фэнтези", "Комедия"],
-    "poster": ""
+    "genres": [
+      "Мелодрама",
+      "Фэнтези",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTA1ODUzMDA3NzFeQTJeQWpwZ15BbWU3MDgxMTYxNTk@._V1_QL75_UX380_CR0,20,380,562_.jpg",
+    "runtime": "123 min",
+    "director": "Richard Curtis",
+    "cast": [
+      "Domhnall Gleeson",
+      "Rachel McAdams",
+      "Bill Nighy"
+    ],
+    "country": "United Kingdom",
+    "imdbRating": 7.8
   },
   {
     "id": "tmdb_597",
@@ -146,8 +312,20 @@
     "overview": "Бедный художник Джек и аристократка Роза встречаются на борту «Титаника». Их короткий роман становится символом свободы на фоне надвигающейся катастрофы.",
     "year": 1997,
     "rating": 7.9,
-    "genres": ["Мелодрама", "Драма"],
-    "poster": ""
+    "genres": [
+      "Мелодрама",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "194 min",
+    "director": "James Cameron",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane"
+    ],
+    "country": "United States, Mexico",
+    "imdbRating": 8
   },
   {
     "id": "tmdb_19995",
@@ -156,8 +334,21 @@
     "overview": "Бывший морпех отправляется на Пандору, где люди добывают ценный минерал. В теле аватара он знакомится с народом на’ви и понимает, за что стоит сражаться.",
     "year": 2009,
     "rating": 7.6,
-    "genres": ["Фантастика", "Приключения", "Боевик"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Боевик"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "runtime": "162 min",
+    "director": "James Cameron",
+    "cast": [
+      "Sam Worthington",
+      "Zoe Saldaña",
+      "Sigourney Weaver"
+    ],
+    "country": "United States, United Kingdom",
+    "imdbRating": 7.9
   },
   {
     "id": "tmdb_76600",
@@ -166,8 +357,20 @@
     "overview": "Джейк Салли и его семья покидают лесные земли и находят убежище у морского народа меткайина. Им снова предстоит защищать дом от людей.",
     "year": 2022,
     "rating": 7.6,
-    "genres": ["Фантастика", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWI0Y2NkOWEtMmM2OC00MjQ3LWI1YzItZGQxYzQ3NzI4NWZmXkEyXkFqcGc@._V1_QL75_UY562_CR6,0,380,562_.jpg",
+    "runtime": "192 min",
+    "director": "James Cameron",
+    "cast": [
+      "Sam Worthington",
+      "Zoe Saldaña",
+      "Sigourney Weaver"
+    ],
+    "country": "United States",
+    "imdbRating": 7.5
   },
   {
     "id": "tmdb_299534",
@@ -176,8 +379,21 @@
     "overview": "После щелчка Таноса выжившие герои ищут способ вернуть всё назад. Их финальная схватка становится прощанием с целой эпохой киновселенной Marvel.",
     "year": 2019,
     "rating": 8.3,
-    "genres": ["Боевик", "Фантастика", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "181 min",
+    "director": "Anthony Russo, Joe Russo",
+    "cast": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo"
+    ],
+    "country": "United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_299536",
@@ -186,8 +402,21 @@
     "overview": "Танос начинает собирать Камни Бесконечности, чтобы уничтожить половину жизни во Вселенной. Мстители и Стражи Галактики объединяются, но цена их противостояния оказывается слишком высокой.",
     "year": 2018,
     "rating": 8.2,
-    "genres": ["Боевик", "Фантастика", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "149 min",
+    "director": "Anthony Russo, Joe Russo",
+    "cast": [
+      "Robert Downey Jr.",
+      "Chris Hemsworth",
+      "Mark Ruffalo"
+    ],
+    "country": "United States, Norway",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_634649",
@@ -196,8 +425,21 @@
     "overview": "Питер Паркер просит доктора Стрэнджа стереть память о его личности, но заклинание идёт не так. В мир проникают злодеи из других вселенных.",
     "year": 2021,
     "rating": 8.1,
-    "genres": ["Боевик", "Приключения", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Приключения",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmFiZGZjMmEtMTA0Ni00MzA2LTljMTYtZGI2MGJmZWYzZTQ2XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "148 min",
+    "director": "Jon Watts",
+    "cast": [
+      "Tom Holland",
+      "Zendaya",
+      "Benedict Cumberbatch"
+    ],
+    "country": "United States",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_324857",
@@ -206,8 +448,21 @@
     "overview": "Подросток Майлз Моралес получает способности Человека-паука и знакомится с героями из других измерений. Яркий анимационный фильм о том, что костюм — не главное.",
     "year": 2018,
     "rating": 8.4,
-    "genres": ["Мультфильм", "Боевик", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Боевик",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "117 min",
+    "director": "Bob Persichetti, Peter Ramsey, Rodney Rothman",
+    "cast": [
+      "Shameik Moore",
+      "Jake Johnson",
+      "Hailee Steinfeld"
+    ],
+    "country": "United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_569094",
@@ -216,8 +471,21 @@
     "overview": "Майлз путешествует по мультивселенной и встречает сотни других Пауков. Ему предстоит решить, можно ли спасти всех, не нарушив «канон».",
     "year": 2023,
     "rating": 8.4,
-    "genres": ["Мультфильм", "Боевик", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Боевик",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNThiZjA3MjItZGY5Ni00ZmJhLWEwN2EtOTBlYTA4Y2E0M2ZmXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "140 min",
+    "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Brian Tyree Henry"
+    ],
+    "country": "United States",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_118340",
@@ -226,8 +494,21 @@
     "overview": "Пёстрая компания авантюристов — от землянина Питера Квилла до говорящего енота — объединяется, чтобы спасти галактику от фанатика Ронана.",
     "year": 2014,
     "rating": 7.9,
-    "genres": ["Боевик", "Приключения", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Приключения",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "121 min",
+    "director": "James Gunn",
+    "cast": [
+      "Chris Pratt",
+      "Vin Diesel",
+      "Bradley Cooper"
+    ],
+    "country": "United States, United Kingdom",
+    "imdbRating": 8
   },
   {
     "id": "tmdb_447365",
@@ -235,9 +516,22 @@
     "originalTitle": "Guardians of the Galaxy Vol. 3",
     "overview": "Команде вновь предстоит спасать одного из своих — Ракету. Путь к его прошлому превращается в самое эмоциональное приключение Стражей.",
     "year": 2023,
-    "rating": 8.0,
-    "genres": ["Боевик", "Приключения", "Фантастика"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Боевик",
+      "Приключения",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "150 min",
+    "director": "James Gunn",
+    "cast": [
+      "Chris Pratt",
+      "Chukwudi Iwuji",
+      "Bradley Cooper"
+    ],
+    "country": "United States, New Zealand, France, Canada",
+    "imdbRating": 7.9
   },
   {
     "id": "tmdb_1726",
@@ -246,8 +540,21 @@
     "overview": "Миллиардер-изобретатель Тони Старк попадает в плен и создаёт броню, которая меняет его жизнь. Так начинается киновселенная Marvel.",
     "year": 2008,
     "rating": 7.6,
-    "genres": ["Боевик", "Фантастика", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "126 min",
+    "director": "Jon Favreau",
+    "cast": [
+      "Robert Downey Jr.",
+      "Gwyneth Paltrow",
+      "Terrence Howard"
+    ],
+    "country": "United States, Canada",
+    "imdbRating": 7.9
   },
   {
     "id": "tmdb_76341",
@@ -256,8 +563,21 @@
     "overview": "В постапокалиптической пустоши Макс объединяется с Фуриосой, которая увозит женщин из армии тирана. Почти два часа непрерывного действия и погонь.",
     "year": 2015,
     "rating": 7.6,
-    "genres": ["Боевик", "Приключения", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Приключения",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDRkODJhOTgtOTc1OC00NTgzLTk4NjItNDgxZDY4YjlmNDY2XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "120 min",
+    "director": "George Miller",
+    "cast": [
+      "Tom Hardy",
+      "Charlize Theron",
+      "Nicholas Hoult"
+    ],
+    "country": "Australia, United States",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_335984",
@@ -266,8 +586,21 @@
     "overview": "Офицер полиции Кей, охотник на репликантов, находит след давней тайны. Её раскрытие ставит под вопрос границу между человеком и машиной.",
     "year": 2017,
     "rating": 7.6,
-    "genres": ["Фантастика", "Драма", "Детектив"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Драма",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "164 min",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Harrison Ford",
+      "Ryan Gosling",
+      "Ana de Armas"
+    ],
+    "country": "United States, Canada, Spain",
+    "imdbRating": 8
   },
   {
     "id": "tmdb_78",
@@ -276,8 +609,21 @@
     "overview": "В неоновом Лос-Анджелесе будущего охотник Рик Декард разыскивает сбежавших репликантов. Размышление о памяти, человечности и цене жизни.",
     "year": 1982,
     "rating": 7.9,
-    "genres": ["Фантастика", "Драма", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Драма",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWQ4YTBmNTQtMDYxMC00NGFjLTkwOGQtNzdhNmY1Nzc1MzUxXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "117 min",
+    "director": "Ridley Scott",
+    "cast": [
+      "Harrison Ford",
+      "Rutger Hauer",
+      "Sean Young"
+    ],
+    "country": "United States, United Kingdom, Hong Kong",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_105",
@@ -285,9 +631,22 @@
     "originalTitle": "Back to the Future",
     "overview": "Марти Макфлай случайно уезжает на машине времени в 1955 год и вмешивается в знакомство собственных родителей. Теперь ему нужно исправить прошлое, чтобы вернуться домой.",
     "year": 1985,
-    "rating": 8.0,
-    "genres": ["Фантастика", "Комедия", "Приключения"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Фантастика",
+      "Комедия",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmM3ZjE0NzctNjBiOC00MDZmLTgzMTUtNGVlOWFlOTNiZDJiXkEyXkFqcGc@._V1_QL75_UX380_CR0,14,380,562_.jpg",
+    "runtime": "116 min",
+    "director": "Robert Zemeckis",
+    "cast": [
+      "Michael J. Fox",
+      "Christopher Lloyd",
+      "Lea Thompson"
+    ],
+    "country": "United States",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_11",
@@ -296,8 +655,21 @@
     "overview": "Фермер Люк Скайуокер вступает в Альянс повстанцев и отправляется спасать принцессу Лею. Классика космической оперы, с которой началась сага.",
     "year": 1977,
     "rating": 8.2,
-    "genres": ["Фантастика", "Приключения", "Боевик"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Боевик"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg",
+    "runtime": "121 min",
+    "director": "George Lucas",
+    "cast": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher"
+    ],
+    "country": "United States",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_1891",
@@ -306,8 +678,21 @@
     "overview": "Повстанцы вынуждены бежать, а Люк учится у мастера Йоды. Одна из самых мрачных и любимых частей саги.",
     "year": 1980,
     "rating": 8.4,
-    "genres": ["Фантастика", "Приключения", "Боевик"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Боевик"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg",
+    "runtime": "124 min",
+    "director": "Irvin Kershner",
+    "cast": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher"
+    ],
+    "country": "United States",
+    "imdbRating": 8.7
   },
   {
     "id": "tmdb_140607",
@@ -316,8 +701,17 @@
     "overview": "Спустя десятилетия после падения Империи новая угроза поднимает голову. Мусорщица Рей находит дроида с картой к местонахождению Люка Скайуокера.",
     "year": 2015,
     "rating": 7.4,
-    "genres": ["Фантастика", "Приключения", "Боевик"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Боевик"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWE3ODExM2YtNzFiNy00OGMzLTlkZTktMWQzZDZjZDBlNTg0XkEyXkFqcGc@._V1_QL75_UY562_CR53,0,380,562_.jpg",
+    "cast": [
+      "Marc Thompson"
+    ],
+    "country": "United States",
+    "imdbRating": 5.8
   },
   {
     "id": "tmdb_98",
@@ -325,9 +719,22 @@
     "originalTitle": "Gladiator",
     "overview": "Римский полководец Максимус предан императором и попадает в рабство. Став гладиатором, он идёт к мести и свободе через арену Колизея.",
     "year": 2000,
-    "rating": 8.0,
-    "genres": ["Боевик", "Драма", "История"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Боевик",
+      "Драма",
+      "История"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "155 min",
+    "director": "Ridley Scott",
+    "cast": [
+      "Russell Crowe",
+      "Joaquin Phoenix",
+      "Connie Nielsen"
+    ],
+    "country": "United Kingdom, Malta, Morocco, United States",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_857",
@@ -336,8 +743,20 @@
     "overview": "После высадки в Нормандии отряд отправляется в тыл врага, чтобы найти единственного выжившего сына в семье. Жёсткое и честное кино о войне.",
     "year": 1998,
     "rating": 8.2,
-    "genres": ["Драма", "Военный"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Военный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "runtime": "169 min",
+    "director": "Steven Spielberg",
+    "cast": [
+      "Tom Hanks",
+      "Matt Damon",
+      "Tom Sizemore"
+    ],
+    "country": "United States",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_11324",
@@ -346,8 +765,21 @@
     "overview": "Маршал расследует исчезновение пациентки из психиатрической клиники на острове. Дело быстро перестаёт быть обычным, а реальность — надёжной.",
     "year": 2010,
     "rating": 8.1,
-    "genres": ["Триллер", "Детектив", "Драма"],
-    "poster": ""
+    "genres": [
+      "Триллер",
+      "Детектив",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "138 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Emily Mortimer",
+      "Mark Ruffalo"
+    ],
+    "country": "Canada, United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_807",
@@ -356,8 +788,12 @@
     "overview": "Два детектива ищут серийного убийцу, который строит свои преступления вокруг семи смертных грехов. Мрачный триллер с одним из самых известных финалов.",
     "year": 1995,
     "rating": 8.4,
-    "genres": ["Триллер", "Криминал", "Детектив"],
-    "poster": ""
+    "genres": [
+      "Триллер",
+      "Криминал",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2IzNzMxZjctZjUxZi00YzAxLTk3ZjMtODFjODdhMDU5NDM1XkEyXkFqcGc@._V1_QL75_UX380_CR0,16,380,562_.jpg"
   },
   {
     "id": "tmdb_274",
@@ -366,8 +802,21 @@
     "overview": "Агент ФБР Клариса Старлинг обращается за помощью к заключённому гению-каннибалу Ганнибалу Лектеру, чтобы поймать другого убийцу.",
     "year": 1991,
     "rating": 8.3,
-    "genres": ["Триллер", "Криминал", "Детектив"],
-    "poster": ""
+    "genres": [
+      "Триллер",
+      "Криминал",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "runtime": "118 min",
+    "director": "Jonathan Demme",
+    "cast": [
+      "Jodie Foster",
+      "Anthony Hopkins",
+      "Scott Glenn"
+    ],
+    "country": "United States",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_694",
@@ -376,8 +825,20 @@
     "overview": "Семья приезжает в пустующий отель на зиму, но уединение пробуждает в отце тёмные силы. Классический хоррор Кубрика о безумии и замкнутом пространстве.",
     "year": 1980,
     "rating": 8.2,
-    "genres": ["Ужасы", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Ужасы",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNmM5ZThhY2ItOGRjOS00NzZiLWEwYTItNDgyMjFkOTgxMmRiXkEyXkFqcGc@._V1_QL75_UX380_CR0,8,380,562_.jpg",
+    "runtime": "146 min",
+    "director": "Stanley Kubrick",
+    "cast": [
+      "Jack Nicholson",
+      "Shelley Duvall",
+      "Danny Lloyd"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_745",
@@ -386,8 +847,21 @@
     "overview": "Психолог пытается помочь мальчику, который утверждает, что видит мёртвых. История о страхе, доверии и неожиданной развязке.",
     "year": 1999,
     "rating": 7.9,
-    "genres": ["Триллер", "Детектив", "Драма"],
-    "poster": ""
+    "genres": [
+      "Триллер",
+      "Детектив",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZWQ2OTY0M2UtMTQxNC00MmIzLTllNDQtNDQ0MTQyYzI2M2ZiXkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg",
+    "runtime": "107 min",
+    "director": "M. Night Shyamalan",
+    "cast": [
+      "Bruce Willis",
+      "Haley Joel Osment",
+      "Toni Collette"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_106",
@@ -396,8 +870,21 @@
     "overview": "Отряд спецназа в джунглях Латинской Америки сталкивается с невидимым охотником с другой планеты. Боевик, ставший классикой научной фантастики.",
     "year": 1987,
     "rating": 7.5,
-    "genres": ["Боевик", "Фантастика", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWEzMDI0MTUtMjQ0Yy00MGRhLWI4YjAtZTgzZTM3NTYxZGJkXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "107 min",
+    "director": "John McTiernan",
+    "cast": [
+      "Arnold Schwarzenegger",
+      "Carl Weathers",
+      "Kevin Peter Hall"
+    ],
+    "country": "United States, Mexico",
+    "imdbRating": 7.8
   },
   {
     "id": "tmdb_348",
@@ -406,8 +893,20 @@
     "overview": "Экипаж буксира откликается на сигнал с неизвестной планеты и приносит на борт смертоносного гостя. Классический космический хоррор Ридли Скотта.",
     "year": 1979,
     "rating": 8.1,
-    "genres": ["Ужасы", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Ужасы",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_QL75_UX380_CR0,6,380,562_.jpg",
+    "runtime": "117 min",
+    "director": "Ridley Scott",
+    "cast": [
+      "Sigourney Weaver",
+      "Tom Skerritt",
+      "John Hurt"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_679",
@@ -415,9 +914,22 @@
     "originalTitle": "Aliens",
     "overview": "Рипли возвращается на планету, где впервые встретила Чужого, вместе с отрядом морпехов. Кэмерон превращает хоррор в жёсткий боевик.",
     "year": 1986,
-    "rating": 8.0,
-    "genres": ["Боевик", "Фантастика", "Ужасы"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Ужасы"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2ZiMmQ0YWItN2IwZS00Y2NhLWE0NzQtNGNiOGFjN2U4MWNmXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg",
+    "runtime": "137 min",
+    "director": "James Cameron",
+    "cast": [
+      "Sigourney Weaver",
+      "Michael Biehn",
+      "Carrie Henn"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_120",
@@ -426,8 +938,20 @@
     "overview": "Хоббит Фродо получает Кольцо Всевластья и отправляется с отрядом в опасный путь. Начало легендарной трилогии о Средиземье.",
     "year": 2001,
     "rating": 8.4,
-    "genres": ["Фэнтези", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Фэнтези",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "178 min",
+    "director": "Peter Jackson",
+    "cast": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Orlando Bloom"
+    ],
+    "country": "New Zealand, United States",
+    "imdbRating": 8.9
   },
   {
     "id": "tmdb_121",
@@ -436,8 +960,20 @@
     "overview": "Братство распадается, пока Саруман собирает армию и осаждает Хельмову падь. Одна из самых масштабных битв в истории кино.",
     "year": 2002,
     "rating": 8.4,
-    "genres": ["Фэнтези", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Фэнтези",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGQxMDdiOWUtYjc1Ni00YzM1LWE2NjMtZTg3Y2JkMjEzMTJjXkEyXkFqcGc@._V1_QL75_UX380_CR0,14,380,562_.jpg",
+    "runtime": "179 min",
+    "director": "Peter Jackson",
+    "cast": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen"
+    ],
+    "country": "New Zealand, United States",
+    "imdbRating": 8.8
   },
   {
     "id": "tmdb_122",
@@ -446,8 +982,20 @@
     "overview": "Фродо и Сэм приближаются к Ородруину, а армии Средиземья собираются у стен Минас-Тирита. Финал трилогии, получивший 11 «Оскаров».",
     "year": 2003,
     "rating": 8.5,
-    "genres": ["Фэнтези", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Фэнтези",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "201 min",
+    "director": "Peter Jackson",
+    "cast": [
+      "Elijah Wood",
+      "Viggo Mortensen",
+      "Ian McKellen"
+    ],
+    "country": "New Zealand, United States",
+    "imdbRating": 9
   },
   {
     "id": "tmdb_49026",
@@ -456,8 +1004,21 @@
     "overview": "Бэтмен возвращается после добровольного изгнания, когда Готэм оказывается под угрозой Бейна. Эпическое завершение трилогии Нолана.",
     "year": 2012,
     "rating": 7.8,
-    "genres": ["Боевик", "Триллер", "Драма"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Триллер",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "164 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Christian Bale",
+      "Tom Hardy",
+      "Anne Hathaway"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_562",
@@ -466,8 +1027,20 @@
     "overview": "Нью-йоркский полицейский оказывается в захваченном террористами небоскрёбе. Один против всех, босиком и с отличными шутками.",
     "year": 1988,
     "rating": 7.8,
-    "genres": ["Боевик", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGNlYmM1NmQtYWExMS00NmRjLTg5ZmEtMmYyYzJkMzljYWMxXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "132 min",
+    "director": "John McTiernan",
+    "cast": [
+      "Bruce Willis",
+      "Alan Rickman",
+      "Bonnie Bedelia"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_218",
@@ -476,8 +1049,21 @@
     "overview": "Из будущего в Лос-Анджелес прибывает робот-убийца с заданием уничтожить будущую мать лидера сопротивления. Кэмерон создаёт нового героя боевика.",
     "year": 1984,
     "rating": 7.7,
-    "genres": ["Боевик", "Фантастика", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmE0YzIxM2QtMGNlMi00MjRmLWE3MWMtOWQzMGVjMmU0YTFmXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "107 min",
+    "director": "James Cameron",
+    "cast": [
+      "Arnold Schwarzenegger",
+      "Linda Hamilton",
+      "Michael Biehn"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_280",
@@ -486,8 +1072,20 @@
     "overview": "Повзрослевший Джон Коннор получает защитника — перепрограммированного Терминатора. Фильм, поднявший планку зрелищности на десятилетия вперёд.",
     "year": 1991,
     "rating": 8.1,
-    "genres": ["Боевик", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGMyMGNkMDUtMjc2Ni00NWFlLTgyODEtZTY2MzBiZTg0OWZiXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "137 min",
+    "director": "James Cameron",
+    "cast": [
+      "Arnold Schwarzenegger",
+      "Linda Hamilton",
+      "Edward Furlong"
+    ],
+    "country": "United States, France",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_329",
@@ -496,8 +1094,20 @@
     "overview": "Учёный создаёт парк с настоящими динозаврами, но экскурсия оборачивается катастрофой. Спилберг делает невозможное реальным.",
     "year": 1993,
     "rating": 7.9,
-    "genres": ["Приключения", "Фантастика"],
-    "poster": ""
+    "genres": [
+      "Приключения",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "127 min",
+    "director": "Steven Spielberg",
+    "cast": [
+      "Sam Neill",
+      "Laura Dern",
+      "Jeff Goldblum"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_77338",
@@ -506,8 +1116,20 @@
     "overview": "Богатый аристократ, прикованный к инвалидной коляске, нанимает сиделку из пригорода. История дружбы, которая меняет обоих.",
     "year": 2011,
     "rating": 8.3,
-    "genres": ["Драма", "Комедия"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "112 min",
+    "director": "Olivier Nakache, Éric Toledano",
+    "cast": [
+      "François Cluzet",
+      "Omar Sy",
+      "Anne Le Ny"
+    ],
+    "country": "France",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_244786",
@@ -516,8 +1138,20 @@
     "overview": "Молодой барабанщик попадает в оркестр к безжалостному наставнику. Фильм о цене совершенства и опасной грани между дисциплиной и жестокостью.",
     "year": 2014,
     "rating": 8.4,
-    "genres": ["Драма", "Музыка"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Музыка"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDFjOWFkYzktYzhhMC00NmYyLTkwY2EtYjViMDhmNzg0OGFkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "106 min",
+    "director": "Damien Chazelle",
+    "cast": [
+      "Miles Teller",
+      "J.K. Simmons",
+      "Melissa Benoist"
+    ],
+    "country": "United States",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_872585",
@@ -526,8 +1160,21 @@
     "overview": "История физика Роберта Оппенгеймера — от создания ядерной бомбы до суда над собственной совестью. Трёхчасовая драма Нолана о цене великого открытия.",
     "year": 2023,
     "rating": 8.1,
-    "genres": ["Драма", "История", "Триллер"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "История",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2JkMDc5MGQtZjg3YS00NmFiLWIyZmQtZTJmNTM5MjVmYTQ4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "180 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon"
+    ],
+    "country": "United States, United Kingdom",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_361743",
@@ -536,8 +1183,21 @@
     "overview": "Мэверик возвращается в школу пилотов, чтобы подготовить выпускников к почти невыполнимой миссии. Авиационный блокбастер с живыми эмоциями.",
     "year": 2022,
     "rating": 7.7,
-    "genres": ["Боевик", "Драма", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Боевик",
+      "Драма",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDBkZDNjMWEtOTdmMi00NmExLTg5MmMtNTFlYTJlNWY5YTdmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "130 min",
+    "director": "Joseph Kosinski",
+    "cast": [
+      "Tom Cruise",
+      "Jennifer Connelly",
+      "Miles Teller"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_438631",
@@ -546,8 +1206,21 @@
     "overview": "Наследник дома Атрейдесов прибывает на пустынную планету Арракис. Судьба, пряности и огромные песчаные черви — первая часть новой экранизации.",
     "year": 2021,
     "rating": 7.8,
-    "genres": ["Фантастика", "Приключения", "Драма"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+    "runtime": "155 min",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Timothée Chalamet",
+      "Rebecca Ferguson",
+      "Zendaya"
+    ],
+    "country": "Canada, United States",
+    "imdbRating": 8
   },
   {
     "id": "tmdb_693134",
@@ -556,8 +1229,21 @@
     "overview": "Пол Атрейдес учится у фременов и готовит восстание против Харконненов. Вторая часть — масштабнее, мрачнее и эмоциональнее первой.",
     "year": 2024,
     "rating": 8.1,
-    "genres": ["Фантастика", "Приключения", "Драма"],
-    "poster": ""
+    "genres": [
+      "Фантастика",
+      "Приключения",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "166 min",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson"
+    ],
+    "country": "United States, Canada, United Arab Emirates, Hungary, Italy, New Zealand, Jordan",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_862",
@@ -566,8 +1252,21 @@
     "overview": "Игрушки мальчика Энди живут своей жизнью, пока не появляется новый любимец — космический рейнджер Базз. Первый полностью компьютерный мультфильм.",
     "year": 1995,
     "rating": 7.9,
-    "genres": ["Мультфильм", "Приключения", "Комедия"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Приключения",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "81 min",
+    "director": "John Lasseter",
+    "cast": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Don Rickles"
+    ],
+    "country": "United States",
+    "imdbRating": 8.3
   },
   {
     "id": "tmdb_10193",
@@ -576,8 +1275,21 @@
     "overview": "Энди уезжает в колледж, и игрушки попадают в детский сад. История о взрослении, предательстве и настоящей дружбе.",
     "year": 2010,
     "rating": 7.8,
-    "genres": ["Мультфильм", "Комедия", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Комедия",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_QL75_UY562_CR9,0,380,562_.jpg",
+    "runtime": "103 min",
+    "director": "Lee Unkrich",
+    "cast": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Joan Cusack"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 8.3
   },
   {
     "id": "tmdb_150540",
@@ -585,9 +1297,22 @@
     "originalTitle": "Inside Out",
     "overview": "В голове девочки Райли живут эмоции — Радость, Печаль, Гнев, Страх и Брезгливость. Когда семья переезжает, их слаженная работа рушится.",
     "year": 2015,
-    "rating": 8.0,
-    "genres": ["Мультфильм", "Семейный", "Комедия"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Мультфильм",
+      "Семейный",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "95 min",
+    "director": "Ronnie Del Carmen, Pete Docter",
+    "cast": [
+      "Amy Poehler",
+      "Bill Hader",
+      "Lewis Black"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_354912",
@@ -596,8 +1321,21 @@
     "overview": "Мальчик Мигель мечтает стать музыкантом и попадает в мир мёртвых. История о семье, памяти и музыке, которая соединяет поколения.",
     "year": 2017,
     "rating": 8.2,
-    "genres": ["Мультфильм", "Семейный", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Семейный",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDIyM2E2NTAtMzlhNy00ZGUxLWI1NjgtZDY5MzhiMDc5NGU3XkEyXkFqcGc@._V1_QL75_UY562_CR7,0,380,562_.jpg",
+    "runtime": "105 min",
+    "director": "Adrian Molina, Lee Unkrich",
+    "cast": [
+      "Anthony Gonzalez",
+      "Gael García Bernal",
+      "Benjamin Bratt"
+    ],
+    "country": "United States, Mexico, Japan",
+    "imdbRating": 8.4
   },
   {
     "id": "tmdb_2062",
@@ -605,9 +1343,22 @@
     "originalTitle": "Ratatouille",
     "overview": "Крысёнок Реми мечтает готовить и попадает на кухню парижского ресторана. Вместе с неуклюжим поварёнком он доказывает, что талант важнее происхождения.",
     "year": 2007,
-    "rating": 8.0,
-    "genres": ["Мультфильм", "Комедия", "Семейный"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Мультфильм",
+      "Комедия",
+      "Семейный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "111 min",
+    "director": "Brad Bird, Jan Pinkava",
+    "cast": [
+      "Brad Garrett",
+      "Lou Romano",
+      "Patton Oswalt"
+    ],
+    "country": "United States, France, Japan",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_14160",
@@ -615,9 +1366,22 @@
     "originalTitle": "Up",
     "overview": "Пожилой Карл привязывает к дому воздушные шары и отправляется в Южную Америку. Неожиданный попутчик — восьмилетний скаут Расселл.",
     "year": 2009,
-    "rating": 8.0,
-    "genres": ["Мультфильм", "Приключения", "Семейный"],
-    "poster": ""
+    "rating": 8,
+    "genres": [
+      "Мультфильм",
+      "Приключения",
+      "Семейный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNmI1ZTc5MWMtMDYyOS00ZDc2LTkzOTAtNjQ4NWIxNjYyNDgzXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "96 min",
+    "director": "Pete Docter, Bob Peterson",
+    "cast": [
+      "Edward Asner",
+      "Jordan Nagai",
+      "John Ratzenberger"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 8.3
   },
   {
     "id": "tmdb_12",
@@ -626,8 +1390,21 @@
     "overview": "Рыба-клоун Марлин отправляется через океан на поиски сына. На пути ему помогает забывчивая рыба Дори и целая компания морских обитателей.",
     "year": 2003,
     "rating": 7.8,
-    "genres": ["Мультфильм", "Приключения", "Семейный"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Приключения",
+      "Семейный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5NjExNTA5OV5BMl5BanBnXkFtZTYwMTQ0ODY2._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "100 min",
+    "director": "Andrew Stanton, Lee Unkrich",
+    "cast": [
+      "Albert Brooks",
+      "Ellen DeGeneres",
+      "Alexander Gould"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 8.2
   },
   {
     "id": "tmdb_585",
@@ -636,8 +1413,21 @@
     "overview": "Монстры пугают детей, чтобы получать энергию из их криков. Но когда в мир монстров попадает девочка Бу, всё меняется.",
     "year": 2001,
     "rating": 7.9,
-    "genres": ["Мультфильм", "Комедия", "Семейный"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Комедия",
+      "Семейный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "92 min",
+    "director": "Pete Docter, David Silverman, Lee Unkrich",
+    "cast": [
+      "Billy Crystal",
+      "John Goodman",
+      "Mary Gibbs"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 8.1
   },
   {
     "id": "tmdb_808",
@@ -646,8 +1436,21 @@
     "overview": "Огр Шрек отправляется спасать принцессу Фиону, чтобы вернуть себе болото. Ирония над сказками и один из лучших анимационных фильмов нулевых.",
     "year": 2001,
     "rating": 7.7,
-    "genres": ["Мультфильм", "Комедия", "Фэнтези"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Комедия",
+      "Фэнтези"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2FkMTRkNTUtYTI0NC00ZjI4LWI5MzUtMDFmOGY0NmU2OGY1XkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "90 min",
+    "director": "Andrew Adamson, Vicky Jenson",
+    "cast": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz"
+    ],
+    "country": "United States",
+    "imdbRating": 7.9
   },
   {
     "id": "tmdb_8587",
@@ -656,8 +1459,21 @@
     "overview": "Львёнок Симба теряет отца и покидает прайд, но взрослеет и возвращается, чтобы вернуть себе трон. Музыкальная классика Disney о долге и семье.",
     "year": 1994,
     "rating": 8.3,
-    "genres": ["Мультфильм", "Семейный", "Приключения"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Семейный",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGRiZDZhZjItM2M3ZC00Y2IyLTk3Y2MtMWY5YjliNDFkZTJlXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "88 min",
+    "director": "Roger Allers, Rob Minkoff",
+    "cast": [
+      "Matthew Broderick",
+      "Jeremy Irons",
+      "James Earl Jones"
+    ],
+    "country": "United States",
+    "imdbRating": 8.5
   },
   {
     "id": "tmdb_109445",
@@ -666,8 +1482,21 @@
     "overview": "Принцесса Эльза скрывает дар управления льдом, и её коронация оборачивается вечной зимой. Анна отправляется спасать сестру и королевство.",
     "year": 2013,
     "rating": 7.4,
-    "genres": ["Мультфильм", "Семейный", "Фэнтези"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Семейный",
+      "Фэнтези"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "102 min",
+    "director": "Chris Buck, Jennifer Lee",
+    "cast": [
+      "Kristen Bell",
+      "Idina Menzel",
+      "Jonathan Groff"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 7.4
   },
   {
     "id": "tmdb_38757",
@@ -676,8 +1505,21 @@
     "overview": "Принцесса с волшебными волосами живёт в башне и мечтает увидеть огни. Вор с обаятельной улыбкой становится её проводником.",
     "year": 2010,
     "rating": 7.7,
-    "genres": ["Мультфильм", "Приключения", "Семейный"],
-    "poster": ""
+    "genres": [
+      "Мультфильм",
+      "Приключения",
+      "Семейный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "runtime": "100 min",
+    "director": "Nathan Greno, Byron Howard",
+    "cast": [
+      "Mandy Moore",
+      "Zachary Levi",
+      "Donna Murphy"
+    ],
+    "country": "United States, Japan",
+    "imdbRating": 7.7
   },
   {
     "id": "tmdb_497",
@@ -686,8 +1528,21 @@
     "overview": "Тюремный надзиратель сталкивается с приговорённым к казни гигантом, который обладает даром исцеления. История о чуде и человечности в жестоком месте.",
     "year": 1999,
     "rating": 8.5,
-    "genres": ["Драма", "Фэнтези", "Криминал"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Фэнтези",
+      "Криминал"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "189 min",
+    "director": "Frank Darabont",
+    "cast": [
+      "Tom Hanks",
+      "Michael Clarke Duncan",
+      "David Morse"
+    ],
+    "country": "United States",
+    "imdbRating": 8.6
   },
   {
     "id": "tmdb_637",
@@ -696,7 +1551,828 @@
     "overview": "Итальянец Гвидо попадает в концлагерь с сыном и превращает происходящее в игру, чтобы мальчик не потерял веру в мир.",
     "year": 1997,
     "rating": 8.4,
-    "genres": ["Драма", "Комедия", "Военный"],
-    "poster": ""
+    "genres": [
+      "Драма",
+      "Комедия",
+      "Военный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGJiZTM3NDUtY2QxMy00NzBlLTlmZDctMjBiMDM1MmMzODNkXkEyXkFqcGc@._V1_SX300.jpg",
+    "runtime": "76 min",
+    "director": "Carlo Ludovico Bragaglia",
+    "cast": [
+      "Alberto Rabagliati",
+      "María Mercader",
+      "Anna Magnani"
+    ],
+    "country": "Italy",
+    "imdbRating": 6.8
+  },
+  {
+    "id": "imdb_tt1853728",
+    "title": "Джанго освобождённый",
+    "originalTitle": "Django Unchained",
+    "overview": "Бывший раб Джанго вместе с охотником за головами отправляется спасать жену из поместья жестокого плантатора.",
+    "year": 2012,
+    "rating": 8.5,
+    "genres": [
+      "Вестерн",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "165 min",
+    "director": "Quentin Tarantino",
+    "cast": [
+      "Jamie Foxx",
+      "Christoph Waltz",
+      "Leonardo DiCaprio"
+    ],
+    "country": "United States",
+    "imdbRating": 8.5
+  },
+  {
+    "id": "imdb_tt0361748",
+    "title": "Бесславные ублюдки",
+    "originalTitle": "Inglourious Basterds",
+    "overview": "Группа американских солдат и французская кинотеатральная хозяйка готовят дерзкую операцию против нацистского руководства.",
+    "year": 2009,
+    "rating": 8.4,
+    "genres": [
+      "Боевик",
+      "Драма",
+      "Военный"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BODZhMWJlNjYtNDExNC00MTIzLTllM2ItOGQ2NGVjNDQ3MzkzXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "153 min",
+    "director": "Quentin Tarantino",
+    "cast": [
+      "Brad Pitt",
+      "Diane Kruger",
+      "Eli Roth"
+    ],
+    "country": "United States, Germany",
+    "imdbRating": 8.4
+  },
+  {
+    "id": "imdb_tt3460252",
+    "title": "Омерзительная восьмёрка",
+    "originalTitle": "The Hateful Eight",
+    "overview": "Охотник за головами и его пленница пережидают метель в лесной хижине, где каждый незнакомец скрывает опасную тайну.",
+    "year": 2015,
+    "rating": 7.8,
+    "genres": [
+      "Вестерн",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA1MTc1NTg5NV5BMl5BanBnXkFtZTgwOTM2MDEzNzE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "168 min",
+    "director": "Quentin Tarantino",
+    "cast": [
+      "Samuel L. Jackson",
+      "Kurt Russell",
+      "Jennifer Jason Leigh"
+    ],
+    "country": "United States",
+    "imdbRating": 7.8
+  },
+  {
+    "id": "imdb_tt21942610",
+    "title": "Однажды в Голливуде",
+    "originalTitle": "Once Upon a Time in Hollywood",
+    "overview": "Актёр и его дублёр пытаются удержаться в меняющемся Голливуде конца 1960-х.",
+    "year": 2019,
+    "rating": 7.5,
+    "genres": [
+      "Драма",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGNmMjJiZTAtMTM0ZS00OTNiLWE1M2ItYjk0YzBjNTkzMTYzXkEyXkFqcGc@._V1_SX300.jpg",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Jim Hemphill",
+      "Brad Pitt"
+    ],
+    "country": "United States"
+  },
+  {
+    "id": "imdb_tt0407887",
+    "title": "Отступники",
+    "originalTitle": "The Departed",
+    "overview": "Полицейский внедряется в банду, пока мафиозный информатор работает в полиции — оба начинают охоту друг на друга.",
+    "year": 2006,
+    "rating": 8.5,
+    "genres": [
+      "Криминал",
+      "Триллер",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_QL75_UY562_CR0,0,380,562_.jpg",
+    "runtime": "151 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Matt Damon",
+      "Jack Nicholson"
+    ],
+    "country": "United States, Hong Kong",
+    "imdbRating": 8.5
+  },
+  {
+    "id": "imdb_tt0099685",
+    "title": "Славные парни",
+    "originalTitle": "Goodfellas",
+    "overview": "История Генри Хилла — от мальчика на побегушках до гангстера, чья жизнь разваливается на глазах.",
+    "year": 1990,
+    "rating": 8.7,
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_QL75_UX380_CR0,3,380,562_.jpg",
+    "runtime": "145 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Robert De Niro",
+      "Ray Liotta",
+      "Joe Pesci"
+    ],
+    "country": "United States",
+    "imdbRating": 8.7
+  },
+  {
+    "id": "imdb_tt0112641",
+    "title": "Казино",
+    "originalTitle": "Casino",
+    "overview": "Управляющий казино в Лас-Вегасе оказывается между мафией, другом-психопатом и собственной женой.",
+    "year": 1995,
+    "rating": 8.2,
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDRlZWZjZjYtYzY2NS00ZWVjLTkwYzAtZTA2ZDAzMGRiYmYwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "178 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Robert De Niro",
+      "Sharon Stone",
+      "Joe Pesci"
+    ],
+    "country": "United States, France",
+    "imdbRating": 8.2
+  },
+  {
+    "id": "imdb_tt0086250",
+    "title": "Лицо со шрамом",
+    "originalTitle": "Scarface",
+    "overview": "Кубинский эмигрант Тони Монтана пробивается на вершину наркоимперии Майами, теряя всё человеческое.",
+    "year": 1983,
+    "rating": 8.3,
+    "genres": [
+      "Криминал",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "170 min",
+    "director": "Brian De Palma",
+    "cast": [
+      "Al Pacino",
+      "Michelle Pfeiffer",
+      "Steven Bauer"
+    ],
+    "country": "United States",
+    "imdbRating": 8.3
+  },
+  {
+    "id": "imdb_tt0075314",
+    "title": "Таксист",
+    "originalTitle": "Taxi Driver",
+    "overview": "Одинокий водитель такси Нью-Йорка всё сильнее погружается в насилие и собственные фантазии о спасении.",
+    "year": 1976,
+    "rating": 8.2,
+    "genres": [
+      "Драма",
+      "Криминал"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDNhMGYwM2UtMTdlZS00MGQ1LWI2YzAtODY5YWI1MjYyNzRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,7,380,562_.jpg",
+    "runtime": "114 min",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Robert De Niro",
+      "Jodie Foster",
+      "Cybill Shepherd"
+    ],
+    "country": "United States",
+    "imdbRating": 8.2
+  },
+  {
+    "id": "imdb_tt0078788",
+    "title": "Апокалипсис сегодня",
+    "originalTitle": "Apocalypse Now",
+    "overview": "Офицер отправляется в джунгли Вьетнама, чтобы найти и устранить полковника, объявившего себя богом.",
+    "year": 1979,
+    "rating": 8.4,
+    "genres": [
+      "Военный",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDhiMTljYjYtODc1Yy00MmEwLTg2OTYtYmE1YTRmNDE4MmEwXkEyXkFqcGc@._V1_QL75_UX380_CR0,11,380,562_.jpg",
+    "runtime": "147 min",
+    "director": "Francis Ford Coppola",
+    "cast": [
+      "Martin Sheen",
+      "Marlon Brando",
+      "Robert Duvall"
+    ],
+    "country": "United States",
+    "imdbRating": 8.4
+  },
+  {
+    "id": "imdb_tt0093058",
+    "title": "Цельнометаллическая оболочка",
+    "originalTitle": "Full Metal Jacket",
+    "overview": "Американские новобранцы проходят жестокую подготовку, а затем попадают в хаос войны во Вьетнаме.",
+    "year": 1987,
+    "rating": 8.2,
+    "genres": [
+      "Военный",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWUzNzZkNzUtNDdiYy00Nzk5LTgxMmItNTk0MjRjNjdjNDA0XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "116 min",
+    "director": "Stanley Kubrick",
+    "cast": [
+      "Matthew Modine",
+      "R. Lee Ermey",
+      "Vincent D&apos;Onofrio"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.2
+  },
+  {
+    "id": "imdb_tt0062622",
+    "title": "2001 год: Космическая одиссея",
+    "originalTitle": "2001: A Space Odyssey",
+    "overview": "Человечество выходит к загадочному монолиту, а космический корабль остаётся под контролем вышедшего из-под контроля ИИ.",
+    "year": 1968,
+    "rating": 8.3,
+    "genres": [
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjU0NDFkMTQtZWY5OS00MmZhLTg3Y2QtZmJhMzMzMWYyYjc2XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "149 min",
+    "director": "Stanley Kubrick",
+    "cast": [
+      "Keir Dullea",
+      "Gary Lockwood",
+      "William Sylvester"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.3
+  },
+  {
+    "id": "imdb_custom_13",
+    "title": "Заводной апельсин",
+    "originalTitle": "A Clockwork Orange",
+    "overview": "Жестокий подросток соглашается на экспериментальное лечение, которое лишает его свободы воли.",
+    "year": 1971,
+    "rating": 7.5,
+    "genres": [
+      "Криминал",
+      "Фантастика",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+  },
+  {
+    "id": "imdb_tt0119174",
+    "title": "Игра",
+    "originalTitle": "The Game",
+    "overview": "Богатый банкир получает на день рождения игру, которая постепенно стирает границу между реальностью и смертельной опасностью.",
+    "year": 1997,
+    "rating": 7.7,
+    "genres": [
+      "Триллер",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGUzNzQwNmMtNzI3Mi00ZDIwLWJlM2ItMTA5N2Q2ZDMxMjJiXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "129 min",
+    "director": "David Fincher",
+    "cast": [
+      "Michael Douglas",
+      "Deborah Kara Unger",
+      "Sean Penn"
+    ],
+    "country": "United States",
+    "imdbRating": 7.7
+  },
+  {
+    "id": "imdb_tt24735934",
+    "title": "Помни",
+    "originalTitle": "Memento",
+    "overview": "Мужчина с потерей кратковременной памяти ищет убийцу жены, полагаясь на записки и татуировки.",
+    "year": 2000,
+    "rating": 7.5,
+    "genres": [
+      "Триллер",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmJlNzYxMmMtMzQ2YS00NTM5LWJjMjYtMzRmY2NhNDZkMjE1XkEyXkFqcGdeQXVyNjc5Mjg4Nzc@._V1_SX300.jpg"
+  },
+  {
+    "id": "imdb_tt0482571",
+    "title": "Престиж",
+    "originalTitle": "The Prestige",
+    "overview": "Два иллюзиониста соперничают за секрет лучшего трюка, не замечая, как одержимость уничтожает их жизни.",
+    "year": 2006,
+    "rating": 8.5,
+    "genres": [
+      "Драма",
+      "Триллер",
+      "Фантастика"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2Y0YmM5MWYtZTYzNi00ZjU5LTlmOGYtZDQ4ODQyMjAzNjQ2XkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+    "runtime": "130 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Christian Bale",
+      "Hugh Jackman",
+      "Scarlett Johansson"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 8.5
+  },
+  {
+    "id": "imdb_tt0443543",
+    "title": "Иллюзионист",
+    "originalTitle": "The Illusionist",
+    "overview": "Фокусник в Вене использует иллюзии, чтобы вернуть любимую и бросить вызов императорскому двору.",
+    "year": 2006,
+    "rating": 7.5,
+    "genres": [
+      "Драма",
+      "Детектив",
+      "Мелодрама"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzNmYmI4YWMtMGFkOS00ODVkLTg3MTEtOTExNDg3ZjQ0MGM3XkEyXkFqcGc@._V1_QL75_UY562_CR7,0,380,562_.jpg",
+    "runtime": "110 min",
+    "director": "Neil Burger",
+    "cast": [
+      "Edward Norton",
+      "Jessica Biel",
+      "Paul Giamatti"
+    ],
+    "country": "United States, Czech Republic",
+    "imdbRating": 7.5
+  },
+  {
+    "id": "imdb_tt1568346",
+    "title": "Девушка с татуировкой дракона",
+    "originalTitle": "The Girl with the Dragon Tattoo",
+    "overview": "Журналист и хакер расследуют исчезновение девушки из влиятельной семьи и находят следы давних убийств.",
+    "year": 2011,
+    "rating": 7.8,
+    "genres": [
+      "Триллер",
+      "Криминал",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTczNDk4NTQ0OV5BMl5BanBnXkFtZTcwNDAxMDgxNw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "158 min",
+    "director": "David Fincher",
+    "cast": [
+      "Daniel Craig",
+      "Rooney Mara",
+      "Christopher Plummer"
+    ],
+    "country": "Sweden, United States",
+    "imdbRating": 7.8
+  },
+  {
+    "id": "imdb_tt1285016",
+    "title": "Социальная сеть",
+    "originalTitle": "The Social Network",
+    "overview": "История создания Facebook — от идеи в общежитии до судебных войн и разрушенной дружбы.",
+    "year": 2010,
+    "rating": 7.8,
+    "genres": [
+      "Драма",
+      "Биография"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjlkNTE5ZTUtNGEwNy00MGVhLThmZjMtZjU1NDE5Zjk1NDZkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "120 min",
+    "director": "David Fincher",
+    "cast": [
+      "Jesse Eisenberg",
+      "Andrew Garfield",
+      "Justin Timberlake"
+    ],
+    "country": "United States",
+    "imdbRating": 7.8
+  },
+  {
+    "id": "imdb_tt2278388",
+    "title": "Отель «Гранд Будапешт»",
+    "originalTitle": "The Grand Budapest Hotel",
+    "overview": "Легендарный консьерж и его юный помощник оказываются в центре кражи бесценной картины и семейной войны.",
+    "year": 2014,
+    "rating": 8.1,
+    "genres": [
+      "Комедия",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "99 min",
+    "director": "Wes Anderson",
+    "cast": [
+      "Ralph Fiennes",
+      "F. Murray Abraham",
+      "Mathieu Amalric"
+    ],
+    "country": "United States, Germany",
+    "imdbRating": 8.1
+  },
+  {
+    "id": "imdb_tt3783958",
+    "title": "Ла-Ла Ленд",
+    "originalTitle": "La La Land",
+    "overview": "Джазовый пианист и начинающая актриса влюбляются в Лос-Анджелесе, но мечты требуют выбора.",
+    "year": 2016,
+    "rating": 8,
+    "genres": [
+      "Мелодрама",
+      "Музыка",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDllYjliOTUtMDJjZC00ODIzLWJmNGMtOWI2NzQxMjA2NzdlXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "128 min",
+    "director": "Damien Chazelle",
+    "cast": [
+      "Ryan Gosling",
+      "Emma Stone",
+      "Rosemarie DeWitt"
+    ],
+    "country": "United States, Hong Kong",
+    "imdbRating": 8
+  },
+  {
+    "id": "imdb_tt10640346",
+    "title": "Вавилон",
+    "originalTitle": "Babylon",
+    "overview": "Эпоха немого Голливуда показана через взлёты и падения актрисы, статиста и продюсера.",
+    "year": 2022,
+    "rating": 7.1,
+    "genres": [
+      "Драма",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGY3M2NkN2QtZTdhOS00YTNjLTgyYmMtMGY3Y2U0OTk2NjA0XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "189 min",
+    "director": "Damien Chazelle",
+    "cast": [
+      "Brad Pitt",
+      "Margot Robbie",
+      "Jean Smart"
+    ],
+    "country": "United States",
+    "imdbRating": 7.1
+  },
+  {
+    "id": "imdb_tt6710474",
+    "title": "Всё везде и сразу",
+    "originalTitle": "Everything Everywhere All at Once",
+    "overview": "Владелица прачечной узнаёт, что может путешествовать между мультивселенными и должна спасти семью.",
+    "year": 2022,
+    "rating": 7.7,
+    "genres": [
+      "Фантастика",
+      "Комедия",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWNmMzAzZmQtNDQ1NC00Nzk5LTkyMmUtNGI2N2NkOWM4MzEyXkEyXkFqcGc@._V1_QL75_UY562_CR4,0,380,562_.jpg",
+    "runtime": "139 min",
+    "director": "Daniel Kwan, Daniel Scheinert",
+    "cast": [
+      "Michelle Yeoh",
+      "Stephanie Hsu",
+      "Jamie Lee Curtis"
+    ],
+    "country": "United States",
+    "imdbRating": 7.7
+  },
+  {
+    "id": "imdb_tt2911666",
+    "title": "Джон Уик",
+    "originalTitle": "John Wick",
+    "overview": "Бывший киллер возвращается к оружию, когда бандиты убивают его собаку — последнюю связь с женой.",
+    "year": 2014,
+    "rating": 7.5,
+    "genres": [
+      "Боевик",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "101 min",
+    "director": "Chad Stahelski",
+    "cast": [
+      "Keanu Reeves",
+      "Michael Nyqvist",
+      "Alfie Allen"
+    ],
+    "country": "United States",
+    "imdbRating": 7.5
+  },
+  {
+    "id": "imdb_tt10366206",
+    "title": "Джон Уик 4",
+    "originalTitle": "John Wick: Chapter 4",
+    "overview": "Джон Уик бросает вызов Совету кланов, пробиваясь через Париж, Осло и Токио.",
+    "year": 2023,
+    "rating": 7.6,
+    "genres": [
+      "Боевик",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2Q2ZmI5ZjUtNWVhMC00YzJkLTlmYjMtY2RmZDhkNzEzYjZhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "169 min",
+    "director": "Chad Stahelski",
+    "cast": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "George Georgiou"
+    ],
+    "country": "United States, Germany",
+    "imdbRating": 7.6
+  },
+  {
+    "id": "imdb_tt0780504",
+    "title": "Драйв",
+    "originalTitle": "Drive",
+    "overview": "Молчаливый каскадёр подрабатывает водителем на ограблениях и встаёт на защиту соседки.",
+    "year": 2011,
+    "rating": 7.8,
+    "genres": [
+      "Криминал",
+      "Драма",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTFmNTFlOTAtNzEyNi00MWU2LTg3MGEtYjA2NWY3MDliNjlkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "100 min",
+    "director": "Nicolas Winding Refn",
+    "cast": [
+      "Ryan Gosling",
+      "Carey Mulligan",
+      "Bryan Cranston"
+    ],
+    "country": "United States",
+    "imdbRating": 7.8
+  },
+  {
+    "id": "imdb_tt2543164",
+    "title": "Прибытие",
+    "originalTitle": "Arrival",
+    "overview": "Лингвист пытается понять язык инопланетян и заодно меняет собственное представление о времени.",
+    "year": 2016,
+    "rating": 7.9,
+    "genres": [
+      "Фантастика",
+      "Драма",
+      "Детектив"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_QL75_UX380_CR0,16,380,562_.jpg",
+    "runtime": "116 min",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Amy Adams",
+      "Jeremy Renner",
+      "Forest Whitaker"
+    ],
+    "country": "Canada, United States",
+    "imdbRating": 7.9
+  },
+  {
+    "id": "imdb_tt1454468",
+    "title": "Гравитация",
+    "originalTitle": "Gravity",
+    "overview": "После катастрофы на орбите врач и астронавт остаются одни в открытом космосе без связи с Землёй.",
+    "year": 2013,
+    "rating": 7.7,
+    "genres": [
+      "Фантастика",
+      "Триллер"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_QL75_UY562_CR0,0,380,562_.jpg",
+    "runtime": "91 min",
+    "director": "Alfonso Cuarón",
+    "cast": [
+      "Sandra Bullock",
+      "George Clooney",
+      "Ed Harris"
+    ],
+    "country": "United Kingdom, United States",
+    "imdbRating": 7.7
+  },
+  {
+    "id": "imdb_tt3659388",
+    "title": "Марсианин",
+    "originalTitle": "The Martian",
+    "overview": "Оставленный на Марсе астронавт выживает с помощью науки и ждёт спасательную миссию.",
+    "year": 2015,
+    "rating": 8,
+    "genres": [
+      "Фантастика",
+      "Приключения"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_QL75_UY562_CR0,0,380,562_.jpg",
+    "runtime": "144 min",
+    "director": "Ridley Scott",
+    "cast": [
+      "Matt Damon",
+      "Jessica Chastain",
+      "Kristen Wiig"
+    ],
+    "country": "United States, United Kingdom, Hungary, Jordan",
+    "imdbRating": 8
+  },
+  {
+    "id": "imdb_tt27793995",
+    "title": "Выживший",
+    "originalTitle": "The Revenant",
+    "overview": "Охотник, едва выживший после нападения медведя и предательства, идёт через зимнюю пустыню за местью.",
+    "year": 2015,
+    "rating": 7.5,
+    "genres": [
+      "Приключения",
+      "Драма",
+      "Вестерн"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTgwNmQzZDctMjNmOS00OTExLTkwM2UtNzJmOTJhODFjOTdlXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+    "director": "Nikolai Kurbatov",
+    "country": "Russia"
+  },
+  {
+    "id": "imdb_tt1065073",
+    "title": "Отрочество",
+    "originalTitle": "Boyhood",
+    "overview": "Взросление мальчика с шести до восемнадцати лет, снятое с одними и теми же актёрами.",
+    "year": 2014,
+    "rating": 7.9,
+    "genres": [
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "165 min",
+    "director": "Richard Linklater",
+    "cast": [
+      "Ellar Coltrane",
+      "Patricia Arquette",
+      "Ethan Hawke"
+    ],
+    "country": "United States",
+    "imdbRating": 7.9
+  },
+  {
+    "id": "imdb_tt5130912",
+    "title": "Бёрдмэн",
+    "originalTitle": "Birdman",
+    "overview": "Бывшая звезда супергеройских фильмов пытается вернуть себе уважение постановкой спектакля на Бродвее.",
+    "year": 2014,
+    "rating": 5.1,
+    "genres": [
+      "Драма",
+      "Комедия"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "13 min",
+    "director": "Guy Bolongaro",
+    "cast": [
+      "Caroline Christl Long"
+    ],
+    "country": "UK",
+    "imdbRating": 5.1
+  },
+  {
+    "id": "imdb_tt4975722",
+    "title": "Лунный свет",
+    "originalTitle": "Moonlight",
+    "overview": "Три периода жизни чернокожего парня из Майами, который ищет себя, любовь и место в мире.",
+    "year": 2016,
+    "rating": 7.4,
+    "genres": [
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "111 min",
+    "director": "Barry Jenkins",
+    "cast": [
+      "Mahershala Ali",
+      "Naomie Harris",
+      "Trevante Rhodes"
+    ],
+    "country": "United States",
+    "imdbRating": 7.4
+  },
+  {
+    "id": "imdb_tt6966692",
+    "title": "Зелёная книга",
+    "originalTitle": "Green Book",
+    "overview": "Итальянский водитель сопровождает афроамериканского пианиста в туре по югу США 1960-х.",
+    "year": 2018,
+    "rating": 8.2,
+    "genres": [
+      "Драма",
+      "Комедия",
+      "Биография"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDU5YTNmMmItN2QxNy00OGQ0LTg5MTctNzFmYjEzZjcwN2UwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "runtime": "130 min",
+    "director": "Peter Farrelly",
+    "cast": [
+      "Viggo Mortensen",
+      "Mahershala Ali",
+      "Linda Cardellini"
+    ],
+    "country": "China, South Korea, United States",
+    "imdbRating": 8.2
+  },
+  {
+    "id": "imdb_tt5013056",
+    "title": "Дюнкерк",
+    "originalTitle": "Dunkirk",
+    "overview": "Эвакуация британских солдат из Дюнкерка показана с земли, моря и воздуха.",
+    "year": 2017,
+    "rating": 7.8,
+    "genres": [
+      "Военный",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTE0Mjg4MTMwMDZeQTJeQWpwZ15BbWU4MDAwMDQ1ODAy._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "106 min",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Fionn Whitehead",
+      "Barry Keoghan",
+      "Mark Rylance"
+    ],
+    "country": "Netherlands, United Kingdom, France, United States",
+    "imdbRating": 7.8
+  },
+  {
+    "id": "imdb_tt24820246",
+    "title": "1917",
+    "originalTitle": "1917",
+    "overview": "Два британских солдата должны пересечь вражескую территорию, чтобы остановить гибельную атаку.",
+    "year": 2019,
+    "rating": 7.5,
+    "genres": [
+      "Военный",
+      "Драма"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYzkxZjg2NDQtMGVjMy00NWZkLTk0ZDEtZWE3NDYwYjAyMTg1XkEyXkFqcGc@._V1_QL75_UX380_CR0,20,380,562_.jpg"
+  },
+  {
+    "id": "imdb_tt0075148",
+    "title": "Рокки",
+    "originalTitle": "Rocky",
+    "overview": "Неизвестный боксёр из Филадельфии получает шанс на титул и шанс изменить свою жизнь.",
+    "year": 1976,
+    "rating": 8.1,
+    "genres": [
+      "Драма",
+      "Спорт"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDEyY2M2MGMtYjg5OC00ZWFjLWFkZDQtNmQzZTdiYmYzZTBkXkEyXkFqcGc@._V1_QL75_UX380_CR0,8,380,562_.jpg",
+    "runtime": "120 min",
+    "director": "John G. Avildsen",
+    "cast": [
+      "Sylvester Stallone",
+      "Talia Shire",
+      "Burt Young"
+    ],
+    "country": "United States",
+    "imdbRating": 8.1
+  },
+  {
+    "id": "imdb_tt8946378",
+    "title": "Достать ножи",
+    "originalTitle": "Knives Out",
+    "overview": "Частный детектив распутывает смерть патриарха среди эксцентричной семьи, где у каждого есть мотив.",
+    "year": 2019,
+    "rating": 7.9,
+    "genres": [
+      "Детектив",
+      "Комедия",
+      "Криминал"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDU5ZTRkYmItZjg0Mi00ZTQwLThjMWItNWM3MTMxMzVjZmVjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "runtime": "130 min",
+    "director": "Rian Johnson",
+    "cast": [
+      "Daniel Craig",
+      "Chris Evans",
+      "Ana de Armas"
+    ],
+    "country": "United States",
+    "imdbRating": 7.9
   }
 ]

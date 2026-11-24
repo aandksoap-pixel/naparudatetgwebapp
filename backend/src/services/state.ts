@@ -13,6 +13,8 @@ import type {
   AppState,
   DailyUsageRow,
   LimitsInfo,
+  LoveMessageInfo,
+  LoveMessageRow,
   MatchInfo,
   MatchRow,
   PairInfo,
@@ -110,6 +112,17 @@ async function listMatches(pairId: string): Promise<MatchRow[]> {
   return (data ?? []) as MatchRow[];
 }
 
+async function listLoveMessages(pairId: string): Promise<LoveMessageRow[]> {
+  const { data, error } = await supabaseAdmin
+    .from('love_messages')
+    .select('*')
+    .eq('pair_id', pairId)
+    .order('created_at', { ascending: false })
+    .limit(50);
+  if (error) throw mapDbError(error);
+  return (data ?? []) as LoveMessageRow[];
+}
+
 async function listReminders(pairId: string): Promise<ReminderRow[]> {
   const { data, error } = await supabaseAdmin
     .from('reminders')
@@ -166,6 +179,16 @@ export function toMatchInfo(row: MatchRow): MatchInfo {
     isCompleted: row.is_completed,
     createdAt: row.created_at,
     completedAt: row.completed_at,
+  };
+}
+
+export function toLoveMessageInfo(row: LoveMessageRow): LoveMessageInfo {
+  return {
+    id: row.id,
+    senderId: row.sender_id,
+    receiverId: row.receiver_id,
+    text: row.text,
+    createdAt: row.created_at,
   };
 }
 
@@ -261,15 +284,23 @@ export async function buildState(userId: number): Promise<AppState> {
   // Дата Москвы считается локально: не тратим ещё один сетевой round-trip.
   const today = moscowDateString();
 
-  const [partner, usageRow, matchRows, reminderRows, mySwipes] = pair
+  const [partner, usageRow, matchRows, reminderRows, loveRows, mySwipes] = pair
     ? await Promise.all([
         getPartnerRow(pair.id, userId),
         getUsageRow(pair.id, today),
         listMatches(pair.id),
         listReminders(pair.id),
+        listLoveMessages(pair.id),
         listMySwipes(pair.id, userId),
       ])
-    : [null, null, [] as MatchRow[], [] as ReminderRow[], { movie: [], food: [] }];
+    : [
+        null,
+        null,
+        [] as MatchRow[],
+        [] as ReminderRow[],
+        [] as LoveMessageRow[],
+        { movie: [], food: [] },
+      ];
 
   const subscription = computeSubscription(pair);
   const usage: UsageInfo = {
@@ -288,6 +319,7 @@ export async function buildState(userId: number): Promise<AppState> {
     usage,
     matches: matchRows.map(toMatchInfo),
     reminders: reminderRows.map(toReminderInfo),
+    loveMessages: loveRows.map(toLoveMessageInfo),
     mySwipes,
     isAdmin: isAdminUser(userId),
     serverTime: new Date().toISOString(),

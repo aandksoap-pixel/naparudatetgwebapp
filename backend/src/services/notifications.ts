@@ -99,6 +99,18 @@ export async function notifyReminderDone(
   );
 }
 
+/** Тёплое сообщение партнёру из раздела «Любовь». */
+export async function notifyLoveMessage(
+  receiverTelegramId: number,
+  senderName: string,
+  text: string,
+): Promise<boolean> {
+  return sendMessage(
+    receiverTelegramId,
+    `💌 <b>${escapeHtml(senderName)}</b> передаёт тебе:\n\n${escapeHtml(text)}`,
+  );
+}
+
 /** Партнёру — активация триала. */
 export async function notifyTrialActivated(
   partnerTelegramId: number,

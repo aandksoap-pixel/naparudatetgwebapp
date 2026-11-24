@@ -9,6 +9,7 @@ import type { HealthResponse } from '../types.js';
 import { adminRoutes } from './admin.js';
 import { contentRoutes } from './content.js';
 import { cronRoutes } from './cron.js';
+import { loveRoutes } from './love.js';
 import { matchRoutes } from './matches.js';
 import { moodRoutes } from './mood.js';
 import { pairRoutes } from './pair.js';
@@ -47,6 +48,7 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
   await app.register(pairRoutes, { prefix: '/api' });
   await app.register(profileRoutes, { prefix: '/api' });
   await app.register(moodRoutes, { prefix: '/api' });
+  await app.register(loveRoutes, { prefix: '/api' });
   await app.register(swipeRoutes, { prefix: '/api' });
   await app.register(matchRoutes, { prefix: '/api' });
   await app.register(reminderRoutes, { prefix: '/api' });

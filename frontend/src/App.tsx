@@ -14,6 +14,7 @@ import { HeaderPair } from './components/HeaderPair';
 import { BottomNav, type TabKey } from './components/BottomNav';
 import { PaywallModal } from './components/PaywallModal';
 import { SwipesTab } from './components/tabs/SwipesTab';
+import { LoveTab } from './components/tabs/LoveTab';
 import { MoodTab } from './components/tabs/MoodTab';
 import { RemindersTab } from './components/tabs/RemindersTab';
 import { ProfileTab } from './components/tabs/ProfileTab';
@@ -230,6 +231,9 @@ function Dashboard(): JSX.Element {
       <main className="page-bottom min-w-0 flex-1">
         <div className={activeTab === 'swipes' ? 'block' : 'hidden'}>
           <SwipesTab />
+        </div>
+        <div className={activeTab === 'love' ? 'block' : 'hidden'}>
+          <LoveTab />
         </div>
         <div className={activeTab === 'mood' ? 'block' : 'hidden'}>
           <MoodTab />

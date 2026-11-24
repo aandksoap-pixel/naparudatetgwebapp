@@ -135,6 +135,16 @@ export interface ReminderRow {
   created_at: string;
 }
 
+export interface LoveMessageRow {
+  id: string;
+  pair_id: string;
+  sender_id: number;
+  receiver_id: number;
+  text: string;
+  is_read: boolean;
+  created_at: string;
+}
+
 export interface PaymentRow {
   id: string;
   pair_id: string;
@@ -281,6 +291,14 @@ export interface MatchInfo {
   completedAt: string | null;
 }
 
+export interface LoveMessageInfo {
+  id: string;
+  senderId: number;
+  receiverId: number;
+  text: string;
+  createdAt: string;
+}
+
 export interface ReminderInfo {
   id: string;
   senderId: number;
@@ -304,6 +322,11 @@ export interface MovieCard {
   year: number | null;
   rating: number;
   genres: string[];
+  runtime?: string;
+  director?: string;
+  cast?: string[];
+  country?: string;
+  imdbRating?: number;
 }
 
 export interface FoodCard {
@@ -334,6 +357,7 @@ export interface AppState {
   usage: UsageInfo;
   matches: MatchInfo[];
   reminders: ReminderInfo[];
+  loveMessages: LoveMessageInfo[];
   mySwipes: { movie: string[]; food: string[] };
   isAdmin: boolean;
   serverTime: string;

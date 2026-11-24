@@ -214,11 +214,27 @@ create table if not exists public.admin_grants (
 );
 
 -- ----------------------------------------------------------------------------
+-- 7.2 love_messages — тёплые сообщения партнёру (не напоминания)
+-- ----------------------------------------------------------------------------
+create table if not exists public.love_messages (
+  id          uuid primary key default gen_random_uuid(),
+  pair_id     uuid not null references public.pairs(id) on delete cascade,
+  sender_id   bigint not null references public.users(id) on delete cascade,
+  receiver_id bigint not null references public.users(id) on delete cascade,
+  text        text not null,
+  is_read     boolean not null default false,
+  created_at  timestamptz not null default now(),
+  constraint love_messages_text_check check (char_length(btrim(text)) between 1 and 300),
+  constraint love_messages_distinct_users_check check (sender_id <> receiver_id)
+);
+
+-- ----------------------------------------------------------------------------
 -- 8. Индексы
 -- ----------------------------------------------------------------------------
 create index if not exists users_pair_id_idx on public.users(pair_id);
 create index if not exists users_last_seen_idx on public.users(last_seen_at desc);
 create index if not exists admin_grants_created_idx on public.admin_grants(created_at desc);
+create index if not exists love_messages_pair_created_idx on public.love_messages(pair_id, created_at desc);
 create index if not exists pairs_user1_id_idx on public.pairs(user1_id);
 create index if not exists pairs_user2_id_idx on public.pairs(user2_id);
 create index if not exists pairs_expiry_idx
@@ -1157,6 +1173,7 @@ alter table public.matches enable row level security;
 alter table public.reminders enable row level security;
 alter table public.payments enable row level security;
 alter table public.admin_grants enable row level security;
+alter table public.love_messages enable row level security;
 
 drop policy if exists users_select_own_pair on public.users;
 create policy users_select_own_pair
@@ -1203,6 +1220,13 @@ for select
 to authenticated
 using (pair_id = nullif(auth.jwt() ->> 'pair_id', '')::uuid);
 
+drop policy if exists love_messages_select_own on public.love_messages;
+create policy love_messages_select_own
+on public.love_messages
+for select
+to authenticated
+using (pair_id = nullif(auth.jwt() ->> 'pair_id', '')::uuid);
+
 -- payments клиенту не отдаём вообще (нет policy)
 
 -- Отзываем права на запись и прямой доступ anon.
@@ -1214,6 +1238,7 @@ revoke all on table public.matches from anon, authenticated;
 revoke all on table public.reminders from anon, authenticated;
 revoke all on table public.payments from anon, authenticated;
 revoke all on table public.admin_grants from anon, authenticated;
+revoke all on table public.love_messages from anon, authenticated;
 
 grant select on table public.users to authenticated;
 grant select on table public.pairs to authenticated;
@@ -1221,6 +1246,7 @@ grant select on table public.daily_usage to authenticated;
 grant select on table public.swipes to authenticated;
 grant select on table public.matches to authenticated;
 grant select on table public.reminders to authenticated;
+grant select on table public.love_messages to authenticated;
 
 -- Backend использует service_role (service key / service_role JWT).
 -- BYPASSRLS не даёт SQL-привилегий автоматически, поэтому выдаём их явно.
@@ -1284,7 +1310,7 @@ do $$
 declare
   t text;
 begin
-  foreach t in array array['users', 'pairs', 'matches', 'reminders', 'daily_usage']
+  foreach t in array array['users', 'pairs', 'matches', 'reminders', 'daily_usage', 'love_messages']
   loop
     if not exists (
       select 1
@@ -1303,6 +1329,7 @@ alter table public.pairs replica identity full;
 alter table public.matches replica identity full;
 alter table public.reminders replica identity full;
 alter table public.daily_usage replica identity full;
+alter table public.love_messages replica identity full;
 
 -- ============================================================================
 -- 18. Комментарии к таблицам
@@ -1315,6 +1342,7 @@ comment on table public.matches is 'Взаимные лайки пары';
 comment on table public.reminders is 'Напоминания партнёру с отложенной отправкой';
 comment on table public.payments is 'Идемпотентные платежи Telegram Stars и ЮKassa';
 comment on table public.admin_grants is 'История ручных выдач и отзывов PRO администратором';
+comment on table public.love_messages is 'Тёплые сообщения между партнёрами';
 
 notify pgrst, 'reload schema';
 

@@ -5,6 +5,7 @@ import type {
   Category,
   ContentResponse,
   FoodCard,
+  LoveResponse,
   MoodResponse,
   MovieCard,
   PaymentPlan,
@@ -347,6 +348,13 @@ export const api = {
       `/matches/${encodeURIComponent(matchId)}`,
       { method: 'PATCH', body: { isCompleted } },
     );
+  },
+
+  sendLove(text: string): Promise<LoveResponse> {
+    return request<LoveResponse>('/love', {
+      method: 'POST',
+      body: { text },
+    });
   },
 
   createReminder(

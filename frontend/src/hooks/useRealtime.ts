@@ -12,6 +12,7 @@ const REALTIME_TABLES = [
   'matches',
   'reminders',
   'daily_usage',
+  'love_messages',
 ] as const;
 
 const REFRESH_DEBOUNCE_MS = 400;

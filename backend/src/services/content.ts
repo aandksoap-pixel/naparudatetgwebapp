@@ -20,7 +20,7 @@ const MOVIES_CACHE_TTL_MS = 30 * 60 * 1000;
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 const TMDB_TIMEOUT_MS = 8_000;
-const TMDB_PAGES = [1, 2, 3] as const;
+const TMDB_PAGES = [1, 2, 3, 4, 5] as const;
 
 /** Русские названия жанров TMDB (genre_ids из /trending). */
 const TMDB_GENRES: Record<number, string> = {
@@ -44,6 +44,20 @@ const TMDB_GENRES: Record<number, string> = {
   10752: 'Военный',
   37: 'Вестерн',
 };
+
+/** Перемешивает массив на месте (Fisher–Yates). */
+function shuffle<T>(items: T[]): T[] {
+  for (let index = items.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    const current = items[index];
+    const other = items[swapIndex];
+    if (current !== undefined && other !== undefined) {
+      items[index] = other;
+      items[swapIndex] = current;
+    }
+  }
+  return items;
+}
 
 // ---------------------------------------------------------------------------
 // Чтение локальных JSON (работает и в tsx, и в собранном dist)
@@ -184,6 +198,11 @@ const fallbackMovieSchema = z.object({
   rating: z.number().optional(),
   genres: z.array(z.string()).optional().default([]),
   poster: z.string().optional().default(''),
+  runtime: z.string().optional(),
+  director: z.string().optional(),
+  cast: z.array(z.string()).optional(),
+  country: z.string().optional(),
+  imdbRating: z.number().optional(),
 });
 
 let fallbackMoviesCache: MovieCard[] | null = null;
@@ -207,6 +226,11 @@ function loadFallbackMovies(): MovieCard[] {
     year: movie.year ?? null,
     rating: movie.rating ?? 0,
     genres: movie.genres,
+    runtime: movie.runtime,
+    director: movie.director,
+    cast: movie.cast,
+    country: movie.country,
+    imdbRating: movie.imdbRating,
   }));
 
   return fallbackMoviesCache;
@@ -253,9 +277,10 @@ export async function getMovies(
     moviesCache = cache;
   }
 
-  const items = cache.items.filter((movie) => !excludeIds.has(movie.id)).slice(0, limit);
+  const available = cache.items.filter((movie) => !excludeIds.has(movie.id));
+  shuffle(available);
 
-  return { items, source: cache.source };
+  return { items: available.slice(0, limit), source: cache.source };
 }
 
 // ---------------------------------------------------------------------------
@@ -314,10 +339,9 @@ export function getFood(
   excludeIds: ReadonlySet<string>,
 ): { items: FoodCard[]; source: 'local' } {
   try {
-    const items = loadFoodCatalog()
-      .filter((item) => !excludeIds.has(item.id))
-      .slice(0, limit);
-    return { items, source: 'local' };
+    const available = loadFoodCatalog().filter((item) => !excludeIds.has(item.id));
+    shuffle(available);
+    return { items: available.slice(0, limit), source: 'local' };
   } catch (error) {
     logger.error({ err: error }, 'Каталог еды недоступен');
     throw appErrors.internal('Каталог еды временно недоступен');

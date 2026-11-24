@@ -84,6 +84,14 @@ export interface MatchInfo {
   completedAt: string | null;
 }
 
+export interface LoveMessageInfo {
+  id: string;
+  senderId: number;
+  receiverId: number;
+  text: string;
+  createdAt: string;
+}
+
 export interface ReminderInfo {
   id: string;
   senderId: number;
@@ -107,6 +115,11 @@ export interface MovieCard {
   year: number | null;
   rating: number;
   genres: string[];
+  runtime?: string;
+  director?: string;
+  cast?: string[];
+  country?: string;
+  imdbRating?: number;
 }
 
 export interface FoodCard {
@@ -137,6 +150,7 @@ export interface AppState {
   usage: UsageInfo;
   matches: MatchInfo[];
   reminders: ReminderInfo[];
+  loveMessages: LoveMessageInfo[];
   mySwipes: { movie: string[]; food: string[] };
   isAdmin: boolean;
   serverTime: string;
@@ -265,6 +279,11 @@ export interface SwipeResponse {
 export interface ReminderResponse {
   state: AppState;
   reminder: ReminderInfo;
+}
+
+export interface LoveResponse {
+  state: AppState;
+  message: LoveMessageInfo;
 }
 
 export interface StarsInvoiceResponse {
