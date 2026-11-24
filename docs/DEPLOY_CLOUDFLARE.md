@@ -54,6 +54,24 @@ Render Free засыпает. Для cron создайте задачу на cro
 - header `X-Cron-Secret: <CRON_SECRET>`
 - каждую минуту.
 
+## Обязательная подписка на канал
+
+В Render (и локально) задайте:
+
+```env
+TELEGRAM_REQUIRED_CHANNEL=@your_channel
+TELEGRAM_CHANNEL_URL=https://t.me/your_channel
+```
+
+Бот должен быть **администратором** канала. Тогда:
+
+- `/start` без подписки показывает кнопки «Подписаться» и «Проверить подписку»;
+- API `/api/session` возвращает `403 CHANNEL_SUBSCRIPTION_REQUIRED`;
+- Mini App показывает экран подписки;
+- после подписки доступ открывается.
+
+Если переменная пустая, проверка отключена (текущий режим).
+
 ## Telegram
 
 После Cloudflare-деплоя:
