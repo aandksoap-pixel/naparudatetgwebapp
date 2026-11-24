@@ -29,9 +29,9 @@ services:
       - key: MINI_APP_URL
         sync: false
       - key: TELEGRAM_REQUIRED_CHANNEL
-        sync: false
+        value: "@naparulove"
       - key: TELEGRAM_CHANNEL_URL
-        sync: false
+        value: "https://t.me/naparulove"
       - key: TELEGRAM_BOT_TOKEN
         sync: false
       - key: TELEGRAM_BOT_USERNAME
