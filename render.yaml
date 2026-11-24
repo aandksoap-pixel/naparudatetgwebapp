@@ -60,6 +60,8 @@ services:
         value: "750"
       - key: CRON_SECRET
         sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        value: "5356551288"
       - key: TMDB_API_KEY
         sync: false
       - key: TMDB_ACCESS_TOKEN

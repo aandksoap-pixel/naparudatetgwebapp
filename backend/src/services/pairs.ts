@@ -75,14 +75,25 @@ export async function ensureUser(input: EnsureUserInput): Promise<UserRow> {
   const nextUsername = input.username;
   // Если Telegram скрыл фото (null), не стираем ранее сохранённый аватар.
   const nextAvatarUrl = input.avatarUrl ?? existing.avatar_url;
+  const lastSeenMs = Date.parse(existing.last_seen_at ?? '');
+  const shouldTouchLastSeen =
+    !Number.isFinite(lastSeenMs) || Date.now() - lastSeenMs > 5 * 60 * 1000;
 
-  if (existing.username === nextUsername && existing.avatar_url === nextAvatarUrl) {
+  if (
+    existing.username === nextUsername &&
+    existing.avatar_url === nextAvatarUrl &&
+    !shouldTouchLastSeen
+  ) {
     return existing;
   }
 
   const { data: updatedData, error: updateError } = await supabaseAdmin
     .from('users')
-    .update({ username: nextUsername, avatar_url: nextAvatarUrl })
+    .update({
+      username: nextUsername,
+      avatar_url: nextAvatarUrl,
+      ...(shouldTouchLastSeen ? { last_seen_at: new Date().toISOString() } : {}),
+    })
     .eq('id', input.id)
     .select('*')
     .single();

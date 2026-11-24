@@ -15,6 +15,7 @@ import {
 import { copyText, openTelegramLink } from '@/lib/telegram';
 import { useApp } from '@/context/AppContext';
 import { useToast } from '@/context/ToastContext';
+import { AdminPanel } from '@/components/AdminPanel';
 import { Avatar } from '@/components/Avatar';
 import { Modal } from '@/components/Modal';
 import { PlanBadge } from '@/components/PlanBadge';
@@ -63,6 +64,7 @@ export function ProfileTab(): JSX.Element {
   const [leaveOpen, setLeaveOpen] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const [leaveError, setLeaveError] = useState<string | null>(null);
+  const [adminOpen, setAdminOpen] = useState(false);
 
   if (!state) return <div />;
 
@@ -503,6 +505,37 @@ export function ProfileTab(): JSX.Element {
         </section>
       ) : null}
 
+      {/* Админ-панель — только для ADMIN_TELEGRAM_IDS */}
+      {state.isAdmin ? (
+        <section className="surface-solid rounded-[24px] p-4">
+          <button
+            type="button"
+            onClick={() => {
+              hapticSelection();
+              setAdminOpen(true);
+            }}
+            className="flex w-full items-center justify-between gap-3 text-left"
+          >
+            <span className="flex items-center gap-2.5">
+              <span aria-hidden="true" className="text-xl">
+                🛡️
+              </span>
+              <span>
+                <span className="block text-sm font-semibold text-tg-text">
+                  Админ-панель
+                </span>
+                <span className="block text-[11px] text-tg-hint">
+                  Аналитика, платежи и выдача PRO
+                </span>
+              </span>
+            </span>
+            <span aria-hidden="true" className="text-tg-hint">
+              →
+            </span>
+          </button>
+        </section>
+      ) : null}
+
       {/* Бот и поддержка */}
       <section className="surface-solid rounded-[24px] p-4">
         <button
@@ -549,6 +582,8 @@ export function ProfileTab(): JSX.Element {
           Пространство для двоих · сделано с заботой 🫶
         </p>
       </section>
+
+      <AdminPanel open={adminOpen} onClose={() => setAdminOpen(false)} />
 
       <Modal
         open={leaveOpen}

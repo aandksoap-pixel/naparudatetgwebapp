@@ -7,6 +7,7 @@ import type { FastifyRequest } from 'fastify';
 import { config } from '../config.js';
 import type { UserRow } from '../types.js';
 import { ensureUser } from '../services/pairs.js';
+import { isAdminUser } from './admin.js';
 import {
   isChannelGateEnabled,
   isSubscribedToRequiredChannel,
@@ -82,4 +83,12 @@ export function getAuth(request: FastifyRequest): AuthContext {
     throw appErrors.invalidInitData('Запрос не авторизован');
   }
   return request.auth;
+}
+
+/** Дополнительный preHandler для админ-маршрутов. */
+export async function requireAdmin(request: FastifyRequest): Promise<void> {
+  const auth = getAuth(request);
+  if (!isAdminUser(auth.userId)) {
+    throw appErrors.notAdmin();
+  }
 }

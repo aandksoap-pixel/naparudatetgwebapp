@@ -5,6 +5,7 @@
  * которые используют остальные сервисы.
  */
 import { config } from '../config.js';
+import { isAdminUser } from '../lib/admin.js';
 import { appErrors, mapDbError } from '../lib/errors.js';
 import { daysLeftUntil, daysTogether, moscowDateString } from '../lib/moscow.js';
 import { supabaseAdmin } from '../lib/supabase.js';
@@ -285,6 +286,7 @@ export async function buildState(userId: number): Promise<AppState> {
     matches: matchRows.map(toMatchInfo),
     reminders: reminderRows.map(toReminderInfo),
     mySwipes,
+    isAdmin: isAdminUser(userId),
     serverTime: new Date().toISOString(),
   };
 }

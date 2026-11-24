@@ -6,6 +6,7 @@
 import type { FastifyInstance } from 'fastify';
 import { supabaseAdmin } from '../lib/supabase.js';
 import type { HealthResponse } from '../types.js';
+import { adminRoutes } from './admin.js';
 import { contentRoutes } from './content.js';
 import { cronRoutes } from './cron.js';
 import { matchRoutes } from './matches.js';
@@ -51,6 +52,7 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
   await app.register(reminderRoutes, { prefix: '/api' });
   await app.register(contentRoutes, { prefix: '/api' });
   await app.register(subscriptionRoutes, { prefix: '/api' });
+  await app.register(adminRoutes, { prefix: '/api' });
   await app.register(cronRoutes, { prefix: '/api' });
 
   await app.register(webhookRoutes);

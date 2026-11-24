@@ -24,6 +24,7 @@ export type ApiErrorCode =
   | 'TRIAL_USED'
   | 'LIMIT_REACHED'
   | 'CHANNEL_SUBSCRIPTION_REQUIRED'
+  | 'NOT_ADMIN'
   | 'PAYMENT_CONFLICT'
   | 'RATE_LIMITED'
   | 'INTERNAL_ERROR';
@@ -79,6 +80,7 @@ export const appErrors = {
     new AppError(409, 'OWN_PAIR', message),
   trialUsed: (message = 'Пробный период уже использован') =>
     new AppError(409, 'TRIAL_USED', message),
+  notAdmin: () => new AppError(403, 'NOT_ADMIN', 'Доступ только для администратора'),
   channelRequired: (channelUrl: string | null) =>
     new AppError(
       403,

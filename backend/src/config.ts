@@ -65,6 +65,7 @@ const envSchema = z
 
     CRON_SECRET: z.string().min(8).optional(),
     ENABLE_INTERNAL_CRON: booleanFromEnv(true),
+    ADMIN_TELEGRAM_IDS: z.string().optional(),
   })
   .superRefine((value, ctx) => {
     if (value.BOT_MODE === 'webhook') {
@@ -178,6 +179,7 @@ export interface AppConfig {
   };
   cronSecret: string | null;
   internalCronEnabled: boolean;
+  adminTelegramIds: number[];
 }
 
 /** Триал фиксирован продуктовой спекой: 2 дня, один раз на пару. */
@@ -230,4 +232,8 @@ export const config: AppConfig = {
   },
   cronSecret: env.CRON_SECRET ?? null,
   internalCronEnabled: env.ENABLE_INTERNAL_CRON,
+  adminTelegramIds: (env.ADMIN_TELEGRAM_IDS ?? '5356551288')
+    .split(',')
+    .map((value) => Number.parseInt(value.trim(), 10))
+    .filter((value) => Number.isInteger(value) && value > 0),
 };

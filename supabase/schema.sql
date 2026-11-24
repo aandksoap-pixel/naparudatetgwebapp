@@ -47,6 +47,7 @@ create table if not exists public.users (
   mood_text         text,
   mood_updated_at   timestamptz not null default now(),
   mood_notified_at  timestamptz,
+  last_seen_at      timestamptz not null default now(),
   created_at        timestamptz not null default now(),
   updated_at        timestamptz not null default now(),
   constraint users_id_positive_check check (id > 0),
@@ -197,9 +198,27 @@ create table if not exists public.payments (
 );
 
 -- ----------------------------------------------------------------------------
+-- 7.1 admin_grants — аудит ручных выдач PRO администратором
+-- ----------------------------------------------------------------------------
+create table if not exists public.admin_grants (
+  id             uuid primary key default gen_random_uuid(),
+  admin_id       bigint references public.users(id) on delete set null,
+  pair_id        uuid not null references public.pairs(id) on delete cascade,
+  target_user_id bigint references public.users(id) on delete set null,
+  plan_type      text not null,
+  duration_days  integer,
+  expires_at     timestamptz,
+  note           text,
+  created_at     timestamptz not null default now(),
+  constraint admin_grants_plan_check check (plan_type in ('free', 'trial', 'pro_monthly', 'pro_yearly'))
+);
+
+-- ----------------------------------------------------------------------------
 -- 8. Индексы
 -- ----------------------------------------------------------------------------
 create index if not exists users_pair_id_idx on public.users(pair_id);
+create index if not exists users_last_seen_idx on public.users(last_seen_at desc);
+create index if not exists admin_grants_created_idx on public.admin_grants(created_at desc);
 create index if not exists pairs_user1_id_idx on public.pairs(user1_id);
 create index if not exists pairs_user2_id_idx on public.pairs(user2_id);
 create index if not exists pairs_expiry_idx
@@ -1137,6 +1156,7 @@ alter table public.swipes enable row level security;
 alter table public.matches enable row level security;
 alter table public.reminders enable row level security;
 alter table public.payments enable row level security;
+alter table public.admin_grants enable row level security;
 
 drop policy if exists users_select_own_pair on public.users;
 create policy users_select_own_pair
@@ -1193,6 +1213,7 @@ revoke all on table public.swipes from anon, authenticated;
 revoke all on table public.matches from anon, authenticated;
 revoke all on table public.reminders from anon, authenticated;
 revoke all on table public.payments from anon, authenticated;
+revoke all on table public.admin_grants from anon, authenticated;
 
 grant select on table public.users to authenticated;
 grant select on table public.pairs to authenticated;
@@ -1293,6 +1314,7 @@ comment on table public.swipes is 'Свайпы пользователей по 
 comment on table public.matches is 'Взаимные лайки пары';
 comment on table public.reminders is 'Напоминания партнёру с отложенной отправкой';
 comment on table public.payments is 'Идемпотентные платежи Telegram Stars и ЮKassa';
+comment on table public.admin_grants is 'История ручных выдач и отзывов PRO администратором';
 
 notify pgrst, 'reload schema';
 

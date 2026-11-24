@@ -138,7 +138,83 @@ export interface AppState {
   matches: MatchInfo[];
   reminders: ReminderInfo[];
   mySwipes: { movie: string[]; food: string[] };
+  isAdmin: boolean;
   serverTime: string;
+}
+
+export interface AdminUserView {
+  id: number;
+  username: string | null;
+  firstName: string;
+  avatarUrl: string | null;
+  pairId: string | null;
+  partnerName: string | null;
+  plan: PlanType;
+  isPro: boolean;
+  trialUsed: boolean;
+  expiresAt: string | null;
+  daysLeft: number | null;
+  lastSeenAt: string;
+  createdAt: string;
+}
+
+export interface AdminPaymentView {
+  id: string;
+  pairId: string;
+  userName: string | null;
+  plan: string;
+  provider: string;
+  amount: number;
+  currency: string;
+  status: string;
+  createdAt: string;
+  paidAt: string | null;
+}
+
+export interface AdminGrantView {
+  id: string;
+  adminId: number | null;
+  adminName: string | null;
+  pairId: string;
+  targetUserId: number | null;
+  targetName: string | null;
+  planType: string;
+  durationDays: number | null;
+  expiresAt: string | null;
+  note: string | null;
+  createdAt: string;
+}
+
+export interface AdminOverview {
+  stats: {
+    totalUsers: number;
+    totalPairs: number;
+    activePro: number;
+    activeTrial: number;
+    freePairs: number;
+    loginsToday: number;
+    paymentsCount: number;
+    starsRevenue: number;
+  };
+  users: AdminUserView[];
+  payments: AdminPaymentView[];
+  grants: AdminGrantView[];
+  serverTime: string;
+}
+
+export interface AdminGrantResponse {
+  pair: PairInfoRow;
+  grant: AdminGrantView;
+}
+
+export interface PairInfoRow {
+  id: string;
+  user1_id: number;
+  user2_id: number | null;
+  plan_type: PlanType;
+  trial_used: boolean;
+  subscription_expires_at: string | null;
+  created_at: string;
 }
 
 export interface RealtimeCredentials {

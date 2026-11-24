@@ -65,6 +65,7 @@ export interface UserRow {
   mood_text: string | null;
   mood_updated_at: string;
   mood_notified_at: string | null;
+  last_seen_at: string;
   created_at: string;
   updated_at: string;
 }
@@ -334,7 +335,86 @@ export interface AppState {
   matches: MatchInfo[];
   reminders: ReminderInfo[];
   mySwipes: { movie: string[]; food: string[] };
+  isAdmin: boolean;
   serverTime: string;
+}
+
+// ---------------------------------------------------------------------------
+// Админ-панель
+// ---------------------------------------------------------------------------
+
+export interface AdminUserView {
+  id: number;
+  username: string | null;
+  firstName: string;
+  avatarUrl: string | null;
+  pairId: string | null;
+  partnerName: string | null;
+  plan: PlanType;
+  isPro: boolean;
+  trialUsed: boolean;
+  expiresAt: string | null;
+  daysLeft: number | null;
+  lastSeenAt: string;
+  createdAt: string;
+}
+
+export interface AdminPaymentView {
+  id: string;
+  pairId: string;
+  userName: string | null;
+  plan: string;
+  provider: string;
+  amount: number;
+  currency: string;
+  status: string;
+  createdAt: string;
+  paidAt: string | null;
+}
+
+export interface AdminGrantView {
+  id: string;
+  adminId: number | null;
+  adminName: string | null;
+  pairId: string;
+  targetUserId: number | null;
+  targetName: string | null;
+  planType: string;
+  durationDays: number | null;
+  expiresAt: string | null;
+  note: string | null;
+  createdAt: string;
+}
+
+export interface AdminStats {
+  totalUsers: number;
+  totalPairs: number;
+  activePro: number;
+  activeTrial: number;
+  freePairs: number;
+  loginsToday: number;
+  paymentsCount: number;
+  starsRevenue: number;
+}
+
+export interface AdminOverview {
+  stats: AdminStats;
+  users: AdminUserView[];
+  payments: AdminPaymentView[];
+  grants: AdminGrantView[];
+  serverTime: string;
+}
+
+export interface AdminGrantRow {
+  id: string;
+  admin_id: number | null;
+  pair_id: string;
+  target_user_id: number | null;
+  plan_type: PlanType;
+  duration_days: number | null;
+  expires_at: string | null;
+  note: string | null;
+  created_at: string;
 }
 
 export interface RealtimeCredentials {
