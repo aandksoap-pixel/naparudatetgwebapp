@@ -47,6 +47,11 @@ Cloudflare собирал проект из корня и искал `dist` в �
    - `CORS_ORIGINS=https://<project>.pages.dev,https://web.telegram.org`
 4. Проверьте `https://naparu-backend.onrender.com/api/health`.
 5. В Cloudflare Pages обновите `BACKEND_URL` на этот адрес.
+6. Авто-деплой backend без ручных действий:
+   - Render → Settings → **Auto-Deploy: On**;
+   - либо создайте **Deploy Hook** и добавьте его URL в GitHub Secrets как
+     `RENDER_DEPLOY_HOOK` — workflow `.github/workflows/deploy-backend.yml`
+     сам вызовет деплой после пуша в `main`.
 
 Render Free засыпает после 15 минут без запросов. Настроены **два независимых
 механизма**, чтобы этого не происходило и не требовались ежедневные деплои:

@@ -43,6 +43,18 @@ export async function isSubscribedToRequiredChannel(
     cache.set(userId, { allowed, expiresAt: Date.now() + CACHE_TTL_MS });
     return allowed;
   } catch (error) {
+    const description =
+      typeof error === 'object' && error !== null && 'description' in error
+        ? String((error as { description?: unknown }).description ?? '')
+        : String(error);
+
+    // Для реального пользователя Telegram обычно возвращает status=left.
+    // "member/user not found" — пользователя нет в канале: закрываем доступ.
+    if (/member not found|user not found|participant.*not found/i.test(description)) {
+      cache.set(userId, { allowed: false, expiresAt: Date.now() + CACHE_TTL_MS });
+      return false;
+    }
+
     logger.warn(
       { err: error, channel, userId },
       'Не удалось проверить подписку на канал — доступ разрешён (fail-open)',
