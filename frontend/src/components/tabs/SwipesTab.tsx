@@ -7,6 +7,7 @@ import type {
   SwipeItem,
 } from '@/types/api';
 import { api, getErrorMessage, isApiError } from '@/lib/api';
+import { loadMovieDeck } from '@/lib/movieCatalog';
 import {
   hapticError,
   hapticImpact,
@@ -101,18 +102,25 @@ export function SwipesTab(): JSX.Element {
       setErrors((previous) => ({ ...previous, [target]: null }));
 
       try {
-        const response =
-          target === 'movie'
-            ? await api.getMovies(CONTENT_LIMIT)
-            : await api.getFood(CONTENT_LIMIT);
-
         const knownIds = new Set<string>([
           ...(stateRef.current?.mySwipes[target] ?? []),
           ...swipedRef.current[target],
           ...decksRef.current[target].map((item) => item.id),
         ]);
 
-        const fresh = response.items.filter((item) => !knownIds.has(item.id));
+        let items: SwipeItem[];
+        if (target === 'movie') {
+          try {
+            // Локальный каталог с постерами и случайной выборкой.
+            items = await loadMovieDeck(CONTENT_LIMIT, knownIds);
+          } catch {
+            items = (await api.getMovies(CONTENT_LIMIT)).items;
+          }
+        } else {
+          items = (await api.getFood(CONTENT_LIMIT)).items;
+        }
+
+        const fresh = items.filter((item) => !knownIds.has(item.id));
         const current = decksRef.current[target];
         const base = append ? current : current;
         const nextDeck = [...base, ...fresh];
@@ -129,8 +137,7 @@ export function SwipesTab(): JSX.Element {
         setLoaded((previous) => ({ ...previous, [target]: true }));
         setExhausted((previous) => ({
           ...previous,
-          [target]:
-            response.items.length < CONTENT_LIMIT || fresh.length === 0,
+          [target]: items.length < CONTENT_LIMIT || fresh.length === 0,
         }));
         return fresh.length;
       } catch (caught) {
