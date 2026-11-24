@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { api, getErrorMessage } from '@/lib/api';
+import { buildPairInviteLink } from '@/lib/format';
 import {
   copyText,
   openTelegramLink,
@@ -54,7 +55,7 @@ function CopyIcon(): JSX.Element {
 
 /** Создание пространства, ожидание партнёра и отвязка пары. */
 export function OnboardingPair(): JSX.Element {
-  const { state, applyState, refreshSession } = useApp();
+  const { state, applyState, refreshSession, config } = useApp();
   const toast = useToast();
   const reduceMotion = useReducedMotion();
 
@@ -86,6 +87,9 @@ export function OnboardingPair(): JSX.Element {
   }
 
   const { pair } = state;
+  const inviteLink = pair
+    ? buildPairInviteLink(config?.botUsername, pair.inviteCode)
+    : null;
 
   const handleCreate = async (): Promise<void> => {
     if (creating) return;
@@ -135,8 +139,8 @@ export function OnboardingPair(): JSX.Element {
   };
 
   const handleCopyLink = async (): Promise<void> => {
-    if (!pair) return;
-    const copiedOk = await copyText(pair.inviteLink);
+    if (!pair || !inviteLink) return;
+    const copiedOk = await copyText(inviteLink);
     if (copiedOk) {
       hapticSelection();
       setCopied(true);
@@ -152,11 +156,11 @@ export function OnboardingPair(): JSX.Element {
   };
 
   const handleShare = (): void => {
-    if (!pair) return;
+    if (!pair || !inviteLink) return;
     hapticImpact('light');
     const text = 'Присоединяйся ко мне в «Пространстве для двоих» 💞';
     const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(
-      pair.inviteLink,
+      inviteLink,
     )}&text=${encodeURIComponent(text)}`;
     openTelegramLink(shareUrl);
   };
@@ -241,7 +245,7 @@ export function OnboardingPair(): JSX.Element {
               Ссылка
             </p>
             <p className="mt-1.5 break-all text-xs leading-5 text-tg-text/80">
-              {pair.inviteLink}
+              {inviteLink}
             </p>
 
             <div className="mt-4 space-y-2.5">

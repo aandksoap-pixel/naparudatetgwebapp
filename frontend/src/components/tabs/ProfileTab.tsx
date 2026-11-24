@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { api, getErrorMessage } from '@/lib/api';
 import {
+  buildPairInviteLink,
   formatDate,
   formatDays,
   parseDateOnly,
@@ -69,6 +70,9 @@ export function ProfileTab(): JSX.Element {
   if (!state) return <div />;
 
   const { user, pair, partner, subscription } = state;
+  const inviteLink = pair
+    ? buildPairInviteLink(config?.botUsername, pair.inviteCode)
+    : null;
   const savedName = user.firstName;
   const savedDate = pair?.relationshipStartDate ?? '';
   const maxDate = todayDateInput();
@@ -163,9 +167,9 @@ export function ProfileTab(): JSX.Element {
   };
 
   const handleCopyInvite = async (): Promise<void> => {
-    if (!pair) return;
+    if (!pair || !inviteLink) return;
     setCopying(true);
-    const copied = await copyText(pair.inviteLink);
+    const copied = await copyText(inviteLink);
     setCopying(false);
     if (copied) {
       hapticSelection();
@@ -464,7 +468,7 @@ export function ProfileTab(): JSX.Element {
           </div>
 
           <p className="mt-2.5 break-all rounded-xl bg-tg-secondary-bg/50 px-3 py-2 text-[11px] leading-4 text-tg-text/75">
-            {pair.inviteLink}
+            {inviteLink}
           </p>
 
           <div className="mt-2.5 flex gap-2">
@@ -484,11 +488,13 @@ export function ProfileTab(): JSX.Element {
               onClick={() => {
                 hapticSelection();
                 const text = 'Присоединяйся ко мне в «Пространстве для двоих» 💞';
-                openTelegramLink(
-                  `https://t.me/share/url?url=${encodeURIComponent(
-                    pair.inviteLink,
-                  )}&text=${encodeURIComponent(text)}`,
-                );
+                if (inviteLink) {
+                  openTelegramLink(
+                    `https://t.me/share/url?url=${encodeURIComponent(
+                      inviteLink,
+                    )}&text=${encodeURIComponent(text)}`,
+                  );
+                }
               }}
               className="btn btn-secondary flex-1"
             >

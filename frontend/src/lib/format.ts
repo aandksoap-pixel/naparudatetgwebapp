@@ -287,3 +287,15 @@ export function reminderStatus(reminder: ReminderInfo): {
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
+
+/**
+ * Invite deep-link. Используем ?start= (бот обрабатывает join), а не
+ * ?startapp=, который требует зарегистрированного Main Mini App.
+ */
+export function buildPairInviteLink(
+  botUsername: string | null | undefined,
+  inviteCode: string,
+): string {
+  const bot = (botUsername ?? 'naparulove_bot').replace(/^@/, '');
+  return `https://t.me/${bot}?start=join_${inviteCode}`;
+}
