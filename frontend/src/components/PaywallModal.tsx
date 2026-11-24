@@ -147,7 +147,7 @@ export function PaywallModal(): JSX.Element | null {
   const open = Boolean(paywallReason && state && config);
 
   const markSuccess = useCallback(
-    (nextState: AppState): void => {
+    (nextState: AppState, message = 'PRO активирован! Теперь без границ ✨'): void => {
       if (successRef.current) return;
       successRef.current = true;
       applyState(nextState);
@@ -155,7 +155,7 @@ export function PaywallModal(): JSX.Element | null {
       setAwaitingNotice(null);
       setError(null);
       hapticSuccess();
-      toast.success('PRO активирован! Теперь без границ ✨');
+      toast.success(message);
       closePaywall();
     },
     [applyState, closePaywall, toast],
@@ -266,7 +266,10 @@ export function PaywallModal(): JSX.Element | null {
     hapticImpact('medium');
     try {
       const response = await api.activateTrial();
-      markSuccess(response.state);
+      markSuccess(
+        response.state,
+        `Пробный период на ${config?.trialDays ?? 2} дня активирован 🎁`,
+      );
     } catch (caught) {
       hapticError();
       if (isApiError(caught) && caught.code === 'TRIAL_USED') {

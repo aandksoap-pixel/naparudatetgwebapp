@@ -34,6 +34,7 @@ export interface AppContextValue {
   loading: boolean;
   error: string | null;
   authError: boolean;
+  channelGateUrl: string | null;
   notice: string | null;
   realtimeStatus: RealtimeStatus;
   refresh: () => Promise<void>;
@@ -56,6 +57,7 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [authError, setAuthError] = useState(false);
+  const [channelGateUrl, setChannelGateUrl] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [paywallReason, setPaywallReason] = useState<PaywallReason | null>(null);
 
@@ -105,11 +107,19 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
         setRealtime(response.realtime);
         setConfig(response.config);
         setAuthError(false);
+        setChannelGateUrl(null);
         if (response.notice && response.notice.trim().length > 0) {
           setNotice(response.notice);
         }
       } catch (caught) {
         if (!mountedRef.current) return;
+        if (isApiError(caught) && caught.code === 'CHANNEL_SUBSCRIPTION_REQUIRED') {
+          const url = caught.details?.channelUrl;
+          setChannelGateUrl(typeof url === 'string' && url.length > 0 ? url : null);
+          setError(null);
+          setAuthError(false);
+          return;
+        }
         if (isApiError(caught) && caught.isAuthError) {
           setAuthError(true);
           setError(getErrorMessage(caught));
@@ -224,6 +234,7 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
       loading,
       error,
       authError,
+      channelGateUrl,
       notice,
       realtimeStatus,
       refresh,
@@ -243,6 +254,7 @@ export function AppProvider({ children }: { children: ReactNode }): JSX.Element 
       loading,
       error,
       authError,
+      channelGateUrl,
       notice,
       realtimeStatus,
       refresh,

@@ -177,6 +177,56 @@ export async function handlePreCheckoutQuery(
   }
 }
 
+/**
+ * Сверка последних Star-транзакций бота. Нужна, если successful_payment
+ * не дошёл (backend был выключен, webhook потерялся) — пользователь нажимает
+ * «Проверить оплату», и подписка активируется по данным Telegram.
+ * Возвращает число новых активаций.
+ */
+export async function reconcileStarPaymentsForUser(userId: number): Promise<number> {
+  let activated = 0;
+  try {
+    const result = await api.getStarTransactions({ offset: 0, limit: 100 });
+    const minDate = Math.floor(Date.now() / 1000) - 7 * 24 * 60 * 60;
+
+    for (const transaction of result.transactions) {
+      if (transaction.amount <= 0) continue;
+      if (transaction.date < minDate) continue;
+      const source = transaction.source;
+      if (!source || source.type !== 'user') continue;
+      if (source.transaction_type !== 'invoice_payment' || !source.invoice_payload) continue;
+      if (source.user.id !== userId) continue;
+
+      const parsed = parseInvoicePayload(source.invoice_payload);
+      if (!parsed || parsed.userId !== userId) continue;
+      if (transaction.amount !== starsForPlan(parsed.plan)) continue;
+
+      const pair = await getPairRow(parsed.pairId);
+      if (!pair) continue;
+
+      const activation = await callRpc<ActivatePaidPlanResult>('app_activate_paid_plan', {
+        p_pair_id: parsed.pairId,
+        p_plan: parsed.plan,
+        p_provider: 'telegram_stars',
+        p_provider_payment_id: transaction.id,
+        p_amount: transaction.amount,
+        p_currency: 'XTR',
+        p_paid_by: userId,
+        p_raw: transaction,
+      });
+
+      if (!activation.already_processed) {
+        activated += 1;
+        const participantIds = await getPairParticipantIds(activation.pair.id);
+        await notifyPaymentSuccess(participantIds, parsed.plan);
+      }
+    }
+  } catch (error) {
+    logger.warn({ err: error, userId }, 'Не удалось сверить Star-транзакции');
+  }
+  return activated;
+}
+
 export interface SuccessfulPaymentLike {
   currency: string;
   total_amount: number;

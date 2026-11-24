@@ -46,7 +46,7 @@ export function MatchModal({
   open,
   onClose,
 }: MatchModalProps): JSX.Element | null {
-  const { state, config } = useApp();
+  const { state } = useApp();
   const toast = useToast();
   const reduceMotion = useReducedMotion();
 
@@ -70,11 +70,12 @@ export function MatchModal({
 
   const handleShare = (): void => {
     if (!match) return;
-    const text = `Мы оба захотели «${match.itemTitle}» 💞 Присоединяйся к нам в «Пространстве для двоих»`;
-    const url = config?.miniAppUrl ?? 'https://t.me';
-    const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(
-      url,
-    )}&text=${encodeURIComponent(text)}`;
+    // Telegram добавляет превью ссылки, если передать url. Передаём только
+    // text — в сообщении останется чистый текст без карточки-ссылки.
+    const text =
+      `Мы оба захотели «${match.itemTitle}» 💞 ` +
+      'Присоединяйся к нам в «Пространстве для двоих»';
+    const shareUrl = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
     try {
       openTelegramLink(shareUrl);
     } catch {

@@ -7,6 +7,11 @@ import type { FastifyRequest } from 'fastify';
 import { config } from '../config.js';
 import type { UserRow } from '../types.js';
 import { ensureUser } from '../services/pairs.js';
+import {
+  isChannelGateEnabled,
+  isSubscribedToRequiredChannel,
+  requiredChannelUrl,
+} from './channel.js';
 import { appErrors } from './errors.js';
 import {
   validateInitData,
@@ -54,6 +59,13 @@ export async function requireTelegramAuth(request: FastifyRequest): Promise<void
     lastName: validated.telegramUser.lastName,
     avatarUrl: validated.telegramUser.avatarUrl,
   });
+
+  if (isChannelGateEnabled()) {
+    const subscribed = await isSubscribedToRequiredChannel(user.id);
+    if (!subscribed) {
+      throw appErrors.channelRequired(requiredChannelUrl());
+    }
+  }
 
   request.auth = {
     userId: user.id,

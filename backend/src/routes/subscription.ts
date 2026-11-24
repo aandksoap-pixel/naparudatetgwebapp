@@ -2,7 +2,10 @@
 import type { FastifyPluginAsync } from 'fastify';
 import { getAuth, requireTelegramAuth } from '../lib/auth.js';
 import { parseInput, subscriptionPlanSchema } from '../lib/validation.js';
-import { createStarsInvoiceLink } from '../services/payments/telegram-stars.js';
+import {
+  createStarsInvoiceLink,
+  reconcileStarPaymentsForUser,
+} from '../services/payments/telegram-stars.js';
 import { buildState } from '../services/state.js';
 import { activateTrial } from '../services/subscription.js';
 
@@ -27,8 +30,8 @@ export const subscriptionRoutes: FastifyPluginAsync = async (app) => {
 
   app.post('/subscription/sync', { preHandler: requireTelegramAuth }, async (request) => {
     const auth = getAuth(request);
-    // Оставлено для совместимости с клиентом: Stars активируются webhook'ом
-    // бота, здесь просто отдаём актуальный снимок состояния.
+    // Сверяем Star-транзакции на случай, если webhook бота не дошёл.
+    await reconcileStarPaymentsForUser(auth.userId);
     const state = await buildState(auth.userId);
     return { state, pending: false };
   });

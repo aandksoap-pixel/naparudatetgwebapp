@@ -11,6 +11,11 @@ import { escapeHtml } from '../lib/html.js';
 import { logger } from '../lib/logger.js';
 import type { TelegramUser } from '../lib/telegram-auth.js';
 import { normalizeInviteCode } from '../lib/validation.js';
+import {
+  isChannelGateEnabled,
+  isSubscribedToRequiredChannel,
+  requiredChannelUrl,
+} from '../lib/channel.js';
 import { ensureUser, joinPair } from '../services/pairs.js';
 import {
   handlePreCheckoutQuery,
@@ -45,6 +50,26 @@ function openSpaceKeyboard(): InlineKeyboardMarkup {
   };
 }
 
+function channelKeyboard(): InlineKeyboardMarkup | undefined {
+  const url = requiredChannelUrl();
+  const rows: InlineKeyboardMarkup['inline_keyboard'] = [];
+  if (url) rows.push([{ text: '📣 Подписаться на канал', url }]);
+  rows.push([{ text: '✅ Проверить подписку', callback_data: 'check_channel' }]);
+  return { inline_keyboard: rows };
+}
+
+const CHANNEL_GATE_TEXT =
+  '🔒 Чтобы открыть «НаПару», сначала подпишитесь на наш Telegram-канал.\n\n' +
+  'После подписки нажмите «Проверить подписку» — доступ откроется автоматически.';
+
+async function ensureChannelSubscription(ctx: Context, userId: number): Promise<boolean> {
+  if (!isChannelGateEnabled()) return true;
+  const subscribed = await isSubscribedToRequiredChannel(userId, true);
+  if (subscribed) return true;
+  await safeReply(ctx, CHANNEL_GATE_TEXT, channelKeyboard());
+  return false;
+}
+
 async function safeReply(
   ctx: Context,
   text: string,
@@ -67,6 +92,9 @@ export function registerBotHandlers(bot: Bot): void {
 
     try {
       const user = await ensureUser(toTelegramUser(from));
+
+      if (!(await ensureChannelSubscription(ctx, from.id))) return;
+
       const payload = typeof ctx.match === 'string' ? ctx.match.trim() : '';
 
       // Deep-link: https://t.me/<bot>?start=join_<code> (или startapp в Mini App).
@@ -106,7 +134,39 @@ export function registerBotHandlers(bot: Bot): void {
     }
   });
 
+  bot.callbackQuery('check_channel', async (ctx) => {
+    const from = ctx.from;
+    if (!from) {
+      await ctx.answerCallbackQuery({ text: 'Не удалось определить пользователя' }).catch(() => undefined);
+      return;
+    }
+    try {
+      const subscribed = await isSubscribedToRequiredChannel(from.id, true);
+      if (!subscribed) {
+        await ctx
+          .answerCallbackQuery({
+            text: 'Подписка пока не найдена. Подпишитесь на канал и попробуйте снова.',
+            show_alert: true,
+          })
+          .catch(() => undefined);
+        return;
+      }
+      await ctx.answerCallbackQuery({ text: 'Подписка подтверждена ✅' }).catch(() => undefined);
+      await safeReply(
+        ctx,
+        '✅ Доступ открыт! Нажмите кнопку ниже, чтобы открыть «Пространство для двоих».',
+        openSpaceKeyboard(),
+      );
+    } catch (error) {
+      logger.warn({ err: error, userId: from.id }, 'Ошибка проверки подписки на канал');
+      await ctx
+        .answerCallbackQuery({ text: 'Не удалось проверить подписку. Попробуйте позже.', show_alert: true })
+        .catch(() => undefined);
+    }
+  });
+
   bot.command('help', async (ctx) => {
+    if (ctx.from && !(await ensureChannelSubscription(ctx, ctx.from.id))) return;
     const text =
       '«Пространство для двоих» — мини-приложение для пар.\n\n' +
       '• Свайпайте фильмы и еду, чтобы найти общие желания\n' +

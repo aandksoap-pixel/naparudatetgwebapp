@@ -32,6 +32,7 @@ export type ApiErrorCode =
   | 'OWN_PAIR'
   | 'TRIAL_USED'
   | 'LIMIT_REACHED'
+  | 'CHANNEL_SUBSCRIPTION_REQUIRED'
   | 'PAYMENT_CONFLICT'
   | 'REMINDER_NOT_FOUND'
   | 'MATCH_NOT_FOUND'
@@ -60,6 +61,8 @@ const FALLBACK_MESSAGES: Record<string, string> = {
   TRIAL_USED: 'Пробный период уже использован.',
   LIMIT_REACHED:
     'Дневной лимит исчерпан. Откройте PRO, чтобы продолжить без ограничений.',
+  CHANNEL_SUBSCRIPTION_REQUIRED:
+    'Подпишитесь на Telegram-канал, чтобы открыть приложение.',
   PAYMENT_CONFLICT: 'Платёж уже привязан к другой паре.',
   REMINDER_NOT_FOUND: 'Напоминание не найдено.',
   MATCH_NOT_FOUND: 'Мэтч не найден.',

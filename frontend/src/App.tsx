@@ -17,7 +17,7 @@ import { SwipesTab } from './components/tabs/SwipesTab';
 import { MoodTab } from './components/tabs/MoodTab';
 import { RemindersTab } from './components/tabs/RemindersTab';
 import { ProfileTab } from './components/tabs/ProfileTab';
-import { getInitData, closeTelegramApp } from './lib/telegram';
+import { getInitData, closeTelegramApp, openTelegramLink } from './lib/telegram';
 import { hapticError, hapticSelection } from './lib/haptics';
 
 /* ------------------------------------------------------------------ */
@@ -104,6 +104,60 @@ function SessionRecoveryScreen({
       >
         Закрыть приложение
       </button>
+    </ScreenShell>
+  );
+}
+
+function ChannelGateScreen({
+  channelUrl,
+  loading,
+  onRetry,
+}: {
+  channelUrl: string | null;
+  loading: boolean;
+  onRetry: () => void;
+}): JSX.Element {
+  return (
+    <ScreenShell>
+      <div className="brand-gradient mx-auto flex h-16 w-16 items-center justify-center rounded-3xl text-3xl shadow-glow">
+        📣
+      </div>
+      <h1 className="mt-5 text-xl font-bold leading-7 text-tg-text">
+        Подпишитесь на канал
+      </h1>
+      <p className="mt-2 text-sm leading-6 text-tg-hint">
+        Чтобы открыть «Пространство для двоих», подпишитесь на наш Telegram-канал.
+        После подписки нажмите «Проверить подписку».
+      </p>
+      <button
+        type="button"
+        onClick={() => {
+          if (channelUrl) {
+            hapticSelection();
+            openTelegramLink(channelUrl);
+          }
+        }}
+        disabled={!channelUrl}
+        className="btn btn-brand mt-5 w-full"
+      >
+        <span aria-hidden="true">📣</span>
+        Подписаться на канал
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          hapticSelection();
+          onRetry();
+        }}
+        disabled={loading}
+        className="btn btn-primary mt-2 w-full"
+      >
+        {loading ? <Spinner size={16} /> : <span aria-hidden="true">✅</span>}
+        Проверить подписку
+      </button>
+      <p className="mt-3 text-[10px] leading-4 text-tg-hint">
+        Доступ откроется автоматически после проверки.
+      </p>
     </ScreenShell>
   );
 }
@@ -204,6 +258,7 @@ function AppContent(): JSX.Element {
     loading,
     error,
     authError,
+    channelGateUrl,
     notice,
     dismissNotice,
     retry,
@@ -219,6 +274,10 @@ function AppContent(): JSX.Element {
     }
     dismissNotice();
   }, [notice, dismissNotice, toast]);
+
+  if (channelGateUrl !== null) {
+    return <ChannelGateScreen channelUrl={channelGateUrl} loading={loading} onRetry={retry} />;
+  }
 
   if (authError) {
     return <SessionRecoveryScreen loading={loading} onRetry={retry} />;

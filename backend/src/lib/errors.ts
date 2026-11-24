@@ -23,6 +23,7 @@ export type ApiErrorCode =
   | 'OWN_PAIR'
   | 'TRIAL_USED'
   | 'LIMIT_REACHED'
+  | 'CHANNEL_SUBSCRIPTION_REQUIRED'
   | 'PAYMENT_CONFLICT'
   | 'RATE_LIMITED'
   | 'INTERNAL_ERROR';
@@ -78,6 +79,13 @@ export const appErrors = {
     new AppError(409, 'OWN_PAIR', message),
   trialUsed: (message = 'Пробный период уже использован') =>
     new AppError(409, 'TRIAL_USED', message),
+  channelRequired: (channelUrl: string | null) =>
+    new AppError(
+      403,
+      'CHANNEL_SUBSCRIPTION_REQUIRED',
+      'Сначала подпишитесь на наш Telegram-канал — после этого откроется доступ.',
+      channelUrl ? { channelUrl } : undefined,
+    ),
   limitReached: (category: Category, limit: number) =>
     new AppError(409, 'LIMIT_REACHED', 'Дневной лимит исчерпан', { category, limit }),
   paymentConflict: (message = 'Платёж привязан к другой паре') =>

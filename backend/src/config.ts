@@ -33,6 +33,8 @@ const envSchema = z
       .min(1, 'Укажите username бота (без @)')
       .transform((value) => value.replace(/^@/, '').trim()),
     TELEGRAM_WEBHOOK_SECRET: z.string().min(8).optional(),
+    TELEGRAM_REQUIRED_CHANNEL: z.string().min(1).optional(),
+    TELEGRAM_CHANNEL_URL: z.string().url().optional(),
     PUBLIC_BASE_URL: z.string().url().optional(),
     BOT_MODE: z.enum(['polling', 'webhook']).default('polling'),
     INIT_DATA_MAX_AGE_SECONDS: z.coerce.number().int().min(60).max(604800).default(86400),
@@ -147,6 +149,8 @@ export interface AppConfig {
     webhookSecret: string | null;
     publicBaseUrl: string | null;
     initDataMaxAgeSeconds: number;
+    requiredChannel: string | null;
+    channelUrl: string | null;
   };
   supabase: {
     url: string;
@@ -189,6 +193,12 @@ export const config: AppConfig = {
     webhookSecret: env.TELEGRAM_WEBHOOK_SECRET ?? null,
     publicBaseUrl: env.PUBLIC_BASE_URL ? trimTrailingSlashes(env.PUBLIC_BASE_URL) : null,
     initDataMaxAgeSeconds: env.INIT_DATA_MAX_AGE_SECONDS,
+    requiredChannel: env.TELEGRAM_REQUIRED_CHANNEL?.trim() || null,
+    channelUrl:
+      env.TELEGRAM_CHANNEL_URL ??
+      (env.TELEGRAM_REQUIRED_CHANNEL
+        ? `https://t.me/${env.TELEGRAM_REQUIRED_CHANNEL.replace(/^@/, '')}`
+        : null),
   },
   supabase: {
     url: trimTrailingSlashes(env.SUPABASE_URL),
