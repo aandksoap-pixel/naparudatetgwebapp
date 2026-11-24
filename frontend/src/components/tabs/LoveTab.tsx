@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { api, getErrorMessage } from '@/lib/api';
+import { createClient } from '@supabase/supabase-js';
+import type { LoveMessageInfo } from '@/types/api';
+import { api, getErrorMessage, isApiError } from '@/lib/api';
 import { formatDateTime, formatRelative } from '@/lib/format';
 import { hapticError, hapticSelection, hapticSuccess } from '@/lib/haptics';
 import { useApp } from '@/context/AppContext';
@@ -20,15 +22,118 @@ const QUICK_MESSAGES: ReadonlyArray<{ emoji: string; text: string }> = [
 ];
 
 /** Раздел «Любовь»: тёплые сообщения без повода и напоминаний. */
+interface RawLoveMessage {
+  id: string;
+  sender_id: number;
+  receiver_id: number;
+  text: string;
+  created_at: string;
+}
+
+function fromRaw(row: RawLoveMessage): LoveMessageInfo {
+  return {
+    id: row.id,
+    senderId: row.sender_id,
+    receiverId: row.receiver_id,
+    text: row.text,
+    createdAt: row.created_at,
+  };
+}
+
 export function LoveTab(): JSX.Element {
-  const { state, applyState } = useApp();
+  const { state, applyState, realtime } = useApp();
   const toast = useToast();
   const reduceMotion = useReducedMotion();
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
+  const [messages, setMessages] = useState<LoveMessageInfo[]>(
+    state?.loveMessages ?? [],
+  );
 
   const userId = state?.user.id ?? 0;
-  const messages = state?.loveMessages ?? [];
+  const pairId = state?.pair?.id ?? null;
+
+  useEffect(() => {
+    const incoming = state?.loveMessages;
+    if (!incoming || incoming.length === 0) return;
+    setMessages((current) => {
+      const byId = new Map(current.map((item) => [item.id, item]));
+      for (const item of incoming) byId.set(item.id, item);
+      return Array.from(byId.values()).sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+      );
+    });
+  }, [state?.loveMessages]);
+
+  // Прямой канал с Supabase: позволяет получать сообщения мгновенно даже
+  // до деплоя последней версии backend. Backend при наличии также шлёт бота.
+  useEffect(() => {
+    if (!realtime || !pairId) return;
+    let cancelled = false;
+    const client = createClient(realtime.url, realtime.anonKey, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+      global: {
+        headers: { Authorization: `Bearer ${realtime.token}` },
+      },
+    });
+    const headers = {
+      apikey: realtime.anonKey,
+      Authorization: `Bearer ${realtime.token}`,
+    };
+
+    const load = async (): Promise<void> => {
+      try {
+        const response = await fetch(
+          `${realtime.url}/rest/v1/love_messages?pair_id=eq.${encodeURIComponent(pairId)}&select=*&order=created_at.desc&limit=50`,
+          { headers },
+        );
+        if (!response.ok) return;
+        const rows = (await response.json()) as RawLoveMessage[];
+        if (!cancelled && Array.isArray(rows)) {
+          setMessages(rows.map(fromRaw));
+        }
+      } catch {
+        /* direct path optional; API state remains */
+      }
+    };
+
+    void (async () => {
+      try {
+        await client.realtime.setAuth(realtime.token);
+      } catch {
+        /* public channel still optional */
+      }
+      if (cancelled) return;
+      client
+        .channel(`love:${pairId}`)
+        .on(
+          'postgres_changes',
+          {
+            event: 'INSERT',
+            schema: 'public',
+            table: 'love_messages',
+            filter: `pair_id=eq.${pairId}`,
+          },
+          (payload) => {
+            const row = payload.new as RawLoveMessage;
+            if (!row?.id) return;
+            const next = fromRaw(row);
+            setMessages((current) =>
+              current.some((item) => item.id === next.id) ? current : [next, ...current],
+            );
+          },
+        )
+        .subscribe();
+    })();
+
+    void load();
+
+    return () => {
+      cancelled = true;
+      void client.removeAllChannels();
+      void client.realtime.disconnect();
+    };
+  }, [pairId, realtime]);
 
   const sorted = useMemo(
     () =>
@@ -51,8 +156,38 @@ export function LoveTab(): JSX.Element {
     setSending(true);
     hapticSelection();
     try {
-      const response = await api.sendLove(trimmed);
-      applyState(response.state);
+      try {
+        const response = await api.sendLove(trimmed);
+        applyState(response.state);
+        setMessages((current) =>
+          current.some((item) => item.id === response.message.id)
+            ? current
+            : [response.message, ...current],
+        );
+      } catch (caught) {
+        // Если backend ещё старой версии и /api/love отсутствует, отправляем
+        // напрямую через защищённый Supabase RPC (RLS + Realtime JWT).
+        if (!isApiError(caught) || caught.status !== 404 || !realtime) throw caught;
+        const response = await fetch(`${realtime.url}/rest/v1/rpc/app_send_love`, {
+          method: 'POST',
+          headers: {
+            apikey: realtime.anonKey,
+            Authorization: `Bearer ${realtime.token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ p_text: trimmed }),
+        });
+        if (!response.ok) {
+          throw new Error(`Не удалось отправить сообщение (${response.status})`);
+        }
+        const row = (await response.json()) as RawLoveMessage;
+        const message = fromRaw(row);
+        setMessages((current) =>
+          current.some((item) => item.id === message.id)
+            ? current
+            : [message, ...current],
+        );
+      }
       setText('');
       hapticSuccess();
       toast.success('Передано партнёру 💌');

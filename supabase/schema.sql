@@ -789,6 +789,51 @@ end;
 $$;
 
 -- ============================================================================
+-- 12.1 RPC: тёплое сообщение (доступно authenticated напрямую через Realtime JWT)
+-- ============================================================================
+create or replace function public.app_send_love(p_text text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare
+  v_uid bigint;
+  v_pair_id uuid;
+  v_receiver bigint;
+  v_text text;
+  v_row public.love_messages%rowtype;
+begin
+  v_uid := nullif(auth.jwt() ->> 'telegram_id', '')::bigint;
+  if v_uid is null then
+    raise exception 'UNAUTHORIZED';
+  end if;
+
+  v_text := btrim(coalesce(p_text, ''));
+  if char_length(v_text) < 1 or char_length(v_text) > 300 then
+    raise exception 'INVALID_TEXT';
+  end if;
+
+  select pair_id into v_pair_id from public.users where id = v_uid;
+  if v_pair_id is null then
+    raise exception 'NO_PAIR';
+  end if;
+
+  select id into v_receiver from public.users
+  where pair_id = v_pair_id and id <> v_uid limit 1;
+  if v_receiver is null then
+    raise exception 'NO_PARTNER';
+  end if;
+
+  insert into public.love_messages (pair_id, sender_id, receiver_id, text)
+  values (v_pair_id, v_uid, v_receiver, v_text)
+  returning * into v_row;
+
+  return to_jsonb(v_row);
+end;
+$$;
+
+-- ============================================================================
 -- 13. RPC: напоминания
 -- ============================================================================
 create or replace function public.app_create_reminder(
@@ -1269,6 +1314,7 @@ revoke all on function public.app_leave_pair(bigint) from public, anon, authenti
 revoke all on function public.app_set_display_name(bigint, text) from public, anon, authenticated;
 revoke all on function public.app_set_relationship_start(bigint, date) from public, anon, authenticated;
 revoke all on function public.app_set_mood(bigint, text, text) from public, anon, authenticated;
+revoke all on function public.app_send_love(text) from public, anon;
 revoke all on function public.app_process_swipe(bigint, text, text, text, text, text) from public, anon, authenticated;
 revoke all on function public.app_complete_match(bigint, uuid, boolean) from public, anon, authenticated;
 revoke all on function public.app_create_reminder(bigint, text, timestamptz) from public, anon, authenticated;
@@ -1286,6 +1332,8 @@ grant execute on function public.app_leave_pair(bigint) to service_role;
 grant execute on function public.app_set_display_name(bigint, text) to service_role;
 grant execute on function public.app_set_relationship_start(bigint, date) to service_role;
 grant execute on function public.app_set_mood(bigint, text, text) to service_role;
+grant execute on function public.app_send_love(text) to authenticated;
+grant execute on function public.app_send_love(text) to service_role;
 grant execute on function public.app_process_swipe(bigint, text, text, text, text, text) to service_role;
 grant execute on function public.app_complete_match(bigint, uuid, boolean) to service_role;
 grant execute on function public.app_create_reminder(bigint, text, timestamptz) to service_role;
