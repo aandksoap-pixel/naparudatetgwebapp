@@ -33,8 +33,14 @@ const envSchema = z
       .min(1, 'Укажите username бота (без @)')
       .transform((value) => value.replace(/^@/, '').trim()),
     TELEGRAM_WEBHOOK_SECRET: z.string().min(8).optional(),
-    TELEGRAM_REQUIRED_CHANNEL: z.string().min(1).optional(),
-    TELEGRAM_CHANNEL_URL: z.string().url().optional(),
+    TELEGRAM_REQUIRED_CHANNEL: z.preprocess(
+      (value) => (value === '' ? undefined : value),
+      z.string().min(1).optional(),
+    ),
+    TELEGRAM_CHANNEL_URL: z.preprocess(
+      (value) => (value === '' ? undefined : value),
+      z.string().url().optional(),
+    ),
     PUBLIC_BASE_URL: z.string().url().optional(),
     BOT_MODE: z.enum(['polling', 'webhook']).default('polling'),
     INIT_DATA_MAX_AGE_SECONDS: z.coerce.number().int().min(60).max(604800).default(86400),
@@ -177,6 +183,11 @@ export interface AppConfig {
 /** Триал фиксирован продуктовой спекой: 2 дня, один раз на пару. */
 const TRIAL_DAYS = 2;
 
+/** Канал проекта; `off` отключает обязательную подписку. */
+const REQUIRED_CHANNEL_RAW = env.TELEGRAM_REQUIRED_CHANNEL?.trim() || '@naparulove';
+const REQUIRED_CHANNEL =
+  REQUIRED_CHANNEL_RAW.toLowerCase() === 'off' ? null : REQUIRED_CHANNEL_RAW;
+
 export const config: AppConfig = {
   nodeEnv: env.NODE_ENV,
   isProduction: env.NODE_ENV === 'production',
@@ -193,12 +204,11 @@ export const config: AppConfig = {
     webhookSecret: env.TELEGRAM_WEBHOOK_SECRET ?? null,
     publicBaseUrl: env.PUBLIC_BASE_URL ? trimTrailingSlashes(env.PUBLIC_BASE_URL) : null,
     initDataMaxAgeSeconds: env.INIT_DATA_MAX_AGE_SECONDS,
-    requiredChannel: env.TELEGRAM_REQUIRED_CHANNEL?.trim() || null,
+    // Канал проекта по умолчанию; env может переопределить или отключить (`off`).
+    requiredChannel: REQUIRED_CHANNEL,
     channelUrl:
       env.TELEGRAM_CHANNEL_URL ??
-      (env.TELEGRAM_REQUIRED_CHANNEL
-        ? `https://t.me/${env.TELEGRAM_REQUIRED_CHANNEL.replace(/^@/, '')}`
-        : null),
+      (REQUIRED_CHANNEL ? `https://t.me/${REQUIRED_CHANNEL.replace(/^@/, '')}` : null),
   },
   supabase: {
     url: trimTrailingSlashes(env.SUPABASE_URL),

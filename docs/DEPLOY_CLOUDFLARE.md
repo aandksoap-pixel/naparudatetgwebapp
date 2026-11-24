@@ -48,14 +48,18 @@ Cloudflare собирал проект из корня и искал `dist` в �
 4. Проверьте `https://naparu-backend.onrender.com/api/health`.
 5. В Cloudflare Pages обновите `BACKEND_URL` на этот адрес.
 
-Render Free засыпает после 15 минут без запросов. В репозитории уже есть
-`.github/workflows/keepalive.yml`: GitHub Actions пингует
-`https://naparu-backend.onrender.com/api/health` каждые 5 минут и не даёт
-Render заснуть. Дополнительные деплои для этого не нужны.
+Render Free засыпает после 15 минут без запросов. Настроены **два независимых
+механизма**, чтобы этого не происходило и не требовались ежедневные деплои:
 
-Проверить: GitHub → Actions → **Backend keep-alive**. Если workflow отключён,
-включите его. Для запуска cron-задач добавьте GitHub secret `CRON_SECRET`;
-без него работает внутренний планировщик backend.
+1. **Supabase pg_cron + pg_net** (основной, уже включён):
+   - каждые 5 минут пингует `https://naparu-backend.onrender.com/api/health`;
+   - каждую минуту вызывает `/api/cron/tick` с `X-Cron-Secret`;
+   - SQL: `supabase/cron.sql`.
+2. **GitHub Actions** (резервный): `.github/workflows/keepalive.yml` пингует
+   health каждые 5 минут. Проверить: GitHub → Actions → Backend keep-alive.
+
+Благодаря этому Render и Supabase остаются активными 24/7, а напоминания
+отправляются даже при выключенном внутреннем планировщике.
 
 Альтернативно — cron-job.org:
 
