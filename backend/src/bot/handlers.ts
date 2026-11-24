@@ -50,11 +50,16 @@ function openSpaceKeyboard(): InlineKeyboardMarkup {
   };
 }
 
-function channelKeyboard(): InlineKeyboardMarkup | undefined {
+function channelKeyboard(inviteCode?: string | null): InlineKeyboardMarkup | undefined {
   const url = requiredChannelUrl();
   const rows: InlineKeyboardMarkup['inline_keyboard'] = [];
   if (url) rows.push([{ text: '📣 Подписаться на канал', url }]);
-  rows.push([{ text: '✅ Проверить подписку', callback_data: 'check_channel' }]);
+  rows.push([
+    {
+      text: '✅ Проверить подписку',
+      callback_data: inviteCode ? `check_channel:${inviteCode}` : 'check_channel',
+    },
+  ]);
   return { inline_keyboard: rows };
 }
 
@@ -62,11 +67,15 @@ const CHANNEL_GATE_TEXT =
   '🔒 Чтобы открыть «НаПару», сначала подпишитесь на наш Telegram-канал.\n\n' +
   'После подписки нажмите «Проверить подписку» — доступ откроется автоматически.';
 
-async function ensureChannelSubscription(ctx: Context, userId: number): Promise<boolean> {
+async function ensureChannelSubscription(
+  ctx: Context,
+  userId: number,
+  inviteCode?: string | null,
+): Promise<boolean> {
   if (!isChannelGateEnabled()) return true;
   const subscribed = await isSubscribedToRequiredChannel(userId, true);
   if (subscribed) return true;
-  await safeReply(ctx, CHANNEL_GATE_TEXT, channelKeyboard());
+  await safeReply(ctx, CHANNEL_GATE_TEXT, channelKeyboard(inviteCode));
   return false;
 }
 
@@ -92,10 +101,14 @@ export function registerBotHandlers(bot: Bot): void {
 
     try {
       const user = await ensureUser(toTelegramUser(from));
-
-      if (!(await ensureChannelSubscription(ctx, from.id))) return;
-
       const payload = typeof ctx.match === 'string' ? ctx.match.trim() : '';
+      const inviteCode = /^join_/i.test(payload)
+        ? normalizeInviteCode(payload)
+        : null;
+
+      // Если пользователь ещё не подписан, сохраняем код приглашения в
+      // callback-кнопке: после подписки пара соединится без повторного клика.
+      if (!(await ensureChannelSubscription(ctx, from.id, inviteCode))) return;
 
       // Deep-link: https://t.me/<bot>?start=join_<code> (или startapp в Mini App).
       if (/^join_/i.test(payload) && !user.pair_id) {
@@ -134,7 +147,7 @@ export function registerBotHandlers(bot: Bot): void {
     }
   });
 
-  bot.callbackQuery('check_channel', async (ctx) => {
+  bot.callbackQuery(/^check_channel(?::(.+))?$/, async (ctx) => {
     const from = ctx.from;
     if (!from) {
       await ctx.answerCallbackQuery({ text: 'Не удалось определить пользователя' }).catch(() => undefined);
@@ -151,6 +164,38 @@ export function registerBotHandlers(bot: Bot): void {
           .catch(() => undefined);
         return;
       }
+
+      const rawInvite = ctx.match?.[1] ?? null;
+      const inviteCode = rawInvite ? normalizeInviteCode(rawInvite) : null;
+      if (inviteCode) {
+        const user = await ensureUser(toTelegramUser(from));
+        if (!user.pair_id) {
+          try {
+            const result = await joinPair(user.id, inviteCode);
+            const partnerName = result.partner?.first_name ?? 'партнёр';
+            await ctx
+              .answerCallbackQuery({ text: 'Подписка подтверждена ✅' })
+              .catch(() => undefined);
+            await safeReply(
+              ctx,
+              `🎉 Подписка подтверждена, и вы теперь вместе с <b>${escapeHtml(partnerName)}</b>!`,
+              openSpaceKeyboard(),
+            );
+            return;
+          } catch (error) {
+            const message =
+              error instanceof AppError
+                ? error.message
+                : 'Не удалось присоединиться к паре.';
+            await ctx
+              .answerCallbackQuery({ text: message, show_alert: true })
+              .catch(() => undefined);
+            await safeReply(ctx, `${escapeHtml(message)}\n\nОткрой приложение.`, openSpaceKeyboard());
+            return;
+          }
+        }
+      }
+
       await ctx.answerCallbackQuery({ text: 'Подписка подтверждена ✅' }).catch(() => undefined);
       await safeReply(
         ctx,

@@ -237,7 +237,10 @@ function toPairInfo(pair: PairRow, subscription: SubscriptionInfo, today: string
   return {
     id: pair.id,
     inviteCode: pair.invite_code,
-    inviteLink: `https://t.me/${config.telegram.botUsername}?startapp=join_${pair.invite_code}`,
+    // ?start= открывает бота и сразу обрабатывает join в /start.
+    // ?startapp= требует зарегистрированного Main Mini App в BotFather,
+    // поэтому для надёжности используем обычный deep-link бота.
+    inviteLink: `https://t.me/${config.telegram.botUsername}?start=join_${pair.invite_code}`,
     relationshipStartDate: pair.relationship_start_date,
     planType: subscription.plan,
     trialUsed: pair.trial_used,
